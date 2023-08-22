@@ -9,9 +9,7 @@ import Home from '../pages/Home'
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<App/>}>
-
             <Route index element={<Home/>}/>
-
         </Route>
     )
 )
