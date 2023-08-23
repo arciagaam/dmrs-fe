@@ -30,7 +30,7 @@ const Home = () => {
 
   
   return (
-    <div className="flex flex-col w-full bg-white">
+    <div className="flex flex-col w-full bg-white tablet:">
       <Hero>
         <div className="flex items-center justify-center w-full text-white">
           HERO SECTION

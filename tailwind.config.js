@@ -22,10 +22,11 @@ export default {
       },
 
       screens: {
-        'tablet' : '640px',
-        'laptop' : '1024px',
-        'desktop' : '1280px',
-      },
+          tablet : {'max': '640px'},
+          laptop : {'max': '1024px'},
+          desktop : {'max': '1280px'},
+      }
+        
     },
   },
   plugins: [],
