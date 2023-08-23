@@ -19,7 +19,13 @@ export default {
         xl : ['3.188rem', '140%'],
         '2xl' : ['4.25rem', '120%'],
         '3xl' : ['5.625rem', '120%'],
-      }
+      },
+
+      screens: {
+        'tablet' : '640px',
+        'laptop' : '1024px',
+        'desktop' : '1280px',
+      },
     },
   },
   plugins: [],
