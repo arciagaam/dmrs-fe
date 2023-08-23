@@ -5,25 +5,27 @@ import gsap from "gsap"
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger);
+
 const Home = () => {
   const animatedCircle = useRef(null);
-
+  
   useEffect(() => {
     const el = animatedCircle.current;
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: el,
         start: '55px 60%',
-        end: '580px 40%',
+        end: '480px 40%',
         scrub: true,
         // markers: true
       }
     });
 
     tl.to(el, {
-      y:700,
-      x:160,
-      scale:100,
+      y:50,
+      x:-300,
+      height: 1200,
+      width: 1200,
       backgroundColor: '#1e1e1e'
     });
   }, [])
@@ -76,7 +78,6 @@ const Home = () => {
       </div>
 
       {/* VISION AND MISSION SECTION */}
-
       <div className="flex min-h-[calc(100vh-4rem)] z-[1] overflow-hidden">
         <div className="flex items-center justify-center w-1/2">
           <div className="flex flex-col">
