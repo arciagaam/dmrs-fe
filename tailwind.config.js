@@ -5,7 +5,22 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        testGreen : '#55D6BD'
+      },
+      
+      fontSize: {
+        xs : ['0.875rem', '140%'],
+        sm : ['1rem', '140%'],
+        base : ['1.375rem', '140%'],
+        md : ['1.75rem', '140%'],
+        lg : ['2.375rem', '140%'],
+        xl : ['3.188rem', '140%'],
+        '2xl' : ['4.25rem', '120%'],
+        '3xl' : ['5.625rem', '120%'],
+      }
+    },
   },
   plugins: [],
 }

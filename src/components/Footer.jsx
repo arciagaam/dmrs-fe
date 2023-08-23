@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="flex text-white min-h-[calc(100vh-4rem)] bg-[#1e1e1e] p-10 gap-10">
+        <div className="flex text-white min-h-[calc(100vh-4rem)] bg-[#1e1e1e] p-10 gap-10 z-50">
             <div className="flex flex-col flex-1 gap-8">
                 <h2 className='text-6xl'>LOGO</h2>
 
@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="min-w-[1px] w-[1px] bg-white min-h-full"></div>
 
             <div className="flex flex-col flex-1">
-                <h2 className='text-6xl'>CONTACT US</h2>
+                <h2 className='text-2xl text-purple-400'>CONTACT US</h2>
                 <p>Ayusin components pa para sa input</p>
             </div>
         </div>
