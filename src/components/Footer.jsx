@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="flex text-white min-h-[calc(100vh-4rem)] bg-[#1e1e1e] p-10 gap-10 z-50">
+        <div className="flex text-white min-h-[calc(100vh-4rem)] bg-[#1e1e1e] p-10 gap-10 z-50 overflow-hidden tablet:flex-col-reverse">
             <div className="flex flex-col flex-1 gap-8">
                 <h2 className='text-6xl'>LOGO</h2>
 
@@ -14,7 +14,7 @@ const Footer = () => {
                     <p>DMRS VPN</p>
                 </div>
 
-                <div className="flex justify-between mt-auto text-xs">
+                <div className="flex justify-between mt-auto text-xs whitespace-nowrap tablet:flex-col tablet:gap-5">
                     <div className="flex gap-3">
                         <p>Privacy Policy</p>
                         <p>|</p>
