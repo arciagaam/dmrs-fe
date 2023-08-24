@@ -136,13 +136,13 @@ const Home = () => {
       <section className="flex tablet:flex-col">
         <div className="flex flex-col flex-1 sticky top-16 items-center justify-center max-h-[calc(100vh-4rem)] gap-1 tablet:bg-white tablet:py-5 tablet:shadow-md tablet:z-10">
           <h2 className='text-2xl font-bold desktop:text-xl'>WHO ARE WE?</h2>
-          <p className='text-sm text-center desktop:text-sm'>Discover who we are and be part of our <span className='font-bold text-purple-400'>JOURNEY</span></p>
+          <p className='text-sm text-center desktop:text-sm'>Discover who we are and be part of our <span className='font-bold text-accent-500'>JOURNEY</span></p>
         </div>
 
         <div className="flex flex-col flex-1 tablet:gap-16">
           <StickyScrollItem>
             <div className="flex flex-col justify-center h-full gap-5">
-              <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-testGreen'>Australia</span></h2>
+              <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-primary-300'>Australia</span></h2>
               <p className='text-sm desktop:text-sm'>Dan Murdoch Risk Services (Australia) Pty Ltd is the parent company of our operational division Dan Murdoch Risk Services (Thailand) Limited.</p>
               <button className='w-fit'>Link Button</button>
             </div>
@@ -150,7 +150,7 @@ const Home = () => {
 
           <StickyScrollItem>
             <div className="flex flex-col justify-center h-full gap-5">
-              <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-testGreen'>Thailand</span></h2>
+              <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-primary-300'>Thailand</span></h2>
               <p className='text-sm desktop:text-sm'>Dan Murdoch Risk Services (Thailand) Co. Ltd. staff are trained detectives and intelligence analysts who use both objective and subjective thinking to gather manual online data leading to intelligence for many Fortune 500 companies worldwide.</p>
               <button className='w-fit'>Link Button</button>
             </div>
@@ -158,7 +158,7 @@ const Home = () => {
 
           <StickyScrollItem>
             <div className="relative flex flex-col justify-center h-full gap-5 max-w-[1080px]">
-              <h2 className='relative text-2xl font-bold text-testGreen desktop:text-xl'>Specialization</h2>
+              <h2 className='relative text-2xl font-bold text-primary-300 desktop:text-xl'>Specialization</h2>
               <p className='text-md desktop:text-sm'>We specialize in pharmaceuticals and the protection of and identifying risks associated with medicines worldwide.</p>
               <button className='w-fit'>Link Button</button>
             </div>
@@ -184,11 +184,11 @@ const Home = () => {
 
           <div className="grid auto-cols-[minmax(calc(100%),_auto)] grid-flow-col tablet:auto-rows-[minmax(fit,_auto)] tablet:grid-flow-row tablet:gap-10 overflow-x-auto gap-16 z-10">
             <div className="flex flex-col gap-3 p-10 tablet:p-0">
-              <h2 className='text-2xl font-bold text-testGreen'>VISION</h2>
+              <h2 className='text-2xl font-bold text-primary-300'>VISION</h2>
               <p>Dan Murdoch Risk Services will be the preferred company of choice for online intelligence, investigative consultancy, brand protection and business intelligence advice worldwide offering beneficial solutions for all corporate and personal problems.</p>
             </div>
             <div className="flex flex-col gap-3 p-10 tablet:p-0">
-              <h2 className='text-2xl font-bold text-purple-400'>MISSION</h2>
+              <h2 className='text-2xl font-bold text-accent-500'>MISSION</h2>
               <p>Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.</p>
             </div>
           </div>
