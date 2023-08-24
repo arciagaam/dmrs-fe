@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      
       colors:{
         primary: { // 300 default, 200 hover, 400 clicked/active
           50: '#f1fcf9',
@@ -50,7 +54,6 @@ export default {
           light: '#FFFFFF',
           dark: '#100F13',
         }
-
 
 
       },
