@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      
       colors:{
         testGreen : '#55D6BD',
         primary: {
@@ -54,7 +58,6 @@ export default {
           light: '#FFFFFF',
           dark: '#100F13',
         }
-
 
 
       },

@@ -3,8 +3,8 @@ import Hero from '../../components/Hero'
 import StickyScrollItem from './components/StickyScrollItem'
 import gsap from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-
+import TextMarquee from './components/TextMarquee'
+import Button from '../../components/Button'
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -32,7 +32,6 @@ const Home = () => {
       tl.to(el, {
         opacity: 100,
         scale: 250,
-        backgroundColor: '#1e1e1e'
       });
     });
 
@@ -52,7 +51,6 @@ const Home = () => {
         opacity: 100,
         scale: 250,
         y: 60,
-        backgroundColor: '#1e1e1e'
       });
     });
 
@@ -73,7 +71,6 @@ const Home = () => {
         y: 0,
         opacity: 100,
         scale: 250,
-        backgroundColor: '#1e1e1e'
       });
     });
 
@@ -94,7 +91,6 @@ const Home = () => {
         y: 0,
         opacity: 100,
         scale: 250,
-        backgroundColor: '#1e1e1e'
       });
     });
 
@@ -115,7 +111,6 @@ const Home = () => {
         y: 0,
         opacity: 100,
         scale: 350,
-        backgroundColor: '#1e1e1e'
       });
     });
 
@@ -127,13 +122,25 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full bg-white overflow-clip">
       <Hero>
-        <div className="flex items-center justify-center w-full text-white">
-          HERO SECTION
+        <div className="z-10 flex flex-col items-center justify-center w-full gap-3 text-white">
+          <div className="flex flex-col items-center justify-center">
+            <p className='z-10 text-xs'>We are</p>
+            <h1 className='z-10 text-lg text-center'>Dan Murdoch Risk Services</h1>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-1">
+            <p className='z-10 text-xs text-center'>Providing Global Corporations with</p>
+            <TextMarquee/>
+          </div>
+
+          <Button variant='outline' size='xs'>
+            Get Started
+          </Button>
         </div>
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex tablet:flex-col">
+      <section className="flex tablet:flex-col navTrigger">
         <div className="flex flex-col flex-1 sticky top-16 items-center justify-center max-h-[calc(100vh-4rem)] gap-1 tablet:bg-white tablet:py-5 tablet:shadow-md tablet:z-10">
           <h2 className='text-2xl font-bold desktop:text-xl'>WHO ARE WE?</h2>
           <p className='text-sm text-center desktop:text-sm'>Discover who we are and be part of our <span className='font-bold text-purple-400'>JOURNEY</span></p>
