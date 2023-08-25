@@ -54,9 +54,6 @@ export default {
           light: '#FFFFFF',
           dark: '#100F13',
         }
-
-
-
       },
       
       fontSize: {
@@ -75,7 +72,6 @@ export default {
           laptop : {'max': '1024px'},
           desktop : {'max': '1280px'},
       }
-        
     },
   },
   plugins: [],
