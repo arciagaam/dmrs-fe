@@ -6,9 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      
       colors:{
-        testGreen : '#55D6BD',
-        primary: {
+        primary: { // 300 default, 200 hover, 400 clicked/active
           50: '#f1fcf9',
           100: '#d1f6ed',
           200: '#a3ecdb',
@@ -21,8 +24,7 @@ export default {
           900: '#194843',
           950: '#082b29'
         },
-
-        secondary: {
+        secondary: { // 50 default, 100 hover, 200 clicked/active
           50: '#fcfcfc', // default light
           100: '#efefef',
           200: '#dcdcdc',
@@ -34,9 +36,8 @@ export default {
           800: '#464646',
           900: '#3d3d3d',
           950: '#292929'
-        },
-        
-        accent: {
+        },        
+        accent: { // 500 default, 400 hover, 600 clicked/active
           50: '#f6f4fe', 
           100: '#eeeafd',
           200: '#ded9fb',
@@ -49,7 +50,6 @@ export default {
           900: '#4c258d',
           950: '#2f165f'
         },
-
         background: {
           light: '#FFFFFF',
           dark: '#100F13',
@@ -68,6 +68,7 @@ export default {
       },
 
       screens: {
+          mobile : {'max': '480px'},
           tablet : {'max': '640px'},
           laptop : {'max': '1024px'},
           desktop : {'max': '1280px'},

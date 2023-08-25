@@ -4,9 +4,9 @@ import Footer from "./components/Footer"
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar/>
-      <Outlet/>
-      <Footer/>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </div>
   )
 }
