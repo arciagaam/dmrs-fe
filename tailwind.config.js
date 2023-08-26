@@ -54,6 +54,8 @@ export default {
           light: '#FFFFFF',
           dark: '#100F13',
         }
+
+
       },
       
       fontSize: {
