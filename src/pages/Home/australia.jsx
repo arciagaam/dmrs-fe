@@ -1,17 +1,20 @@
-import React, { useEffect, useRef } from 'react'
 import Hero from '../../components/Hero'
+import Button from '../../components/Button'
 
 const Australia = () => {
   return (
     <div className="flex flex-col w-full bg-white"> 
       <Hero>
-        <div className="flex items-center justify-center w-full text-white">
-            HERO SECTION
-        </div>
-      </Hero>    
+				<div className="z-10 flex flex-col items-center justify-center w-full gap-3 text-white">
+					<div className="flex flex-col items-center justify-center gap-4">
+						<h1 className='z-10 text-3xl font-bold text-center'>DMRS Australia</h1>
+						<Button variant="outline" size="sm">Services</Button>
+					</div>
+				</div>
+			</Hero>
 
       {/* DMRS Australia */}
-      <section>
+      <section className="navTrigger">
         <div className="flex items-center w-full gap-[6rem] p-[150px]">
           <div className="rounded-tl-[3.12rem] rounded-br-[3.12rem] flex w-1/2 h-full min-h-[450px] bg-primary-300">
           &emsp;&emsp;sdada
