@@ -2,28 +2,33 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const TextMarquee = () => {
 
-    const base = 2.45; // font size in rem
+    const base = 2.353; // font size in rem
     const content = ['Intelligent Intelligence', 'Meaningful Investigations', 'Thoughtful Research'];
     const [counter, setCounter] = useState(content.length-1)
     const sliderRef = useRef(null);
 
+    const [index, setIndex] = useState(0);
+    const timeoutRef = useRef(null);
+    
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        resetTimeout();
+        timeoutRef.current = setTimeout(() => {
+            setIndex((prevIndex) => prevIndex === content.length - 1 ? 0 : prevIndex + 1)
+        }, 2500);
 
-            if (counter == 0) {
-                setCounter(content.length-1)
-            } else {
-                setCounter(prev => prev-1)
-            }
-        }, 3000)
-        
-        return () => clearInterval(intervalId);
-    }, [counter])
+        return () => {setTimeout};
+    }, [index]);
+
+    function resetTimeout() {
+        if(timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+    }
 
     return (
-        <div className={`flex flex-col overflow-hidden transition-all max-h-[2.45rem]`}>
-            <div ref={sliderRef} className={`flex transition-all duration-1000 ease-in-out flex-col-reverse items-center z-10 translate-y-[-${counter*base}rem]`}>
-                {content.map((item, index) => <p className='text-md' key={index}>{item}</p>)}
+        <div className={`flex flex-col overflow-hidden transition-all max-h-[2.353rem] w-fit`}>
+            <div className={`whitespace-nowrap flex transition-all duration-1000 ease-in-out flex-col items-center z-10`} style={{transform: `translateY(${-index * 2.353}rem)`}}>
+                {content.map((item, index) => <p className={`text-md`} key={index}>{item}</p>)}
             </div>
         </div>
     )

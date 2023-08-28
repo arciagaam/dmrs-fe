@@ -5,11 +5,25 @@ import gsap from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import TextMarquee from './components/TextMarquee'
 import Button from '../../components/Button'
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const animatedCircle = useRef(null);
   const animatedCircleTrigger = useRef(null)
+  const blockCount = new Array(28);
+  const blockRef = useRef([]);
+
+  function toggleBlock(selectedBlock) {
+    if (selectedBlock.classList.contains('active') || !selectedBlock) return;
+
+    selectedBlock.classList.add('fill');
+
+    setTimeout(() => {
+      selectedBlock.classList.remove('fill');
+    }, (Math.random() * 2) * 5000);
+
+  }
 
   useEffect(() => {
     const el = animatedCircle.current;
@@ -70,7 +84,7 @@ const Home = () => {
         x: 185,
         y: 0,
         opacity: 100,
-        scale: 250,
+        scale: 285,
       });
     });
 
@@ -116,32 +130,56 @@ const Home = () => {
 
     return () => { mm.kill() }
 
+  }, []);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const selectedBlock = blockRef.current[Math.floor(Math.random() * 25)];
+      toggleBlock(selectedBlock);
+    }, 5000)
+
+    return () => clearInterval(intervalId);
   }, [])
 
 
   return (
     <div className="flex flex-col w-full bg-white overflow-clip">
       <Hero>
-        <div className="z-10 flex flex-col items-center justify-center w-full gap-3 text-white">
-          <div className="flex flex-col items-center justify-center">
-            <p className='z-10 text-xs'>We are</p>
-            <h1 className='z-10 text-lg text-center'>Dan Murdoch Risk Services</h1>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+            <div className="absolute w-full h-full bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
+            <div className="absolute top-0 left-0 grid w-full h-full grid-cols-7 z-[1] ">
+              {
+                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
+              }
+            </div>
+            <div className="z-10 flex flex-col items-center justify-center w-full gap-10 text-white">
+              <div className="flex flex-col justify-center">
+                <h1 className='z-10 text-xl'>Dan Murdoch Risk Services</h1>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-center justify-center gap-1">
+                  <p className='z-10 text-sm'>Providing Global Corporations with</p>
+                  <TextMarquee />
+                </div>
+                <div className="flex gap-3">
+                  <Button variant='default' size='xs' className='w-fit'>
+                    Get Started
+                  </Button>
+                  <Button variant='outline' size='xs' className='w-fit'>
+                    Our Services
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div className="flex flex-col items-center justify-center gap-1">
-            <p className='z-10 text-xs text-center'>Providing Global Corporations with</p>
-            <TextMarquee/>
-          </div>
-
-          <Button variant='outline' size='xs'>
-            Get Started
-          </Button>
         </div>
       </Hero>
 
+
       {/* WHO ARE WE SECTION */}
       <section className="flex tablet:flex-col navTrigger">
-        <div className="flex flex-col flex-1 sticky top-16 items-center justify-center max-h-[calc(100vh-4rem)] gap-1 tablet:bg-white tablet:py-5 tablet:shadow-md tablet:z-10">
+        <div className="flex flex-col flex-1 sticky top-16 items-center justify-center max-h-[calc(100vh-4rem)] gap-1 tablet:py-5 tablet:shadow-md tablet:z-10">
           <h2 className='text-2xl font-bold desktop:text-xl'>WHO ARE WE?</h2>
           <p className='text-sm text-center desktop:text-sm'>Discover who we are and be part of our <span className='font-bold text-purple-400'>JOURNEY</span></p>
         </div>
