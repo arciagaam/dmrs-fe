@@ -1,6 +1,7 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Route } from 'react-router-dom'
+import Australia from '../pages/Home/australia'
 
 // Elements/Pages
 import App from '../App'
@@ -13,6 +14,8 @@ const router = createBrowserRouter(
             <Route index element={<Home/>}/>
             
             <Route path="dmrs/thailand" thailand  element={<Thailand/>}/>
+
+            <Route path="dmrs/australia" australia element={<Australia/>}/>
         </Route>
     )
 )
