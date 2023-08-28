@@ -10,7 +10,7 @@ import Thailand from '../pages/Home/thailand'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<App/>}>
+        <Route path="/dmrs-fe" element={<App/>}>
             <Route index element={<Home/>}/>
             
             <Route path="dmrs/thailand" thailand  element={<Thailand/>}/>
