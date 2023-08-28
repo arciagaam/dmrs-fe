@@ -5,11 +5,14 @@ import { Route } from 'react-router-dom'
 // Elements/Pages
 import App from '../App'
 import Home from '../pages/Home'
+import Thailand from '../pages/Home/thailand'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<App/>}>
             <Route index element={<Home/>}/>
+            
+            <Route path="dmrs/thailand" thailand  element={<Thailand/>}/>
         </Route>
     )
 )
