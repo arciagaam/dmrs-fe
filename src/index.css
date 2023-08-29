@@ -16,3 +16,17 @@ html {
 .block.fill {
     background-color: #8860eb80;
 }
+
+.marquee {
+    white-space: nowrap;
+    animation: marquee 60s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-398%);
+    }
+}
