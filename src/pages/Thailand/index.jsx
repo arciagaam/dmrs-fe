@@ -1,15 +1,16 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import Hero from "../../components/Hero"
 import Button from '../../components/Button'
-import { IntelligenceAnalysts } from "../../components/Svgs"
+import { IntelligenceAnalysts, BussinessIntelligence, UndercoverOperations } from "../../components/Svgs"
 import Services from "./components/Services"
+import BgTextMarquee from "./components/BgTextMarquee"
 
 
 const Thailand = () => {
 	const services = [ 
-		{name:'Intelligence', icon:<IntelligenceAnalysts/>}, 
-		{name:'Research', icon:''}, 
-		{name:'Investigations', icon:''}, 
+		{name:'Intelligence', icon:<IntelligenceAnalysts />}, 
+		{name:'Research', icon:<BussinessIntelligence />}, 
+		{name:'Investigations', icon:<UndercoverOperations />}, 
 		{name:'Other Services', icon:''},
 	]
 
@@ -32,7 +33,7 @@ const Thailand = () => {
 
 					</div>
 
-					<div className="flex flex-col w-1/2 gap-6">
+					<div className="flex flex-col w-1/2 gap-4">
 						<div>
 							<h2 className="text-xl font-bold">Dan Murdoch Risk Services</h2>
 							<h2 className="text-xl font-bold text-primary-300">Thailand.</h2>
@@ -49,14 +50,19 @@ const Thailand = () => {
 			{/* Services */}
 			<section>
 				<div className="flex w-full h-screen gap-20 items-center py-10 px-28">
-					<div className="flex flex-col w-1/2 h-[calc((3/5)*100vh) gap-2">
-						<h2 className="text-2xl font-bold">SERVICES</h2>
-						<p className="text-base">The services DMRS offers fall into three categories <strong className="text-accent-500">INTELLIGENCE</strong>, <strong className="text-accent-500">INVESTIGATIONS</strong> and <strong className="text-accent-500">RESEARCH</strong>. However, as an additional service to our partners, we offer further unique capabilities.</p>
+					<div className="flex flex-col w-1/2 gap-2 relative">
+						<h2 className="text-2xl font-bold z-10" >SERVICES</h2>
+						<p className="text-base z-10">The services DMRS offers fall into three categories <strong className="text-accent-500">INTELLIGENCE</strong>, <strong className="text-accent-500">INVESTIGATIONS</strong> and <strong className="text-accent-500">RESEARCH</strong>. However, as an additional service to our partners, we offer further unique capabilities.</p>
+						<div className="absolute flex text flex-col w-[150%] -left-40 -top-40 overflow-clip">
+							<BgTextMarquee />
+							<BgTextMarquee />
+							<BgTextMarquee />
+						</div> 
 					</div>
 
-					<div className="flex flex-col h-screen w-1/2 gap-6 justify-center">
-						<div className="grid grid-cols-2 gap-6 h-1/2 h-[calc((3/5)*100vh)">
-							{services.map((item, index) => <Services key={index} name={item.name} icon={item.icon}/>)}
+					<div className="flex flex-col h-full w-1/2 justify-center items-center bg-white z-10">
+						<div className="grid grid-cols-2 w-3/4 z-10 fill-black hover:text-secondary-200 hover:fill-secondary-200">
+							{services.map((item, index) => item.name != 'Services' ? <Services key={index} name={item.name} icon={item.icon}/> : '')}
 						</div>
 					</div>
 				</div>
