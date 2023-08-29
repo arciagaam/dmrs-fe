@@ -73,7 +73,7 @@ const DefaultNavbar = ({ nav, cta }) => {
       <p>LOGO</p>
 
       <div className="flex items-center gap-8">
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/">
+        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs-fe">
           Home
         </NavLink>
         

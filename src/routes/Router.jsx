@@ -1,21 +1,21 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Route } from 'react-router-dom'
-import Australia from '../pages/Home/australia'
 
 // Elements/Pages
 import App from '../App'
 import Home from '../pages/Home'
-import Thailand from '../pages/Home/thailand'
+import Australia from '../pages/Australia'
+import Thailand from '../pages/Thailand'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/dmrs-fe" element={<App/>}>
             <Route index element={<Home/>}/>
             
-            <Route path="dmrs/thailand" thailand  element={<Thailand/>}/>
+            <Route path="dmrs/thailand" element={<Thailand/>}/>
 
-            <Route path="dmrs/australia" australia element={<Australia/>}/>
+            <Route path="dmrs/australia" element={<Australia/>}/>
         </Route>
     )
 )
