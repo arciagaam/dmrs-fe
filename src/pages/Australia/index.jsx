@@ -1,38 +1,44 @@
 import Hero from '../../components/Hero'
 import Button from '../../components/Button'
+import DMRSimg from '../../assets/Australia-dots.png'
 
 const Australia = () => {
   return (
     <div className="flex flex-col w-full bg-white"> 
-      <Hero>
-				<div className="z-10 flex flex-col items-center justify-center w-full gap-3 text-white">
-					<div className="flex flex-col items-center justify-center gap-4">
-						<h1 className='z-10 text-3xl font-bold text-center'>DMRS Australia</h1>
-						<Button variant="outline" size="sm">Services</Button>
-					</div>
-				</div>
-			</Hero>
+      <div className="z-10">
+        <Hero>
+          <div className="flex flex-col items-center justify-center w-full gap-3 text-white">
+            <div className="flex flex-col items-center justify-center gap-4">
+              <h1 className='z-10 text-3xl font-bold text-center'>DMRS Australia</h1>
+              <Button variant="outline" size="sm">Services</Button>
+            </div>
+          </div>
+        </Hero>  
+      </div>
+      
 
       {/* DMRS Australia */}
-      <section className="navTrigger">
-        <div className="flex items-center w-full gap-[6rem] p-[150px]">
-          <div className="rounded-tl-[3.12rem] rounded-br-[3.12rem] flex w-1/2 h-full min-h-[450px] bg-primary-300">
-          &emsp;&emsp;sdada
+      <section className="relative navTrigger">
+        <div className="flex items-center w-full gap-[6rem] p-[150px] tablet:flex-col">
+          <div className="z-10 rounded-tl-[3.12rem] rounded-br-[3.12rem] flex w-1/2 h-full min-h-[450px] bg-no-repeat bg-center bg-cover bg-[url('assets/dmrs-australia-1.jpg')]">
+
           </div>
 
-          <div className="flex flex-col w-1/2 h-full gap-10">
+          <div className="z-10 flex flex-col w-1/2 h-full gap-10">
             <div>
               <p className="text-xl font-bold leading-[3rem] text-bg-dark">Dan Murdoch Risk Services</p>
               <p className="text-2xl font-bold text-primary-300">Australia</p>
             </div>
             
-            <p className="max-w-lg text-small text-bg-dark">
+            <p className="z-10 max-w-lg text-small text-bg-dark">
               <strong className="text-accent-800">DMRS </strong> 
               <strong className="text-primary-400">Australia </strong> 
               Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
             </p>
           </div>
-        </div>  
+        </div> 
+        
+        <img src={DMRSimg} alt="" className="absolute top-0 bottom-0 right-[-10px] w-auto m-auto min-h-[600px] max-h-[850px] z-0 tablet:hidden"/>
       </section>
 
       {/* Intelligent Intelligence */}
