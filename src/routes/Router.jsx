@@ -1,16 +1,18 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Route } from 'react-router-dom'
-
+import ScrollToTop from './ScrollToTop'
 // Elements/Pages
 import App from '../App'
 import Home from '../pages/Home'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/dmrs-fe" element={<App/>}>
-            <Route index element={<Home/>}/>
-        </Route>
+        <ScrollToTop>
+          <Route path="/dmrs-fe" element={<App/>}>
+              <Route index element={<Home/>}/>
+          </Route>
+        </ScrollToTop>
     )
 )
 
