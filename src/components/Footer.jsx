@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="min-w-[1px] w-[1px] bg-white min-h-full"></div>
 
             <div className="flex flex-col flex-1">
-                <h2 className='text-2xl text-purple-400'>CONTACT US</h2>
+                <h2 className='text-2xl text-accent-500'>CONTACT US</h2>
                 <p>Ayusin components pa para sa input</p>
             </div>
         </div>
