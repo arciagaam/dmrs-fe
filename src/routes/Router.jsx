@@ -1,7 +1,6 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Route } from 'react-router-dom'
-import ScrollToTop from './ScrollToTop'
 import Australia from '../pages/Home/australia'
 
 // Elements/Pages
@@ -18,7 +17,7 @@ const router = createBrowserRouter(
 
             <Route path="dmrs/australia" australia element={<Australia/>}/>
         </Route>
-    )
+    ) 
 )
 
 const Router = () => {
