@@ -186,7 +186,7 @@ const Home = () => {
         <div className="flex flex-col flex-1 tablet:gap-16">
           <StickyScrollItem>
             <div className="relative flex flex-col justify-center h-full">
-              <img src="/australia-map.png" alt="" className='absolute top-0 right-[60%] opacity-50 h-full brightness-90' />
+              <img src="/public/australia-map.png" alt="" className='absolute top-0 right-[60%] opacity-50 h-full brightness-90' />
 
               <div className="z-10 flex flex-col justify-center h-full gap-5">
                 <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-primary-300'>Australia</span></h2>
@@ -198,7 +198,7 @@ const Home = () => {
 
           <StickyScrollItem>
             <div className="relative flex flex-col justify-center h-full">
-              <img src="/thailand-map.png" alt="" className='absolute top-0 right-[85%] opacity-50 h-full brightness-90' />
+              <img src="/public/thailand-map.png" alt="" className='absolute top-0 right-[85%] opacity-50 h-full brightness-90' />
 
               <div className='z-10 flex flex-col justify-center h-full gap-5'>
                 <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-primary-300'>Thailand</span></h2>
