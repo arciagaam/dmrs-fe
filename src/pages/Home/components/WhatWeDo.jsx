@@ -50,6 +50,7 @@ const WhatWeDo = () => {
         const index = contents.findIndex((_content) => _content.name == content.name);
         setActiveContent(contents[index]);
     }
+    
     return (
         <div className="flex justify-between py-20">
 
@@ -60,11 +61,13 @@ const WhatWeDo = () => {
                 </div>
             </div>
             
-            <div className="flex flex-col items-center self-center flex-1 w-fit" onMouseOver={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
-                <div className="grid grid-cols-3 gap-1 w-fit">
-                    {
-                        contents.map((content, index) => <WhatWeDoItem key={index} content={content} parentHover={hovering} active={content.name == activeContent?.name} handleSelectActive={handleSelectActive}/>)
-                    }
+            <div className="flex-1">
+                <div className="flex flex-col items-center self-center w-fit" onMouseOver={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
+                    <div className="grid grid-cols-3 gap-1 w-fit">
+                        {
+                            contents.map((content, index) => <WhatWeDoItem key={index} content={content} parentHover={hovering} active={content.name == activeContent?.name} handleSelectActive={handleSelectActive}/>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>
