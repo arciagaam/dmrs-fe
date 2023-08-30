@@ -17,7 +17,7 @@ const router = createBrowserRouter(
 
             <Route path="dmrs/australia" element={<Australia/>}/>
         </Route>
-    )
+    ) 
 )
 
 const Router = () => {
