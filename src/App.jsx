@@ -1,13 +1,16 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import ScrollToTop from "./routes/ScrollToTop"
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </div>
+    <ScrollToTop>
+      <div className="flex flex-col min-h-screen font-poppins">
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </div>
+    </ScrollToTop>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Button from './Button';
 import { NavLink } from 'react-router-dom';
+import NavAccordion from './NavAccordion';
 const Navbar = () => {
   const navRef = useRef(null);
   const ctaRef = useRef(null);
@@ -72,19 +73,19 @@ const DefaultNavbar = ({ nav, cta }) => {
       <p>LOGO</p>
 
       <div className="flex items-center gap-8">
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/">
+        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs-fe/">
           Home
         </NavLink>
         
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs/australia">
+        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/australia">
           DMRS Australia
         </NavLink>
 
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs/thailand">
+        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/thailand">
           DMRS Thailand
         </NavLink>
 
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs/vpn">
+        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/vpn">
           DMRS VPN
         </NavLink>
 

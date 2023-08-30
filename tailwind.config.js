@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif']
+      },
+
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
@@ -59,14 +63,15 @@ export default {
       },
       
       fontSize: {
-        xs : ['0.875rem', '140%'],
-        sm : ['1rem', '140%'],
-        base : ['1.375rem', '140%'],
-        md : ['1.75rem', '140%'],
-        lg : ['2.375rem', '140%'],
-        xl : ['3.188rem', '140%'],
-        '2xl' : ['4.25rem', '120%'],
-        '3xl' : ['5.625rem', '120%'],
+        xs : ['0.875rem', '130%'],
+        sm : ['1rem', '130%'],
+        base : ['1.375rem', '130%'],
+        md : ['1.75rem', '130%'],
+        lg : ['2.375rem', '100%'],
+        xl : ['3.188rem', '100%'],
+        '2xl' : ['4.25rem', '110%'],
+        '3xl' : ['5.625rem', '110%'],
+        '6xl' : ['10rem', '110%'],
       },
 
       screens: {
