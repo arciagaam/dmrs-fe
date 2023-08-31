@@ -35,7 +35,7 @@ const VisionMission = () => {
     return (
         <div className="z-10 flex w-full">
             <div className="flex items-center justify-center flex-1">
-                <img className='max-h-[50vh]' src={CONTENT[index].icon} alt="" />
+                <img className='max-h-[50vh]' src={`/images/${CONTENT[index].icon}`} alt="" />
             </div>
 
             <div className="flex flex-col flex-1">
@@ -44,14 +44,14 @@ const VisionMission = () => {
                     <div className={`absolute bg-primary-300 left-0 top-0 h-full transition-transform duration-500`} style={{ minWidth: `${titleWidth}px`, transform: `translateX(${titleWidth * index + 1}px)` }}></div>
                     
                     <div onClick={() => setIndex(0)} ref={titleRef} className={`z-10 flex items-center flex-1 gap-2 px-5 py-2 cursor-pointer transition-[color filter] delay-100 duration-500 ${index == 0 ? 'text-white' : 'text-background-dark/70 grayscale'}`}>
-                        <img src="/star-dynamic-color.png" className='h-[2.25rem]' alt="" />
+                        <img src="/images/star-dynamic-color.png" className='h-[2.25rem]' alt="" />
                         <p>Vision</p>
                     </div>
 
                     <div className="min-w-[.5px] border border-background-dark/10 z-10"></div>
                     
                     <div onClick={() => setIndex(1)} className={`z-10 flex items-center flex-1 gap-2 px-5 py-2 cursor-pointer transition-[color filter] delay-100 duration-500 ${index == 1 ? 'text-white' : 'text-background-dark/70 grayscale'}`}>
-                        <img src="/target-dynamic-color.png" className='h-[2.25rem]' alt="" />
+                        <img src="/images/target-dynamic-color.png" className='h-[2.25rem]' alt="" />
                         <p>Mission</p>
                     </div>
                     
