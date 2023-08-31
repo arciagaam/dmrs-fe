@@ -23,7 +23,7 @@ const Footer = () => {
     return (
         <div className="flex text-white min-h-[calc(100vh-4rem)] bg-background-dark p-10 gap-10 z-50 overflow-hidden tablet:flex-col-reverse">
             <div className="flex flex-col flex-1 gap-8">
-                <img src="/logo-1.png" alt="" />
+                <img src="./images/logo-1.png" alt="" />
 
                 <div className="flex flex-col gap-2">
                     <p className='text-sm text-accent-400'>Navigation</p>

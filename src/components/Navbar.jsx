@@ -70,7 +70,7 @@ const Navbar = () => {
 const DefaultNavbar = ({ nav, cta }) => {
   return (
     <div ref={nav} className="fixed top-0 left-0 z-50 flex items-center justify-between w-full h-16 px-6 text-xs text-white">
-      <img src="/logo-1.png" className='h-full' alt="" />
+      <img src="./images/logo-1.png" className='h-full' alt="" />
 
       <div className="flex items-center gap-8">
         <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs-fe/">
