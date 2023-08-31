@@ -7,10 +7,10 @@ const BgTextMarquee = () => {
   })
 
   return (
-    <div className="marquee flex flex-row gap-8 w-full ">
+    <div className="marquee flex flex-row gap-8 w-fit">
       {words}
     </div>
   )
 }
-
+  
 export default BgTextMarquee

@@ -19,14 +19,14 @@ html {
 
 .marquee {
     white-space: nowrap;
-    animation: marquee 60s linear infinite;
+    animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
     0% {
-        transform: translateX(0%);
+        transform: translateX(0.46%);
     }
     100% {
-        transform: translateX(-398%);
+        transform: translateX(-70%);
     }
 }
