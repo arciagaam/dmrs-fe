@@ -16,7 +16,7 @@ const WhatWeDo = () => {
             content: 'Undercover operations worldwide'
         },
         {
-            name: 'BI Background',
+            name: 'Business Intelligence Background',
             content: 'Business Intelligence background checks'
         },
         {
@@ -40,35 +40,23 @@ const WhatWeDo = () => {
             content: 'Enhancing protective measures systematically.'
         },
     ]
-    
+
     const [hovering, setHovering] = useState(false);
     const [activeContent, setActiveContent] = useState(contents[0]);
 
     const handleSelectActive = (content) => {
         if (content.name === activeContent.name) return;
-        
+
         const index = contents.findIndex((_content) => _content.name == content.name);
         setActiveContent(contents[index]);
     }
-    
-    return (
-        <div className="flex justify-between py-20">
 
-            <div className="flex flex-col items-center justify-center flex-1 p-3">
-                <div className="flex flex-col items-start">
-                    <h2 className='text-xl font-bold uppercase'>{activeContent.name}</h2>
-                    <p>{activeContent.content}</p>
-                </div>
-            </div>
-            
-            <div className="flex-1">
-                <div className="flex flex-col items-center self-center w-fit" onMouseOver={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
-                    <div className="grid grid-cols-3 gap-1 w-fit">
-                        {
-                            contents.map((content, index) => <WhatWeDoItem key={index} content={content} parentHover={hovering} active={content.name == activeContent?.name} handleSelectActive={handleSelectActive}/>)
-                        }
-                    </div>
-                </div>
+    return (
+        <div className='z-10 flex-[1]' onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
+            <div className="flex flex-col">
+                {
+                    contents.map((content, index) => <WhatWeDoItem key={index} content={content} parentHover={hovering} active={content.name == activeContent?.name} handleSelectActive={handleSelectActive} />)
+                }
             </div>
         </div>
     )
