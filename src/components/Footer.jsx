@@ -23,20 +23,20 @@ const Footer = () => {
     return (
         <div className="flex text-white min-h-[calc(100vh-4rem)] bg-background-dark p-10 gap-10 z-50 overflow-hidden tablet:flex-col-reverse">
             <div className="flex flex-col flex-1 gap-8">
-                <h2 className='text-6xl'>LOGO</h2>
+                <img src="/logo-1.png" alt="" />
 
                 <div className="flex flex-col gap-2">
                     <p className='text-sm text-accent-400'>Navigation</p>
                     <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="/dmrs-fe/">
                         Home
                     </NavLink>
-                    <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="/dmrs/thailand">
+                    <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="dmrs/thailand">
                         DMRS Thailand
                     </NavLink>
-                    <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="/dmrs/australia">
+                    <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="dmrs/australia">
                         DMRS Australia
                     </NavLink>
-                    <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="/dmrs/vpn">
+                    <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="dmrs/vpn">
                         DMRS VPN
                     </NavLink>
                 </div>
