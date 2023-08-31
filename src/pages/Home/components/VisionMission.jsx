@@ -35,7 +35,7 @@ const VisionMission = () => {
     return (
         <div className="z-10 flex w-full">
             <div className="flex items-center justify-center flex-1">
-                <img className='max-h-[50vh]' src={`/images/${CONTENT[index].icon}`} alt="" />
+                <img className='max-h-[50vh]' src={`./images/${CONTENT[index].icon}`} alt="" />
             </div>
 
             <div className="flex flex-col flex-1">
