@@ -13,8 +13,8 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
-      
-      colors:{
+
+      colors: {
         primary: { // 300 default, 200 hover, 400 clicked/active
           50: '#f1fcf9',
           100: '#d1f6ed',
@@ -28,6 +28,7 @@ export default {
           900: '#194843',
           950: '#082b29'
         },
+
         secondary: { // 50 default, 100 hover, 200 clicked/active
           50: '#fcfcfc', // default light
           100: '#efefef',
@@ -40,9 +41,10 @@ export default {
           800: '#464646',
           900: '#3d3d3d',
           950: '#292929'
-        },        
+        },
+
         accent: { // 500 default, 400 hover, 600 clicked/active
-          50: '#f6f4fe', 
+          50: '#f6f4fe',
           100: '#eeeafd',
           200: '#ded9fb',
           300: '#c6baf8',
@@ -61,24 +63,36 @@ export default {
 
 
       },
-      
+
       fontSize: {
-        xs : ['0.875rem', '130%'],
-        sm : ['1rem', '130%'],
-        base : ['1.375rem', '130%'],
-        md : ['1.75rem', '130%'],
-        lg : ['2.375rem', '100%'],
-        xl : ['3.188rem', '100%'],
-        '2xl' : ['4.25rem', '110%'],
-        '3xl' : ['5.625rem', '110%'],
+        xs: ['0.875rem', '130%'],
+        sm: ['1rem', '130%'],
+        base: ['1.375rem', '130%'],
+        md: ['1.75rem', '130%'],
+        lg: ['2.375rem', '100%'],
+        xl: ['3.188rem', '100%'],
+        '2xl': ['4.25rem', '110%'],
+        '3xl': ['5.625rem', '110%'],
       },
 
       screens: {
-          mobile : {'max': '480px'},
-          tablet : {'max': '640px'},
-          laptop : {'max': '1024px'},
-          desktop : {'max': '1280px'},
+        mobile: { 'max': '480px' },
+        tablet: { 'max': '640px' },
+        laptop: { 'max': '1024px' },
+        desktop: { 'max': '1280px' },
+      },
+
+      animation: {
+        'appear-from-left' : 'afl 500ms ease-in-out'
+      },
+
+      keyframes: {
+        'afl': {
+          '0%': { transform: 'translateX(-25%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        }
       }
+
     },
   },
   plugins: [],
