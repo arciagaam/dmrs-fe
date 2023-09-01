@@ -9,6 +9,7 @@ import WhatWeDo from './components/WhatWeDo'
 import { Link } from 'react-router-dom'
 import GridFiller from './components/GridFiller'
 import VisionMission from './components/VisionMission'
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -188,7 +189,7 @@ const Home = () => {
         <div className="flex flex-col flex-1 tablet:gap-16">
           <StickyScrollItem>
             <div className="relative flex flex-col justify-center h-full">
-              <img src="/australia-map.png" alt="" className='absolute top-0 right-[60%] opacity-50 h-full brightness-90' />
+              <img src="./images/australia-map.png" alt="" className='absolute top-0 right-[60%] opacity-50 h-full brightness-90' />
 
               <div className="z-10 flex flex-col justify-center h-full gap-5">
                 <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-primary-300'>Australia</span></h2>
@@ -205,7 +206,7 @@ const Home = () => {
 
           <StickyScrollItem>
             <div className="relative flex flex-col justify-center h-full">
-              <img src="/thailand-map.png" alt="" className='absolute top-0 right-[85%] opacity-50 h-full brightness-90' />
+              <img src="./images/thailand-map.png" alt="" className='absolute top-0 right-[85%] opacity-50 h-full brightness-90' />
 
               <div className='z-10 flex flex-col justify-center h-full gap-5'>
                 <h2 className='text-2xl font-bold desktop:text-xl'>DMRS <span className='text-primary-300'>Thailand</span></h2>
@@ -233,7 +234,7 @@ const Home = () => {
       </section>
 
       {/* VISION AND MISSION SECTION */}
-      <section className="relative flex p-20 z-[1] max-h-screen tablet:flex-col overflow-hidden">
+      <section className="relative flex pb-36 px-20 z-[1] tablet:flex-col">
         <div className="absolute top-0 left-0 flex w-full h-full">
           <div className="relative w-full h-full">
 
@@ -245,7 +246,6 @@ const Home = () => {
 
           </div>
         </div>
-
         <VisionMission />
       </section>
 
@@ -267,7 +267,7 @@ const Home = () => {
         <div className="z-10 flex flex-col items-center w-[40%] gap-8">
 
           <div className="flex items-center">
-            <img src="/sheild-dynamic-color.png" className='flex-1 h-[6rem]' alt="" />
+            <img src="./images/sheild-dynamic-color.png" className='flex-1 h-[6rem]' alt="" />
             <h2 className='text-xl font-bold'> <span className='whitespace-nowrap'> What are <span className="text-primary-300">we</span></span> offering?</h2>
           </div>
 

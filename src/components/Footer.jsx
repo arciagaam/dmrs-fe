@@ -8,8 +8,8 @@ const Footer = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        
-        const {name, email, message} = formData;
+
+        const { name, email, message } = formData;
     }
 
     const handleOnInput = (e) => {
@@ -23,9 +23,12 @@ const Footer = () => {
     return (
         <div className="flex text-white min-h-[calc(100vh-4rem)] bg-background-dark p-10 gap-10 z-50 overflow-hidden tablet:flex-col-reverse">
             <div className="flex flex-col flex-1 gap-8">
-                <img src="/logo-1.png" alt="" />
 
-                <div className="flex flex-col gap-2">
+                <div className="flex items-center">
+                    <img src="./images/logo-1.png" alt="" />
+                </div>
+
+                <div className="flex flex-col h-full gap-2">
                     <p className='text-sm text-accent-400'>Navigation</p>
                     <NavLink className={({ isActive }) => isActive ? 'text-primary-300 text-base' : 'text-white transition-all duration-500 hover:text-primary-300 active:brightness-90 text-base hover:bg-white/20 w-full hover:px-3'} to="/dmrs-fe/">
                         Home
@@ -62,7 +65,7 @@ const Footer = () => {
                     <FormInput label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} />
                     <FormInput label='Message' name='message' placeholder='Leave us a message!' onInput={handleOnInput} value={formData.message} />
                     <Button size="sm" variant="outline"><a href="mailto:test@gmail.com">Send us a message!</a></Button>
-                    
+
                 </form>
             </div>
         </div>
