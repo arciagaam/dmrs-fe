@@ -9,6 +9,7 @@ import WhatWeDo from './components/WhatWeDo'
 import { Link } from 'react-router-dom'
 import GridFiller from './components/GridFiller'
 import VisionMission from './components/VisionMission'
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -233,7 +234,7 @@ const Home = () => {
       </section>
 
       {/* VISION AND MISSION SECTION */}
-      <section className="relative flex p-20 z-[1] max-h-screen tablet:flex-col overflow-hidden">
+      <section className="relative flex pb-36 px-20 z-[1] tablet:flex-col">
         <div className="absolute top-0 left-0 flex w-full h-full">
           <div className="relative w-full h-full">
 
@@ -245,7 +246,6 @@ const Home = () => {
 
           </div>
         </div>
-
         <VisionMission />
       </section>
 
