@@ -249,7 +249,7 @@ const Home = () => {
         <VisionMission />
       </section>
 
-      <section className='relative flex gap-20 px-20'>
+      <section className='relative flex gap-20 px-20 py-20'>
 
         <div className="absolute top-0 left-0 flex w-full h-full">
           <div className="relative w-full h-full">

@@ -24,8 +24,14 @@ const Footer = () => {
         <div className="flex text-white min-h-[calc(100vh-4rem)] bg-background-dark p-10 gap-10 z-50 overflow-hidden tablet:flex-col-reverse">
             <div className="flex flex-col flex-1 gap-8">
 
-                <div className="flex items-center">
-                    <img src="./images/logo-1.png" alt="" />
+                <div className="flex items-center justify-center gap-3">
+                    <img src="./images/logo-1.png" className='w-1/4' alt="" />
+                    <div className="flex gap-2 text-lg">
+                        <h2>Dan</h2>
+                        <h2>Murdoch</h2>
+                        <h2>Risk</h2>
+                        <h2>Services</h2>
+                    </div>
                 </div>
 
                 <div className="flex flex-col h-full gap-2">
