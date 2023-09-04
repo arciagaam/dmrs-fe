@@ -1,6 +1,8 @@
 import Hero from '../../components/Hero'
 import Button from '../../components/Button'
 import DMRSimg from '../../assets/Australia-dots.png'
+import Intelligence_img from '../../assets/intelligence-investigations.png' 
+import Australia_img from '../../assets/dmrs-australia-1.jpg' 
 
 const Australia = () => {
   return (
@@ -18,33 +20,33 @@ const Australia = () => {
       
 
       {/* DMRS Australia */}
-      <section className="relative overflow-hidden navTrigger">
-        <div className="flex items-center w-full gap-[6rem] p-[150px] tablet:flex-col">
-          <div className="z-10 rounded-tl-[3.12rem] rounded-br-[3.12rem] flex w-1/2 h-full min-h-[450px] bg-no-repeat bg-center bg-cover bg-[url('assets/dmrs-australia-1.jpg')]">
-
-          </div>
-
-          <div className="z-10 flex flex-col w-1/2 h-full gap-10">
-            <div>
-              <p className="text-xl font-bold leading-[3rem] text-bg-dark">Dan Murdoch Risk Services</p>
-              <p className="text-2xl font-bold text-primary-300">Australia</p>
+      <section className="relative navTrigger">
+          <div className="flex items-center w-full min-h-[768px] h-screen gap-[6rem] p-20 tablet:flex-col">
+            <div className="z-10 flex w-1/2  max-h-[500px]">
+              <img src={Australia_img} alt="" className="object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem]"/>
             </div>
-            
-            <p className="z-10 max-w-lg text-small text-bg-dark">
-              <strong className="text-accent-800">DMRS </strong> 
-              <strong className="text-primary-400">Australia </strong> 
-              Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
-            </p>
-          </div>
-        </div> 
+
+            <div className="z-10 flex flex-col w-1/2 gap-10">
+              <div>
+                <p className="text-xl font-bold leading-[3rem] text-bg-dark">Dan Murdoch Risk Services</p>
+                <p className="text-2xl font-bold text-primary-300">Australia</p>
+              </div>
+              
+              <p className="z-10 max-w-lg text-small text-bg-dark">
+                <strong className="text-accent-800">DMRS </strong> 
+                <strong className="text-primary-400">Australia </strong> 
+                Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
+              </p>
+            </div>  
+          </div>  
+          <img src={DMRSimg} alt="" className="absolute top-0 bottom-0 right-[-10px] w-auto m-auto min-h-[600px] max-h-[850px] z-0 tablet:hidden"/>
         
-        <img src={DMRSimg} alt="" className="absolute top-0 bottom-0 right-[-10px] w-auto m-auto min-h-[600px] max-h-[850px] z-0 tablet:hidden"/>
       </section>
 
       {/* Intelligent Intelligence */}
       <section>
-        <div className="flex w-full gap-[6rem] p-[150px] ">
-          <div className="flex flex-col items-center justify-center w-full h-full p-[5rem] rounded-[3.12rem] bg-no-repeat bg-bottom bg-cover bg-[url('assets/IntelligentIntelligence.png')]">
+        <div className="flex w-full h-screen items-center gap-[6rem] p-20">
+          <div className="flex flex-col items-center justify-center w-full h-full max-h-[450px] p-[5rem] rounded-[3.12rem] bg-no-repeat bg-bottom bg-cover bg-[url('assets/IntelligentIntelligence.png')]">
             <p className="text-lg leading-[3rem] text-center text-bg-dark">
               <strong className="text-primary-300">Intelligent Intelligence</strong>
             </p>
@@ -56,9 +58,9 @@ const Australia = () => {
       </section>
 
       {/* Services */}
-      <section className=""> 
+      <section> 
         <div className="flex flex-col h-[94vh]">
-          <div className="flex flex-col w-full justify-center gap-5 px-[150px] py-[50px]">
+          <div className="flex flex-col justify-center w-full gap-5 px-20 py-20">
             <p className="text-2xl font-bold text-center uppercase text-bg-dark ">Who are Dan Murdoch Risk Services?</p>
             <p className="self-center max-w-5xl min-w-[565px] text-center text-small text-bg-dark">
               <strong className="text-accent-800">DMRS </strong> 
@@ -82,16 +84,13 @@ const Australia = () => {
 
       {/* Brochure */}
       <section>
-        <div className="flex items-center w-full gap-[6rem] p-[150px]">
-          <div className="flex flex-col w-1/2 h-full gap-10">
-            <div>
-              <p className="text-2xl font-bold uppercase text-bg-dark ">Intelligence Investigations</p>
-            </div>
-            
+        <div className="flex items-center w-full h-full">
+          <div className="flex flex-col w-auto h-full gap-10 py-20 pl-20 mr-5">
+            <p className="text-2xl font-bold uppercase laptop:text-xl text-bg-dark ">Intelligence Investigations</p>
           </div>
 
-          <div className="rounded-tl-[3.12rem] rounded-br-[3.12rem] flex w-1/2 h-full min-h-[450px] bg-primary-300">
-          &emsp;&emsp;sdada
+          <div className="flex flex-col w-auto h-full">
+            <img src={Intelligence_img} alt="" className="h-full"/>
           </div>
         </div>  
       </section>
