@@ -61,7 +61,7 @@ const Thailand = () => {
 					</div>
 
 					<div className="flex flex-col h-full w-1/2 justify-center items-center bg-white z-10">
-						<div className="grid grid-cols-2 w-3/4 z-10 fill-black hover:text-secondary-200 hover:fill-secondary-200">
+						<div className="grid grid-cols-2 gap-4 w-3/4 z-10 fill-black hover:text-secondary-200 hover:fill-secondary-200">
 							{services.map((item, index) => item.name != 'Services' ? <Services key={index} name={item.name} icon={item.icon}/> : '')}
 						</div>
 					</div>
