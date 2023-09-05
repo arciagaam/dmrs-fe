@@ -18,7 +18,7 @@ const Thailand = () => {
 
 
   return (
-    <div className="flex flex-col w-full gap-20 bg-white overflow-clip">
+    <div className="flex flex-col w-full bg-white overflow-clip">
 			<Hero>
 				<div className="z-10 flex flex-col items-center justify-center w-full gap-3 text-white">
 					<div className="flex flex-col items-center justify-center gap-4">
@@ -49,9 +49,9 @@ const Thailand = () => {
 			</section>
 
 			{/* Services */}
-			<section className="relative h-screen flex items-center align-middle">
+			<section className="relative h-full flex items-center align-middle overflow-hidden pb-20">
 				<div className="flex flex-col w-full h-fit mt-10 gap-10 justify-start px-28">
-          <div className="flex flex-col gap-2 items-center">
+          <div className="flex flex-col gap-2 items-start pl-20">
             <h2 className="text-xl font-bold z-10">Services</h2>
             <p className="z-10">The services DMRS offers fall into three categories <strong>INTELLIGENCE</strong>, <strong>INVESTIGATIONS</strong> and <strong>RESEARCH</strong>.</p>
           </div>
@@ -62,19 +62,20 @@ const Thailand = () => {
           </div>
 				</div>
 
-        <div className="absolute left-0 top-10 grid w-full h-screen grid-cols-8 rounded-full">
+        <div className="absolute left-0 -top-10 grid w-full h-screen grid-cols-8 rounded-full">
           <GridFiller cellCount={40} cellClass={'border border-background-dark/5'} />
         </div>
 			</section>
 
       {/* Other Services */}
       <section className="flex flex-col w-full h-full gap-10 justify-start px-28 mb-10">
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col gap-2 items-start pl-20">
           <h2 className="text-xl font-bold z-10">Other Services</h2>
           <p className="z-10">However, as an additional service to our partners, we offer further unique capabilities such as -</p>
           <OtherServices /> 
         </div>
       </section>
+
     </div>
     
   )
