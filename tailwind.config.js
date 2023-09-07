@@ -77,21 +77,10 @@ export default {
       },
 
       screens: {
-        mobile: { 'max': '480px' },
-        tablet: { 'max': '640px' },
-        laptop: { 'max': '1024px' },
-        desktop: { 'max': '1280px' },
-      },
-
-      animation: {
-        'appear-from-left' : 'afl 500ms ease-in-out'
-      },
-
-      keyframes: {
-        'afl': {
-          '0%': { transform: 'translateX(-25%)', opacity: 0 },
-          '100%': { transform: 'translateX(0)', opacity: 1 },
-        }
+          mobile : {'max': '480px'},
+          tablet : {'max': '720px'},
+          laptop : {'max': '1024px'},
+          desktop : {'max': '1280px'},
       }
 
     },
