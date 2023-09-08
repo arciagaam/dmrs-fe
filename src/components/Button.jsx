@@ -14,7 +14,7 @@ const Button = ({
     const variants = {
         variant: {
             default: `bg-primary-300 text-background-dark ring-1 ring-primary-300`,
-            outline: `bg-transparent text-primary-300 ring-1 ring-primary-300 hover:bg-primary-300 hover:text-background-dark`,
+            outline: `bg-transparent text-primary-300 ring-1 ring-primary-300 hover:bg-primary-300/10`,
             underline: '',
         },
 
