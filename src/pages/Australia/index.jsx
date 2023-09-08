@@ -3,6 +3,7 @@ import Button from '../../components/Button'
 import DMRSimg from '../../assets/Australia-dots.png'
 import Intelligence_img from '../../assets/intelligence-investigations.png' 
 import Australia_img from '../../assets/dmrs-australia-1.jpg' 
+import II_icon from '../../assets/intelligent-intelligence-icon.png'
 
 const Australia = () => {
   return (
@@ -46,13 +47,17 @@ const Australia = () => {
       {/* Intelligent Intelligence */}
       <section>
         <div className="flex w-full h-screen items-center gap-[6rem] p-20">
-          <div className="flex flex-col items-center justify-center w-full h-full max-h-[450px] p-[5rem] rounded-[3.12rem] bg-no-repeat bg-bottom bg-cover bg-[url('assets/IntelligentIntelligence.png')]">
-            <p className="text-lg leading-[3rem] text-center text-bg-dark">
-              <strong className="text-primary-300">Intelligent Intelligence</strong>
-            </p>
-            <p className="max-w-[80%] text-lg text-center text-accent-50 leading-[3rem]">
-              <strong>leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.</strong>
-            </p>  
+          <div className="flex justify-center w-full h-full max-h-[450px] p-[5rem] gap-10 rounded-[3.12rem] bg-black">
+            <img src={II_icon} alt="" className="object-contain w-1/4"/>
+            <div className="flex flex-col justify-center">
+              <p className="text-lg leading-[3rem]  text-bg-dark">
+                <strong className="text-primary-300">Intelligent Intelligence</strong>
+              </p>
+              <p className="text-lg text-accent-50 leading-[3rem]">
+                <strong>leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.</strong>
+              </p>    
+            </div>
+            
           </div>
         </div>  
       </section>
