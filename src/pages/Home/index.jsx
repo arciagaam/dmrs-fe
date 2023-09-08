@@ -166,9 +166,12 @@ const Home = () => {
                   <TextMarquee />
                 </div>
                 <div className="flex gap-3">
-                  <Button variant='default' size='xs' className='w-fit'>
-                    Get Started
-                  </Button>
+                  <Link to='contact'>
+                    <Button variant='default' size='xs' className='w-fit'>
+                      Get Started
+                    </Button>
+                  </Link>
+
                   <Button variant='outline' size='xs' className='w-fit'>
                     Our Services
                   </Button>
