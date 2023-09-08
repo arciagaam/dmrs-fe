@@ -24,9 +24,9 @@ const ContactUs = () => {
                 </div>
                 
                 <form className="flex flex-col self-center flex-1 gap-3 px-20">
-                    <FormInput className='ring-background-dark' label='Name' name='name' placeholder='Enter your name' onInput={handleOnInput} value={formData.name} />
-                    <FormInput className='ring-background-dark' label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} />
-                    <FormInput className='ring-background-dark' label='Message' name='message' placeholder='Leave us a message!' onInput={handleOnInput} value={formData.message} />
+                    <FormInput className='!ring-background-dark' label='Name' name='name' placeholder='Enter your name' onInput={handleOnInput} value={formData.name} />
+                    <FormInput className='!ring-background-dark' label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} />
+                    <FormInput className='!ring-background-dark' label='Message' name='message' placeholder='Leave us a message!' onInput={handleOnInput} value={formData.message} />
                     <Button size="sm" variant="outline"><a href="mailto:test@gmail.com">Send us a message!</a></Button>
                 </form>
                 
