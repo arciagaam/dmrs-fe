@@ -20,6 +20,10 @@ const Thailand = () => {
             title: 'Online Intelligence Data Collection and Analysis',
             description: 'Unique manual online intelligence monitoring service. Intelligent intelligence protecting your products and company online. All data collected is secured and displayed within a SharePoint environment for access 24/7 with corporate visual presentations linked to the raw data collected.',
           },
+          {
+            title: 'Online Intelligence Data Collection and Analysis',
+            description: 'Unique manual online intelligence monitoring service. Intelligent intelligence protecting your products and company online. All data collected is secured and displayed within a SharePoint environment for access 24/7 with corporate visual presentations linked to the raw data collected.',
+          },
         ]
       }, 
       {
