@@ -77,10 +77,11 @@ export default {
       },
 
       screens: {
-          mobile : {'max': '480px'},
-          tablet : {'max': '720px'},
-          laptop : {'max': '1024px'},
-          desktop : {'max': '1280px'},
+          mobile : '480px',
+          tablet : '720px',
+          laptop : '1024px',
+          desktop : '1280px',
+          hd : '1920px',
       }
 
     },
