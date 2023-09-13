@@ -15,11 +15,13 @@ export default {
       },
 
       colors: {
-        primary: { // 300 default, 200 hover, 400 clicked/active
+        
+        // 300 default, 200 hover, 400 clicked/active
+        primary: {
           50: '#f1fcf9',
           100: '#d1f6ed',
           200: '#a3ecdb',
-          300: '#55d6bd', // default
+          300: '#55d6bd',
           400: '#3ec3ad',
           500: '#25a794',
           600: '#1b8679',
@@ -29,8 +31,9 @@ export default {
           950: '#082b29'
         },
 
-        secondary: { // 50 default, 100 hover, 200 clicked/active
-          50: '#fcfcfc', // default light
+        // 50 default, 100 hover, 200 clicked/active
+        secondary: {
+          50: '#fcfcfc',
           100: '#efefef',
           200: '#dcdcdc',
           300: '#bdbdbd',
@@ -43,19 +46,21 @@ export default {
           950: '#292929'
         },
 
-        accent: { // 500 default, 400 hover, 600 clicked/active
+        // 500 default, 400 hover, 600 clicked/active
+        accent: {
           50: '#f6f4fe',
           100: '#eeeafd',
           200: '#ded9fb',
           300: '#c6baf8',
           400: '#a992f3',
-          500: '#8860eb', // default 
+          500: '#8860eb',
           600: '#7c46e1',
           700: '#6d34cd',
           800: '#5b2bac',
           900: '#4c258d',
           950: '#2f165f'
         },
+
         background: {
           light: '#FFFFFF',
           dark: '#100F13',
@@ -77,10 +82,11 @@ export default {
       },
 
       screens: {
-          mobile : {'max': '480px'},
-          tablet : {'max': '720px'},
-          laptop : {'max': '1024px'},
-          desktop : {'max': '1280px'},
+        mobile : '480px',
+        tablet : '768px',
+        laptop : '1024px',
+        desktop : '1366px',
+        hd : '1920px',
       }
 
     },
