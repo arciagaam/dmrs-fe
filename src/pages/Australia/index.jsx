@@ -23,15 +23,15 @@ const Australia = () => {
 
       {/* DMRS Australia */}
       <section className="relative overflow-hidden navTrigger ">
-        <div className="flex items-center w-full laptop:min-h-[768px] laptop:h-full h-screen gap-[6rem] p-20 tablet:flex-col laptop:gap-10">
-          <div className="z-10 flex w-1/2 tablet:w-full  max-h-[500px]">
+        <div className="flex flex-col h-full items-center w-full laptop:min-h-[768px] laptop:h-full gap-12 laptop:gap-[6rem] laptop:p-20 tablet:p-16 p-10 tablet:flex-row ">
+          <div className="max-h-[350px] z-10 flex w-full tablet:w-full  tablet:max-h-[500px]">
             <img src={Australia_img} alt="" className="object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem]"/>
           </div>
 
-          <div className="z-10 flex flex-col w-1/2 gap-10 tablet:w-full">
+          <div className="z-10 flex flex-col w-full gap-10 tablet:w-full">
             <div>
-              <p className="text-xl laptop:text-lg font-bold leading-[3rem] text-bg-dark mobile:text-purple-300">Dan Murdoch Risk Services</p>
-              <p className="text-2xl font-bold laptop:text-xl text-primary-300">Australia</p>
+              <p className="font-bold text-md laptop:text-xl text-bg-dark ">Dan Murdoch Risk Services</p>
+              <p className="text-lg font-bold laptop:text-2xl text-primary-300">Australia</p>
             </div>
             
             <p className="z-10 max-w-lg text-small text-bg-dark">
@@ -48,13 +48,13 @@ const Australia = () => {
       {/* Intelligent Intelligence */}
       <section>
         <div className="flexh-full w-full items-center gap-[6rem] p-7 tablet:p-20">
-          <div className="flex flex-col tablet:flex-row tablet:p-10 justify-center items-center w-full max-h-[450px] p-10 gap-2 mobile:gap-5 rounded-[3.12rem] bg-black">
+          <div className="flex flex-col tablet:flex-row tablet:p-10 laptop:p-20 justify-center items-center w-full max-h-[450px] p-10 gap-2 mobile:gap-5 rounded-[3.12rem] bg-black">
             <img src={II_icon} alt="" className="object-contain w-1/4"/>
-            <div className="flex flex-col justify-center text-center">
-              <p className="text-sm tablet:text-md laptop:text-lg desktop:text-xl">
+            <div className="flex flex-col justify-center text-center tablet:text-left">
+              <p className="text-sm tablet:text-md laptop:text-lg ">
                 <strong className="text-primary-300">Intelligent Intelligence</strong>
               </p>
-              <p className="text-sm tablet:text-md laptop:text-lg desktop:text-xl text-accent-50 ">
+              <p className="text-sm tablet:text-md laptop:text-lg text-accent-50 ">
                 <strong>leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.</strong>
               </p>    
             </div>
@@ -65,17 +65,17 @@ const Australia = () => {
 
       {/* Services */}
       <section className=''> 
-        <div className="flex flex-col h-[95vh] laptop:min-w-[450px]">
-          <div className="flex flex-col justify-center w-full gap-5 px-20 pt-20 pb-10">
-            <p className="text-2xl font-bold text-center uppercase laptop:text-xl text-bg-dark ">Who are Dan Murdoch Risk Services?</p>
-            <p className="self-center max-w-5xl min-w-[565px] text-center text-small text-bg-dark laptop:text-xs">
+        <div className="flex flex-col h-full laptop:h-[95vh] laptop:min-h-[740px] laptop:min-w-[450px]">
+          <div className="flex flex-col justify-center w-full gap-5 px-10 pt-10 pb-5 laptop:px-20 laptop:pt-20 laptop:pb-10">
+            <p className="text-lg font-bold text-center uppercase laptop:text-xl text-bg-dark ">Who are Dan Murdoch Risk Services?</p>
+            <p className="self-center max-w-5xl tablet:min-w-[565px] text-center text-xs text-bg-dark tablet:text-sm">
               <strong className="text-accent-800">DMRS </strong> 
               <strong className="text-primary-400">Australia </strong> 
               Pty Ltd Pty Ltd operates all services offered under the banners of DMRS, Dan Murdoch Risk Services, Your Intelligence Program, and DMRS VPN.
             </p>
           </div>
           
-          <div className="flex w-full h-full">
+          <div className="flex w-full min-h-[450px] tablet:h-full">
             <div className="flex flex-col items-center justify-center w-full bg-no-repeat bg-bottom bg-cover bg-[url('assets/IntelligentIntelligence.png')]">
               
             </div>  
@@ -87,18 +87,16 @@ const Australia = () => {
 
       {/* Brochure */} 
       <section>
-        <div className="flex items-center w-full h-full">
-          <div className="flex flex-col items-center w-auto h-full gap-5 py-20 pl-20 mr-5 laptop:mr-10 laptop:items-start">
-            <p className="text-2xl font-bold uppercase laptop:text-lg tablet:text-lg mobile:text-medium text-bg-dark ">Intelligence Investigations</p>
+        <div className="flex flex-col-reverse items-center w-full tablet:min-h-[200px] h-full tablet:flex-row">
+          <div className="flex flex-col items-center w-auto h-full gap-5 p-10 mr-5 tablet:mr-0 laptop:p-20 laptop:pr-10 tablet:items-start">
+            <p className="font-bold text-center uppercase laptop:text-2xl text-md tablet:text-lg tablet:text-left text-bg-dark ">Intelligence Investigations</p>
             <Button variant="default" size="sm" >See Brochure</Button>
           </div>
 
           <div className="flex flex-col w-auto h-full laptop:h-full">
-            <img src={Intelligence_img} alt="" className="h-full tablet:hidden mobile:hidden"/>
-            <img src={IntelligenceMb_img} alt="" className="w-full desktop:hidden laptop:hidden "/>
+            <img src={Intelligence_img} alt="" className="hidden w-full h-full tablet:block"/>
+            <img src={IntelligenceMb_img} alt="" className="w-full tablet:hidden"/>
           </div>
-
-          
         </div>  
       </section>
     </div>
