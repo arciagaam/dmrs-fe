@@ -64,7 +64,7 @@ const Thailand = () => {
 
       {/* DMRS Thailand section */}
       <section className="navTrigger">
-        <div className="relative flex flex-col w-full h-fit px-6 py-8 gap-6 mobile:py-10 mobile:px-6 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-16 tablet:flex-row desktop:gap-20 desktop:px-24">
+        <div className="relative flex flex-col w-full h-fit px-6 py-8 gap-6 mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row desktop:gap-20 desktop:px-24">
           <div className="flex w-full h-[300px] bg-gray-200 rounded-tl-[2rem] rounded-br-[2rem] tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 tablet:rounded-tl-[4rem] tablet:rounded-br-[4rem]"></div>
           <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 z-0 top-0 laptop:right-[20%]' />
 
