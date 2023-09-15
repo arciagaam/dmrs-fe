@@ -5,16 +5,46 @@ import Intelligence_img from '../../assets/intelligence-investigations.png'
 import Australia_img from '../../assets/dmrs-australia-1.jpg' 
 import II_icon from '../../assets/intelligent-intelligence-icon.png'
 import IntelligenceMb_img from '../../assets/intelligent-investigations-mb.png'
+import { useEffect, useRef } from 'react'
 
 const Australia = () => {
+  const blockCount = new Array(28);
+  const blockRef = useRef([]);
+  
+  function toggleBlock(selectedBlock) {
+    if (selectedBlock.classList.contains('active') || !selectedBlock) return;
+
+    selectedBlock.classList.add('fill');
+
+    setTimeout(() => {
+      selectedBlock.classList.remove('fill');
+    }, (Math.random() * 2) * 5000);
+
+  }
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const selectedBlock = blockRef.current[Math.floor(Math.random() * 25)];
+      toggleBlock(selectedBlock);
+    }, 5000)
+
+    return () => clearInterval(intervalId);
+  }, [])
+
   return (
     <div className="flex flex-col w-full bg-white"> 
       <div className="tablet:z-10">
         <Hero>
-          <div className="flex flex-col items-center justify-center w-full gap-3 text-white">
+          <div className="relative flex flex-col items-center justify-center w-full gap-3 text-white">
+            <div className="absolute -top-20 w-full h-screen bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
+            <div className="absolute -top-20 left-0 grid w-full h-screen grid-cols-7 z-[1] ">
+              {
+                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
+              }
+            </div>
             <div className="flex flex-col items-center justify-center gap-4">
               <h1 className='z-10 text-3xl font-bold text-center'>DMRS Australia</h1>
-              <Button variant="outline" size="sm">Services</Button>
+              <Button variant="outline" size="sm" className="z-10">Services</Button>
             </div>
           </div>
         </Hero>  

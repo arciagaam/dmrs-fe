@@ -6,10 +6,34 @@ import Services from "./components/Services"
 import BgTextMarquee from "./components/BgTextMarquee"
 import OtherServices from "./components/OtherServices"
 import GridFiller from "../Home/components/GridFiller"
+import { useEffect, useRef } from "react"
 
 
 const Thailand = () => {
     let size = '300';
+    const blockCount = new Array(28);
+    const blockRef = useRef([]);
+    
+    function toggleBlock(selectedBlock) {
+      if (selectedBlock.classList.contains('active') || !selectedBlock) return;
+  
+      selectedBlock.classList.add('fill');
+  
+      setTimeout(() => {
+        selectedBlock.classList.remove('fill');
+      }, (Math.random() * 2) * 5000);
+  
+    }
+
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        const selectedBlock = blockRef.current[Math.floor(Math.random() * 25)];
+        toggleBlock(selectedBlock);
+      }, 5000)
+  
+      return () => clearInterval(intervalId);
+    }, [])
+
     const services = [ 
       {
         name:'Intelligence', 
@@ -54,10 +78,16 @@ const Thailand = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full bg-white overflow-clip">
       <Hero>
-        <div className="z-10 flex flex-col justify-center w-full px-6 text-white">
+        <div className="relative z-10 flex flex-col justify-center w-full px-6 text-white">
           <div className="flex flex-col items-center justify-center gap-8 desktop:gap-4">
-            <h1 className='z-10 text-xl font-bold mobile:text-center mobile:text-2xl tablet:text-center tablet:text-2xl'>DMRS Thailand</h1>
-            <Button variant="outline" size="sm" className="w-full mobile:fit tablet:w-fit">Services</Button>
+            <div className="absolute -top-20 w-full h-screen bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
+            <div className="absolute -top-20 left-0 grid w-full h-screen grid-cols-7 z-[1] ">
+              {
+                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
+              }
+            </div>
+            <h1 className='z-10 text-xl font-bold mobile:text-center mobile:text-3xl tablet:text-center tablet:text-3xl'>DMRS Thailand</h1>
+            <Button variant="outline" size="sm" className="w-full mobile:fit tablet:w-fit z-10">Services</Button>
           </div>
         </div>
       </Hero>
@@ -80,14 +110,14 @@ const Thailand = () => {
       </section>
 
       {/* Services */}
-      <section className="relative flex items-center w-full h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-24">
+      <section className="relative flex items-center w-full h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-18">
         <div className="flex flex-col justify-start w-full gap-6 h-fit">
-          <div className="flex flex-col items-start gap-2 mobile:pl-5 tablet:pl-5 laptop:pl-12 desktop:pl-20">
+          <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-12">
             <h2 className="z-10 font-bold text-md mobile:text-xl laptop:text-xl">Services</h2>
             <p className="z-10 text-xs mobile:text-sm laptop:text-sm">The services DMRS offers fall into three categories <strong>INTELLIGENCE</strong>, <strong>INVESTIGATIONS</strong> and <strong>RESEARCH</strong>.</p>
           </div>
-          <div className="flex flex-row items-start justify-start h-fit mobile:px-12 tablet:px-12 laptop:px-20">
-            <div className="z-10 flex flex-col w-full gap-8 fill-black hover:text-secondary-200 hover:fill-secondary-200 mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid laptop:grid-cols-3">
+          <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12">
+            <div className="z-10 flex flex-col w-full gap-8 fill-black hover:text-secondary-200 hover:fill-secondary-200 mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3">
               {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} subContents={item.subContent}/> )}
             </div>
           </div>
