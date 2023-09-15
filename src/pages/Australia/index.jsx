@@ -22,26 +22,26 @@ const Australia = () => {
       
 
       {/* DMRS Australia */}
-      <section className="relative navTrigger tablet:z-10">
-        <div className="flex flex-col h-full items-center w-full laptop:min-h-[768px] laptop:h-full gap-12 laptop:gap-[6rem] laptop:p-20 tablet:p-16 p-10 tablet:flex-row ">
-          <div className="max-h-[350px] tablet:z-10 flex w-full tablet:w-full  tablet:max-h-[500px]">
+      <section className="relative navTrigger tablet:z-12">
+        <div className="flex flex-col h-full w-full items-center p-10 gap-12 tablet:p-16 tablet:flex-row laptop:min-h-[768px] laptop:h-full laptop:gap-24 laptop:p-20 ">
+          <div className="max-h-[350px] flex w-full tablet:z-10 tablet:w-full tablet:max-h-[500px]">
             <img src={Australia_img} alt="" className="object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem]"/>
           </div>
 
           <div className="flex flex-col w-full gap-10 tablet:z-10 tablet:w-full">
             <div>
-              <p className="font-bold text-md laptop:text-xl text-bg-dark ">Dan Murdoch Risk Services</p>
-              <p className="text-lg font-bold laptop:text-2xl text-primary-300">Australia</p>
+              <p className="font-bold text-md text-bg-dark laptop:text-xl ">Dan Murdoch Risk Services</p>
+              <p className="text-lg font-bold text-primary-300 laptop:text-2xl">Australia</p>
             </div>
             
-            <p className="max-w-lg tablet:z-10 text-small text-bg-dark">
+            <p className="max-w-lg text-xs text-bg-dark tablet:z-10 tablet:text-sm">
               <strong className="text-accent-800">DMRS </strong> 
               <strong className="text-primary-400">Australia </strong> 
               Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
             </p>
           </div>  
         </div>  
-        <img src={DMRSimg} alt="" className="tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block hidden"/>
+        <img src={DMRSimg} alt="" className="hidden tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block"/>
         
       </section>
 
