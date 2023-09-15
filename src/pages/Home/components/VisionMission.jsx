@@ -4,16 +4,16 @@ import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/all';
 import { MissionRocket } from './../../../components/Svgs'
 import { FaEye, FaFlag } from 'react-icons/fa'
+import { Application } from '@splinetool/runtime';
+import Spline from '@splinetool/react-spline';
+
+
 
 gsap.registerPlugin(MotionPathPlugin);
 
 const VisionMission = () => {
     const titleRef = useRef(null);
     const [titleWidth, setTitleWidth] = useState(titleRef.current?.offsetWidth);
-
-    useEffect(() => {
-        gsap.to("#test", { duration: 10, motionPath: "#c3" })
-    }, [])
 
     useEffect(() => {
         setTitleWidth(titleRef.current?.offsetWidth);
@@ -46,9 +46,20 @@ const VisionMission = () => {
     return (
         <div className="z-10 grid self-start w-full grid-cols-1 gap-10 laptop:grid-cols-2">
 
-            {
-                index == 0 ? <Vision /> : <Mission />
-            }
+            <div className="relative flex items-center justify-center flex-1">
+                <div className="absolute scale-110 inset-0 w-full h-full translate-x-[-9%] translate-y-[-35%] laptop:translate-y-[-200%] laptop:translate-x-[-20%] hd:translate-y-[-34%] hd:translate-x-[-1%] z-0">
+                    {/* <Spline scene="https://prod.spline.design/QpMCQb63RhuuWbia/scene.splinecode" /> */}
+                    <MissionRocket/>
+                </div>
+
+                {
+                    index == 0 ? <Vision /> : <Mission />
+                }
+
+            </div>
+
+
+
 
             <div className="flex flex-col flex-1">
                 <div className="relative grid grid-cols-2">
@@ -88,17 +99,11 @@ const Content = ({ content, ...props }) => {
 
 const Mission = () => {
     return (
-        <div className="relative flex items-center justify-center flex-1">
-            <div className="absolute top-0 left-0 translate-x-[-9%] translate-y-[-35%] opacity-40 laptop:translate-y-[-35%] laptop:translate-x-[-20%] hd:translate-y-[-34%] hd:translate-x-[-1%] z-0">
-                <MissionRocket />
-            </div>
-            
-            <div className="z-10 flex flex-col items-center self-center justify-center gap-3 text-lg font-bold laptop:text-xl laptop:flex-row laptop:gap-5 hd:text-3xl text-background-dark">
-                <FaFlag />
-                <div className="flex flex-col">
-                    <h2 className='text-center laptop:flex laptop:text-left laptop:flex-col'>Our <span className='text-primary-300'>Mission</span><span className='text-primary-300'>Statement</span></h2>
-                    
-                </div>
+        <div className="z-10 flex flex-col items-center self-center justify-center gap-3 text-lg font-bold laptop:text-xl laptop:flex-row laptop:gap-5 hd:text-3xl text-background-dark">
+            <FaFlag />
+            <div className="flex flex-col">
+                <h2 className='text-center laptop:flex laptop:text-left laptop:flex-col'>Our <span className='text-primary-300'>Mission</span><span className='text-primary-300'>Statement</span></h2>
+
             </div>
         </div>
     )
@@ -106,15 +111,9 @@ const Mission = () => {
 
 const Vision = () => {
     return (
-        <div className="relative flex items-center justify-center flex-1">
-            <div className="absolute top-0 left-0 translate-x-[-9%] translate-y-[-35%] opacity-40 laptop:translate-y-[-35%] laptop:translate-x-[-20%] hd:translate-y-[-34%] hd:translate-x-[-1%] z-0">
-                <MissionRocket />
-            </div>
-            
-            <div className="flex flex-col items-center self-center gap-3 text-lg font-bold laptop:text-xl laptop:flex-row laptop:gap-5 hd:text-3xl text-background-dark">
-                <FaEye  />
-                <h2 className='text-center laptop:flex laptop:text-left laptop:flex-col'>Our <span className='text-primary-300'>Vision</span></h2>
-            </div>
+        <div className="flex flex-col items-center self-center gap-3 text-lg font-bold laptop:text-xl laptop:flex-row laptop:gap-5 hd:text-3xl text-background-dark">
+            <FaEye />
+            <h2 className='text-center laptop:flex laptop:text-left laptop:flex-col'>Our <span className='text-primary-300'>Vision</span></h2>
         </div>
     )
 }

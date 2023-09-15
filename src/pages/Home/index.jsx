@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import GridFiller from './components/GridFiller'
 import VisionMission from './components/VisionMission'
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
