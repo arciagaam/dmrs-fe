@@ -47,7 +47,7 @@ const VisionMission = () => {
         <div className="z-10 grid self-start w-full grid-cols-1 gap-10 laptop:grid-cols-2">
 
             <div className="relative flex items-center justify-center flex-1">
-                <div className="absolute scale-110 inset-0 w-full h-full translate-x-[-9%] translate-y-[-35%] laptop:translate-y-[-200%] laptop:translate-x-[-20%] hd:translate-y-[-34%] hd:translate-x-[-1%] z-0">
+                <div className="opacity-40 absolute scale-110 inset-0 w-full h-full translate-x-[-9%] translate-y-[-35%] laptop:translate-y-[-200%] laptop:translate-x-[-20%] hd:translate-y-[-34%] hd:translate-x-[-1%] z-0">
                     {/* <Spline scene="https://prod.spline.design/QpMCQb63RhuuWbia/scene.splinecode" /> */}
                     <MissionRocket/>
                 </div>
