@@ -110,13 +110,13 @@ const Thailand = () => {
       </section>
 
       {/* Services */}
-      <section className="relative flex items-center w-full h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-18">
+      <section className="relative flex items-center w-full h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-[4.5rem]">
         <div className="flex flex-col justify-start w-full gap-6 h-fit">
-          <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-12">
+          <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-[4.5rem]">
             <h2 className="z-10 font-bold text-md mobile:text-xl laptop:text-xl">Services</h2>
             <p className="z-10 text-xs mobile:text-sm laptop:text-sm">The services DMRS offers fall into three categories <strong>INTELLIGENCE</strong>, <strong>INVESTIGATIONS</strong> and <strong>RESEARCH</strong>.</p>
           </div>
-          <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12">
+          <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
             <div className="z-10 flex flex-col w-full gap-8 fill-black hover:text-secondary-200 hover:fill-secondary-200 mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3">
               {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} subContents={item.subContent}/> )}
             </div>
@@ -129,8 +129,8 @@ const Thailand = () => {
       </section>
 
       {/* Other Services */}
-      <section className="flex flex-col items-center justify-center w-full h-full gap-10 px-6 mb-10 tablet:px-12 desktop:px-24">
-        <div className="flex flex-col items-start gap-2 mobile:pl-5 tablet:pl-5 laptop:pl-10 desktop:pl-20">
+      <section className="flex flex-col items-center justify-center w-full h-full gap-10 px-6 mb-10 tablet:px-12 desktop:px-[4.5rem]">
+        <div className="flex flex-col items-start gap-2 mobile:pl-5 tablet:pl-5 laptop:pl-10 desktop:pl-[4.5rem]">
           <h2 className="z-10 font-bold text-md mobile:text-xl laptop:text-xl">Other Services</h2>
           <p className="z-10 text-xs mobile:text-sm laptop:text-sm">However, as an additional service to our partners, we offer further unique capabilities such as -</p>
           <OtherServices /> 
