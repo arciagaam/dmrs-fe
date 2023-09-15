@@ -79,7 +79,7 @@ const VisionMission = () => {
 
                 </div>
 
-                <Content content={CONTENT[index]} className={'animate-appear-from-left'} />
+                <Content content={CONTENT[index]} />
 
             </div>
         </div>
