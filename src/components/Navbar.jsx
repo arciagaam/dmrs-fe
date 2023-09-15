@@ -89,7 +89,7 @@ const DefaultNavbar = ({ nav, cta }) => {
           DMRS VPN
         </NavLink>
 
-        <NavLink ref={cta} className='overflow-hidden transition-all duration-1000 max-w-0 whitespace-nowrap'>
+        <NavLink ref={cta} to={'./contact'} className='overflow-hidden transition-all duration-1000 max-w-0 whitespace-nowrap'>
           <Button size='xs' className="m-1">Get Started</Button>
         </NavLink>
       </div>
@@ -100,7 +100,8 @@ const DefaultNavbar = ({ nav, cta }) => {
 const MobileNavbar = ({ nav }) => {
   return (
     <div ref={nav} className="fixed top-0 left-0 z-50 flex items-center justify-between w-full h-16 px-6 text-sm text-white bg-background-dark">
-      <p>LOGO</p>
+      <img src="./images/logo-1.png" className='h-3/4' alt="" />
+
 
       <button className='text-lg'>=</button>
     </div>
