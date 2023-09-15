@@ -17,6 +17,7 @@ html {
     background-color: #8860eb80;
 }
 
+/* 
 .marquee {
     white-space: nowrap;
     animation: marquee 20s linear infinite;
@@ -29,4 +30,4 @@ html {
     100% {
         transform: translateX(-69%);
     }
-}
+} */

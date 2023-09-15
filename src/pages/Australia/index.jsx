@@ -4,16 +4,47 @@ import DMRSimg from '../../assets/Australia-dots.png'
 import Intelligence_img from '../../assets/intelligence-investigations.png' 
 import Australia_img from '../../assets/dmrs-australia-1.jpg' 
 import II_icon from '../../assets/intelligent-intelligence-icon.png'
+import IntelligenceMb_img from '../../assets/intelligent-investigations-mb.png'
+import { useEffect, useRef } from 'react'
 
 const Australia = () => {
+  const blockCount = new Array(28);
+  const blockRef = useRef([]);
+  
+  function toggleBlock(selectedBlock) {
+    if (selectedBlock.classList.contains('active') || !selectedBlock) return;
+
+    selectedBlock.classList.add('fill');
+
+    setTimeout(() => {
+      selectedBlock.classList.remove('fill');
+    }, (Math.random() * 2) * 5000);
+
+  }
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const selectedBlock = blockRef.current[Math.floor(Math.random() * 25)];
+      toggleBlock(selectedBlock);
+    }, 5000)
+
+    return () => clearInterval(intervalId);
+  }, [])
+
   return (
     <div className="flex flex-col w-full bg-white"> 
-      <div className="z-10">
+      <div className="tablet:z-10">
         <Hero>
-          <div className="flex flex-col items-center justify-center w-full gap-3 text-white">
+          <div className="relative flex flex-col items-center justify-center w-full gap-3 text-white">
+            <div className="absolute -top-20 w-full h-screen bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
+            <div className="absolute -top-20 left-0 grid w-full h-screen grid-cols-7 z-[1] ">
+              {
+                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
+              }
+            </div>
             <div className="flex flex-col items-center justify-center gap-4">
               <h1 className='z-10 text-3xl font-bold text-center'>DMRS Australia</h1>
-              <Button variant="outline" size="sm">Services</Button>
+              <Button variant="outline" size="sm" className="z-10">Services</Button>
             </div>
           </div>
         </Hero>  
@@ -21,39 +52,39 @@ const Australia = () => {
       
 
       {/* DMRS Australia */}
-      <section className="relative overflow-hidden navTrigger ">
-        <div className="flex items-center w-full min-h-[768px] h-screen gap-[6rem] p-20 tablet:flex-col">
-          <div className="z-10 flex w-1/2  max-h-[500px]">
+      <section className="relative navTrigger tablet:z-12">
+        <div className="flex flex-col h-full w-full items-center p-10 gap-12 tablet:p-16 tablet:flex-row laptop:min-h-[768px] laptop:h-full laptop:gap-24 laptop:p-20 ">
+          <div className="max-h-[350px] flex w-full tablet:z-10 tablet:w-full tablet:max-h-[500px]">
             <img src={Australia_img} alt="" className="object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem]"/>
           </div>
 
-          <div className="z-10 flex flex-col w-1/2 gap-10">
+          <div className="flex flex-col w-full gap-10 tablet:z-10 tablet:w-full">
             <div>
-              <p className="text-xl font-bold leading-[3rem] text-bg-dark">Dan Murdoch Risk Services</p>
-              <p className="text-2xl font-bold text-primary-300">Australia</p>
+              <p className="font-bold text-md text-bg-dark laptop:text-xl ">Dan Murdoch Risk Services</p>
+              <p className="text-lg font-bold text-primary-300 laptop:text-2xl">Australia</p>
             </div>
             
-            <p className="z-10 max-w-lg text-small text-bg-dark">
+            <p className="max-w-lg text-xs text-bg-dark tablet:z-10 tablet:text-sm">
               <strong className="text-accent-800">DMRS </strong> 
               <strong className="text-primary-400">Australia </strong> 
               Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
             </p>
           </div>  
         </div>  
-        <img src={DMRSimg} alt="" className="absolute top-0 bottom-0 right-[-10px] w-auto m-auto min-h-[600px] max-h-[850px] z-0 tablet:hidden"/>
+        <img src={DMRSimg} alt="" className="hidden tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block"/>
         
       </section>
 
       {/* Intelligent Intelligence */}
-      <section>
-        <div className="flex w-full h-screen items-center gap-[6rem] p-20">
-          <div className="flex justify-center w-full h-full max-h-[450px] p-[5rem] gap-10 rounded-[3.12rem] bg-black">
+      <section className="relative tablet:z-10">
+        <div className="flex h-full w-full items-center gap-[6rem] p-7 tablet:p-20">
+          <div className="flex flex-col tablet:flex-row tablet:p-10 laptop:p-20 justify-center items-center w-full max-h-[450px] p-10 gap-2 mobile:gap-5 rounded-[3.12rem] bg-black">
             <img src={II_icon} alt="" className="object-contain w-1/4"/>
-            <div className="flex flex-col justify-center">
-              <p className="text-lg leading-[3rem]  text-bg-dark">
+            <div className="flex flex-col justify-center text-center tablet:text-left">
+              <p className="text-sm tablet:text-md laptop:text-lg ">
                 <strong className="text-primary-300">Intelligent Intelligence</strong>
               </p>
-              <p className="text-lg text-accent-50 leading-[3rem]">
+              <p className="text-sm tablet:text-md laptop:text-lg text-accent-50 ">
                 <strong>leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.</strong>
               </p>    
             </div>
@@ -64,17 +95,17 @@ const Australia = () => {
 
       {/* Services */}
       <section className=''> 
-        <div className="flex flex-col h-[95vh] laptop:min-w-[450px]">
-          <div className="flex flex-col justify-center w-full gap-5 px-20 pt-20 pb-10">
-            <p className="text-2xl font-bold text-center uppercase laptop:text-xl text-bg-dark ">Who are Dan Murdoch Risk Services?</p>
-            <p className="self-center max-w-5xl min-w-[565px] text-center text-small text-bg-dark laptop:text-xs">
+        <div className="flex flex-col h-full laptop:h-[95vh] laptop:min-h-[740px] laptop:min-w-[450px]">
+          <div className="flex flex-col justify-center w-full gap-5 px-10 pt-10 pb-5 laptop:px-20 laptop:pt-20 laptop:pb-10">
+            <p className="text-lg font-bold text-center uppercase laptop:text-xl text-bg-dark ">Who are Dan Murdoch Risk Services?</p>
+            <p className="self-center max-w-5xl tablet:min-w-[565px] text-center text-xs text-bg-dark tablet:text-sm">
               <strong className="text-accent-800">DMRS </strong> 
               <strong className="text-primary-400">Australia </strong> 
               Pty Ltd Pty Ltd operates all services offered under the banners of DMRS, Dan Murdoch Risk Services, Your Intelligence Program, and DMRS VPN.
             </p>
           </div>
           
-          <div className="flex w-full h-full overflow-x-scroll">
+          <div className="flex w-full min-h-[450px] tablet:h-full">
             <div className="flex flex-col items-center justify-center w-full bg-no-repeat bg-bottom bg-cover bg-[url('assets/IntelligentIntelligence.png')]">
               
             </div>  
@@ -84,15 +115,17 @@ const Australia = () => {
         </div>
       </section>
 
-      {/* Brochure */}
+      {/* Brochure */} 
       <section>
-        <div className="flex items-center w-full h-full">
-          <div className="flex flex-col items-center w-auto h-full gap-10 py-20 pl-20 mr-5">
-            <p className="text-2xl font-bold uppercase laptop:text-xl text-bg-dark ">Intelligence Investigations</p>
+        <div className="flex flex-col-reverse items-center w-full tablet:min-h-[200px] h-full tablet:flex-row">
+          <div className="flex flex-col items-center w-auto h-full gap-5 p-10 mr-5 tablet:mr-0 laptop:p-20 laptop:pr-5 tablet:items-start">
+            <p className="font-bold text-center uppercase laptop:text-2xl text-md tablet:text-lg tablet:text-left text-bg-dark ">Intelligence Investigations</p>
+            <Button variant="default" size="sm" >See Brochure</Button>
           </div>
 
-          <div className="flex flex-col w-auto h-full">
-            <img src={Intelligence_img} alt="" className="h-full"/>
+          <div className="flex flex-col w-auto h-full laptop:h-full">
+            <img src={Intelligence_img} alt="" className="hidden w-full h-full tablet:block"/>
+            <img src={IntelligenceMb_img} alt="" className="w-full tablet:hidden"/>
           </div>
         </div>  
       </section>

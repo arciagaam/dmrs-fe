@@ -4,16 +4,16 @@ import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/all';
 import { MissionRocket } from './../../../components/Svgs'
 import { FaEye, FaFlag } from 'react-icons/fa'
+import { Application } from '@splinetool/runtime';
+import Spline from '@splinetool/react-spline';
+
+
 
 gsap.registerPlugin(MotionPathPlugin);
 
 const VisionMission = () => {
     const titleRef = useRef(null);
     const [titleWidth, setTitleWidth] = useState(titleRef.current?.offsetWidth);
-
-    useEffect(() => {
-        gsap.to("#test", { duration: 10, motionPath: "#c3" })
-    }, [])
 
     useEffect(() => {
         setTitleWidth(titleRef.current?.offsetWidth);
@@ -44,25 +44,35 @@ const VisionMission = () => {
     ]
 
     return (
-        <div className="z-10 flex w-full">
+        <div className="z-10 grid self-start w-full grid-cols-1 gap-10 laptop:grid-cols-2">
 
-            {
-                index == 0 ? <Vision /> : <Mission />
-            }
+            <div className="relative flex items-center justify-center flex-1">
+                <div className="opacity-40 absolute scale-110 inset-0 w-full h-full translate-x-[-9%] translate-y-[-35%] laptop:translate-y-[-200%] laptop:translate-x-[-20%] hd:translate-y-[-34%] hd:translate-x-[-1%] z-0">
+                    {/* <Spline scene="https://prod.spline.design/QpMCQb63RhuuWbia/scene.splinecode" /> */}
+                    <MissionRocket/>
+                </div>
 
-            <div className="flex flex-col flex-1 px-10">
-                <div className="relative flex text-md">
+                {
+                    index == 0 ? <Vision /> : <Mission />
+                }
 
+            </div>
+
+
+
+
+            <div className="flex flex-col flex-1">
+                <div className="relative grid grid-cols-2">
+
+                    {/* highlight */}
                     <div className={`absolute bg-primary-300 left-0 top-0 h-full transition-transform duration-500`} style={{ minWidth: `${titleWidth}px`, transform: `translateX(${titleWidth * index + 1}px)` }}></div>
 
-                    <div onClick={() => setIndex(0)} ref={titleRef} className={`z-10 flex items-center flex-1 gap-2 px-5 py-2 cursor-pointer transition-[color filter] delay-100 duration-500 ${index == 0 ? 'text-white' : 'text-background-dark/70 grayscale'}`}>
+                    <div onClick={() => setIndex(0)} ref={titleRef} className={`z-10 tablet:text-base hd:text-lg flex items-center justify-center flex-1 gap-2 px-5 py-2 hd:py-6 cursor-pointer transition-[color filter] delay-100 duration-500 ${index == 0 ? 'text-white' : 'text-background-dark/70 grayscale'}`}>
                         <FaEye />
                         <p>Vision</p>
                     </div>
 
-                    <div className="min-w-[.5px] border border-background-dark/10 z-10"></div>
-
-                    <div onClick={() => setIndex(1)} className={`z-10 flex items-center flex-1 gap-2 px-5 py-2 cursor-pointer transition-[color filter] delay-100 duration-500 ${index == 1 ? 'text-white' : 'text-background-dark/70 grayscale'}`}>
+                    <div onClick={() => setIndex(1)} className={`z-10 tablet:text-base hd:text-lg flex items-center justify-center flex-1 gap-2 px-5 py-2 hd:py-6 cursor-pointer transition-[color filter] delay-100 duration-500 ${index == 1 ? 'text-white' : 'text-background-dark/70 grayscale'}`}>
                         <FaFlag />
                         <p>Mission</p>
                     </div>
@@ -77,29 +87,23 @@ const VisionMission = () => {
 }
 
 const Content = ({ content, ...props }) => {
-    const { title, body } = content;
+    const { body } = content;
     const { className } = props;
 
     return (
-        <div className={`flex flex-col py-10 gap-3 ${className}`}>
-            {/* <h2 className='text-xl font-medium text-primary-300'>{title}</h2> */}
-            <p className='text-base text-justify'>{body}</p>
+        <div className={`flex flex-col py-10 gap-3 ${className} tablet:px-5 tablet:self-center desktop:w-full`}>
+            <p className='text-xs text-justify tablet:text-sm hd:text-md'>{body}</p>
         </div>
     )
 }
 
 const Mission = () => {
     return (
-        <div className="relative flex items-center justify-center flex-1">
-            <div className="absolute top-0 left-0 translate-x-[-9%] translate-y-[-35%] opacity-40">
-                <MissionRocket />
-            </div>
-            <div className="flex gap-3 text-lg font-bold text-background-dark">
-                <FaFlag className='flex-1 w-full h-16' />
-                <div className="flex flex-col">
-                    <h2>Our <span className='text-primary-300'>Mission</span></h2>
-                    <h2 className='text-primary-300'>Statement</h2>
-                </div>
+        <div className="z-10 flex flex-col items-center self-center justify-center gap-3 text-lg font-bold laptop:text-xl laptop:flex-row laptop:gap-5 hd:text-3xl text-background-dark">
+            <FaFlag />
+            <div className="flex flex-col">
+                <h2 className='text-center laptop:flex laptop:text-left laptop:flex-col'>Our <span className='text-primary-300'>Mission</span><span className='text-primary-300'>Statement</span></h2>
+
             </div>
         </div>
     )
@@ -107,14 +111,9 @@ const Mission = () => {
 
 const Vision = () => {
     return (
-        <div className="relative flex items-center justify-center flex-1">
-            <div className="absolute top-0 left-0 translate-x-[-9%] translate-y-[-35%] opacity-40">
-                <MissionRocket />
-            </div>
-            <div className="flex items-center gap-3 text-lg font-bold text-background-dark">
-                <FaEye className='flex-1 w-full h-12' />
-                <h2>Our <span className='text-primary-300'>Vision</span></h2>
-            </div>
+        <div className="flex flex-col items-center self-center gap-3 text-lg font-bold laptop:text-xl laptop:flex-row laptop:gap-5 hd:text-3xl text-background-dark">
+            <FaEye />
+            <h2 className='text-center laptop:flex laptop:text-left laptop:flex-col'>Our <span className='text-primary-300'>Vision</span></h2>
         </div>
     )
 }

@@ -6,10 +6,34 @@ import Services from "./components/Services"
 import BgTextMarquee from "./components/BgTextMarquee"
 import OtherServices from "./components/OtherServices"
 import GridFiller from "../Home/components/GridFiller"
+import { useEffect, useRef } from "react"
 
 
 const Thailand = () => {
     let size = '300';
+    const blockCount = new Array(28);
+    const blockRef = useRef([]);
+    
+    function toggleBlock(selectedBlock) {
+      if (selectedBlock.classList.contains('active') || !selectedBlock) return;
+  
+      selectedBlock.classList.add('fill');
+  
+      setTimeout(() => {
+        selectedBlock.classList.remove('fill');
+      }, (Math.random() * 2) * 5000);
+  
+    }
+
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        const selectedBlock = blockRef.current[Math.floor(Math.random() * 25)];
+        toggleBlock(selectedBlock);
+      }, 5000)
+  
+      return () => clearInterval(intervalId);
+    }, [])
+
     const services = [ 
       {
         name:'Intelligence', 
@@ -19,6 +43,10 @@ const Thailand = () => {
           {
             title: 'Online Intelligence Data Collection and Analysis',
             description: 'Unique manual online intelligence monitoring service. Intelligent intelligence protecting your products and company online. All data collected is secured and displayed within a SharePoint environment for access 24/7 with corporate visual presentations linked to the raw data collected.',
+          },
+          {
+            title: 'Intellectual Property Protection',
+            description: 'Many global Fortune 500 companies leave their trademark, copyright and intellectual property protection in our hands. Many companies in the worldwide pharmaceutical marketplace trust us to protect them with our hands-on manual intelligence and investigative consultancy.',
           },
         ]
       }, 
@@ -48,28 +76,31 @@ const Thailand = () => {
 
 
   return (
-    <div className="flex flex-col justify-center items-center w-full bg-white overflow-clip">
+    <div className="flex flex-col items-center justify-center w-full bg-white overflow-clip">
       <Hero>
-        <div className="z-10 flex flex-col items-center justify-center w-full gap-3 text-white">
-          <div className="flex flex-col items-center justify-center gap-4">
-            <h1 className='z-10 text-3xl text-center font-bold'>DMRS Thailand</h1>
-            <Button variant="outline" size="sm">Services</Button>
+        <div className="relative z-10 flex flex-col justify-center w-full px-6 text-white">
+          <div className="flex flex-col items-center justify-center gap-8 desktop:gap-4">
+            <div className="absolute -top-20 w-full h-screen bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
+            <div className="absolute -top-20 left-0 grid w-full h-screen grid-cols-7 z-[1] ">
+              {
+                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
+              }
+            </div>
+            <h1 className='z-10 text-xl font-bold mobile:text-center mobile:text-3xl tablet:text-center tablet:text-3xl'>DMRS Thailand</h1>
+            <Button variant="outline" size="sm" className="w-full mobile:fit tablet:w-fit z-10">Services</Button>
           </div>
         </div>
       </Hero>
 
       {/* DMRS Thailand section */}
       <section className="navTrigger">
-        <div className="relative flex w-full h-screen gap-20 items-center py-10 px-28 desktop:px-12 tablet:flex-col tablet:gap-10 ">
-          <div className="flex w-1/2 h-[calc((3/5)*100vh)] bg-gray-100 rounded-tl-[4rem] rounded-br-[4rem] tablet:w-full"></div>
-          <img src="/images/thailand-map.png" alt="" className='absolute top-0 right-[20%] opacity-50 h-full brightness-90 z-0' />
+        <div className="relative flex flex-col w-full gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:gap-20 desktop:px-24">
+          <div className="flex w-full h-[300px] bg-gray-200 rounded-tl-[2rem] rounded-br-[2rem] tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 tablet:rounded-tl-[4rem] tablet:rounded-br-[4rem]"></div>
+          <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 z-0 top-0 hidden mobile:block laptop:right-[20%]' />
 
-          <div className="flex flex-col justify-center h-full w-1/2 gap-4 z-10 tablet:w-full">
-            <div>
-              <h2 className="text-xl font-bold">Dan Murdoch Risk Services</h2>
-              <h2 className="text-xl font-bold text-primary-300">Thailand.</h2>
-            </div>
-            <div className="flex flex-col gap-4">
+          <div className="z-10 flex flex-col justify-center w-full gap-4 mobile:w-full mobile:gap-4 tablet:w-1/2 tablet:gap-10">
+            <h2 className="font-bold text-md mobile:text-xl tablet:text-xl">Dan Murdoch Risk Services <strong className="font-bold text-primary-300">Thailand.</strong></h2>
+            <div className="flex flex-col gap-4 text-xs mobile:text-sm laptop:text-sm">
               <p><strong className="text-accent-500">DMRS</strong> <strong className="text-primary-300">Thailand</strong> Co. Limited is based in Thailand with staff also in the Philippines, Australia, Hong Kong and China with trusted and verified agents in many global locations.</p>
               <p>DMRS staff are <strong>trained detectives</strong> and <strong>intelligence analysts</strong> who use both objective and subjective thinking to <strong>gather online data and intelligence</strong> for many Fortune 500 companies worldwide.</p>
               <p>Our facilities also offer <strong>premier and innovative investigative consultancy</strong> in all areas of corporate and personal requirements. DMRS is proud to be focused on the  <strong>protection of patients globally</strong> through our identification of risks concerned with the illicit trade in counterfeit, sub-standard and suspect medicines together with all associated risks to corporations tasked with the protection of consumers worldwide.</p>
@@ -79,30 +110,29 @@ const Thailand = () => {
       </section>
 
       {/* Services */}
-      <section className="relative w-full h-full flex items-center align-middle overflow-hidden pb-20">
-        <div className="flex flex-col w-full h-fit mt-10 gap-10 justify-start px-20 desktop:px-6 tablet:px-0">
-          <div className="flex flex-col gap-2 items-start pl-20 tablet:pl-10">
-            <h2 className="text-xl font-bold z-10">Services</h2>
-            <p className="z-10">The services DMRS offers fall into three categories <strong>INTELLIGENCE</strong>, <strong>INVESTIGATIONS</strong> and <strong>RESEARCH</strong>.</p>
+      <section className="relative flex items-center w-full h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-[4.5rem]">
+        <div className="flex flex-col justify-start w-full gap-6 h-fit">
+          <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-[4.5rem]">
+            <h2 className="z-10 font-bold text-md mobile:text-xl laptop:text-xl">Services</h2>
+            <p className="z-10 text-xs mobile:text-sm laptop:text-sm">The services DMRS offers fall into three categories <strong>INTELLIGENCE</strong>, <strong>INVESTIGATIONS</strong> and <strong>RESEARCH</strong>.</p>
           </div>
-          <div className="flex flex-row h-fit justify-start items-start px-20">
-            <div className="grid grid-cols-3 flex-row gap-8 z-10 justify-center items-center w-full fill-black hover:text-secondary-200 hover:fill-secondary-200
-                  laptop:grid-cols-2 tablet:flex tablet:flex-col">
+          <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
+            <div className="z-10 flex flex-col w-full gap-8 fill-black hover:text-secondary-200 hover:fill-secondary-200 mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3">
               {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} subContents={item.subContent}/> )}
             </div>
           </div>
         </div>
 
-        <div className="absolute left-0 -top-10 grid w-full h-screen grid-cols-8 rounded-full tablet:grid-cols-5">
+        <div className="absolute left-0 grid w-full h-screen grid-cols-5 rounded-full -top-10 desktop:grid-cols-8">
           <GridFiller cellCount={40} cellClass={'border border-background-dark/5'} />
         </div>
       </section>
 
       {/* Other Services */}
-      <section className="flex flex-col w-full h-full gap-10 justify-center items-center px-28 mb-10 desktop:px-6">
-        <div className="flex flex-col gap-2 items-start pl-20">
-          <h2 className="text-xl font-bold z-10">Other Services</h2>
-          <p className="z-10">However, as an additional service to our partners, we offer further unique capabilities such as -</p>
+      <section className="flex flex-col items-center justify-center w-full h-full gap-10 px-6 mb-10 tablet:px-12 desktop:px-[4.5rem]">
+        <div className="flex flex-col items-start gap-2 mobile:pl-5 tablet:pl-5 laptop:pl-10 desktop:pl-[4.5rem]">
+          <h2 className="z-10 font-bold text-md mobile:text-xl laptop:text-xl">Other Services</h2>
+          <p className="z-10 text-xs mobile:text-sm laptop:text-sm">However, as an additional service to our partners, we offer further unique capabilities such as -</p>
           <OtherServices /> 
         </div>
       </section>
