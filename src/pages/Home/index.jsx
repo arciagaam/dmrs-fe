@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const animatedCircle = useRef(null);
   const animatedCircleTrigger = useRef(null)
-  const blockCount = new Array(9);
+  const blockCount = new Array(28);
   const blockRef = useRef([]);
 
   function toggleBlock(selectedBlock) {
@@ -50,7 +50,7 @@ const Home = () => {
             <div className="absolute w-full h-full bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
             
             {/* generate blocks */}
-            <div className="absolute top-0 left-0 grid w-full h-full grid-cols-3 z-[1] ">
+            <div className="absolute top-0 left-0 grid w-full h-full grid-cols-7 z-[1] ">
               {
                 blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
               }
