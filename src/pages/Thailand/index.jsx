@@ -66,7 +66,7 @@ const Thailand = () => {
       <section className="navTrigger">
         <div className="relative flex flex-col w-full gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:gap-20 desktop:px-24">
           <div className="flex w-full h-[300px] bg-gray-200 rounded-tl-[2rem] rounded-br-[2rem] tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 tablet:rounded-tl-[4rem] tablet:rounded-br-[4rem]"></div>
-          <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 z-0 top-0 laptop:right-[20%]' />
+          <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 z-0 top-0 hidden mobile:block laptop:right-[20%]' />
 
           <div className="z-10 flex flex-col justify-center w-full gap-4 mobile:w-full mobile:gap-4 tablet:w-1/2 tablet:gap-10">
             <h2 className="font-bold text-md mobile:text-xl tablet:text-xl">Dan Murdoch Risk Services <strong className="font-bold text-primary-300">Thailand.</strong></h2>
@@ -82,7 +82,7 @@ const Thailand = () => {
       {/* Services */}
       <section className="relative flex items-center w-full h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-24">
         <div className="flex flex-col justify-start w-full gap-6 h-fit">
-          <div className="flex flex-col items-start gap-2 mobile:pl-5 tablet:pl-5 laptop:pl-10 desktop:pl-20">
+          <div className="flex flex-col items-start gap-2 mobile:pl-5 tablet:pl-5 laptop:pl-12 desktop:pl-20">
             <h2 className="z-10 font-bold text-md mobile:text-xl laptop:text-xl">Services</h2>
             <p className="z-10 text-xs mobile:text-sm laptop:text-sm">The services DMRS offers fall into three categories <strong>INTELLIGENCE</strong>, <strong>INVESTIGATIONS</strong> and <strong>RESEARCH</strong>.</p>
           </div>
