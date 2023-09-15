@@ -7,6 +7,7 @@ import App from '../App'
 import Home from '../pages/Home'
 import Australia from '../pages/Australia'
 import Thailand from '../pages/Thailand'
+import ContactUs from '../pages/ContactUs'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -16,6 +17,8 @@ const router = createBrowserRouter(
             <Route path="dmrs/thailand" element={<Thailand/>}/>
 
             <Route path="dmrs/australia" element={<Australia/>}/>
+
+            <Route path="contact" element={<ContactUs/>}/>
         </Route>
     ) 
 )

@@ -166,9 +166,12 @@ const Home = () => {
                   <TextMarquee />
                 </div>
                 <div className="flex gap-3">
-                  <Button variant='default' size='xs' className='w-fit'>
-                    Get Started
-                  </Button>
+                  <Link to='contact'>
+                    <Button variant='default' size='xs' className='w-fit'>
+                      Get Started
+                    </Button>
+                  </Link>
+
                   <Button variant='outline' size='xs' className='w-fit'>
                     Our Services
                   </Button>
@@ -249,7 +252,7 @@ const Home = () => {
         <VisionMission />
       </section>
 
-      <section className='relative flex gap-20 px-20'>
+      <section className='relative flex gap-20 px-20 py-20'>
 
         <div className="absolute top-0 left-0 flex w-full h-full">
           <div className="relative w-full h-full">

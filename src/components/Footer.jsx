@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import FormInput from './Form/FormInput';
 import Button from './Button';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 const Footer = () => {
-
+    const location = useLocation();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
+    const path = location.pathname;
+    
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
         const { name, email, message } = formData;
     }
+
+        console.log(path);
 
     const handleOnInput = (e) => {
         const inputName = e.target.name;
@@ -24,8 +27,14 @@ const Footer = () => {
         <div className="flex text-white min-h-[calc(100vh-4rem)] bg-background-dark p-10 gap-10 z-50 overflow-hidden tablet:flex-col-reverse">
             <div className="flex flex-col flex-1 gap-8">
 
-                <div className="flex items-center">
-                    <img src="./images/logo-1.png" alt="" />
+                <div className="flex items-center justify-center gap-3">
+                    <img src="./images/logo-1.png" className='w-1/4' alt="" />
+                    <div className="flex gap-2 text-lg">
+                        <h2>Dan</h2>
+                        <h2>Murdoch</h2>
+                        <h2>Risk</h2>
+                        <h2>Services</h2>
+                    </div>
                 </div>
 
                 <div className="flex flex-col h-full gap-2">
@@ -55,19 +64,25 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="min-w-[1px] w-[1px] bg-white min-h-full"></div>
+            {
+                path != "/dmrs-fe/contact"
+                ? <>
+                    <div className="min-w-[1px] w-[1px] bg-white min-h-full"></div>
 
-            <div className="flex flex-col flex-1 gap-5">
-                <h2 className='text-2xl text-accent-500'>CONTACT US</h2>
+                    <div className="flex flex-col flex-1 gap-5">
+                        <h2 className='text-2xl text-accent-500'>CONTACT US</h2>
 
-                <form action="#" className='flex flex-col gap-8' onSubmit={handleFormSubmit}>
-                    <FormInput label='Name' name='name' placeholder='Enter your name' onInput={handleOnInput} value={formData.name} />
-                    <FormInput label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} />
-                    <FormInput label='Message' name='message' placeholder='Leave us a message!' onInput={handleOnInput} value={formData.message} />
-                    <Button size="sm" variant="outline"><a href="mailto:test@gmail.com">Send us a message!</a></Button>
+                        <form action="#" className='flex flex-col gap-8' onSubmit={handleFormSubmit}>
+                            <FormInput label='Name' name='name' placeholder='Enter your name' onInput={handleOnInput} value={formData.name} />
+                            <FormInput label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} />
+                            <FormInput label='Message' name='message' placeholder='Leave us a message!' onInput={handleOnInput} value={formData.message} />
+                            <Button size="sm" variant="outline"><a href="mailto:test@gmail.com">Send us a message!</a></Button>
 
-                </form>
-            </div>
+                        </form>
+                    </div>
+                </>
+                : <></>
+            }
         </div>
     )
 }
