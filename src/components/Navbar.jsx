@@ -89,7 +89,7 @@ const DefaultNavbar = ({ nav, cta }) => {
           DMRS VPN
         </NavLink>
 
-        <NavLink ref={cta} className='overflow-hidden transition-all duration-1000 max-w-0 whitespace-nowrap'>
+        <NavLink ref={cta} to={'./contact'} className='overflow-hidden transition-all duration-1000 max-w-0 whitespace-nowrap'>
           <Button size='xs' className="m-1">Get Started</Button>
         </NavLink>
       </div>
