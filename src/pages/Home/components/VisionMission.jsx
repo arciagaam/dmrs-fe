@@ -1,15 +1,9 @@
-import React, { useEffect, useRef, useState, useTransition } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-import gsap from 'gsap';
-import { MotionPathPlugin } from 'gsap/all';
 import { MissionRocket } from './../../../components/Svgs'
 import { FaEye, FaFlag } from 'react-icons/fa'
 import { Application } from '@splinetool/runtime';
 import Spline from '@splinetool/react-spline';
-
-
-
-gsap.registerPlugin(MotionPathPlugin);
 
 const VisionMission = () => {
     const titleRef = useRef(null);
@@ -48,8 +42,8 @@ const VisionMission = () => {
 
             <div className="relative flex items-center justify-center flex-1">
                 <div className="opacity-40 absolute scale-110 inset-0 w-full h-full translate-x-[-9%] translate-y-[-35%] laptop:translate-y-[-200%] laptop:translate-x-[-20%] hd:translate-y-[-34%] hd:translate-x-[-1%] z-0">
-                    {/* <Spline scene="https://prod.spline.design/QpMCQb63RhuuWbia/scene.splinecode" /> */}
-                    <MissionRocket/>
+                    <Spline scene="https://prod.spline.design/QpMCQb63RhuuWbia/scene.splinecode" />
+                    {/* <MissionRocket/> */}
                 </div>
 
                 {

@@ -1,17 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 import Hero from '../../components/Hero'
 import StickyScrollItem from './components/StickyScrollItem'
-import gsap from "gsap"
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import TextMarquee from './components/TextMarquee'
 import Button from '../../components/Button'
 import WhatWeDo from './components/WhatWeDo'
 import { Link } from 'react-router-dom'
 import GridFiller from './components/GridFiller'
 import VisionMission from './components/VisionMission'
-
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const animatedCircle = useRef(null);
