@@ -6,55 +6,48 @@ import Button from '../../components/Button'
 import WhatWeDo from './components/WhatWeDo'
 import { Link } from 'react-router-dom'
 import GridFiller from './components/GridFiller'
-import VisionMission from './components/VisionMission'
+import ColoredGrid from '../../components/ColoredGrid'
+import { FaEye, FaRocket } from 'react-icons/fa'
+import Rocket from './components/Rocket'
+
+import VerticalProgress from './components/VerticalProgress'
+import { motion } from 'framer-motion'
+import StickyScrollContent from './components/StickyScrollContent'
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    x:-80
+  },
+  animate: (index) => ({
+    opacity: 1,
+    x:0,
+    transition: {
+      delay: index * 0.1,
+      duration: .5
+    }
+  })
+}
 
 const Home = () => {
-  const animatedCircle = useRef(null);
-  const animatedCircleTrigger = useRef(null)
-  const blockCount = new Array(28);
-  const blockRef = useRef([]);
-
-  function toggleBlock(selectedBlock) {
-    if (selectedBlock.classList.contains('active') || !selectedBlock) return;
-
-    selectedBlock.classList.add('fill');
-
-    setTimeout(() => {
-      selectedBlock.classList.remove('fill');
-    }, (Math.random() * 2) * 5000);
-
-  }
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const selectedBlock = blockRef.current[Math.floor(Math.random() * 25)];
-      toggleBlock(selectedBlock);
-    }, 5000)
-
-    return () => clearInterval(intervalId);
-  }, [])
 
   return (
     <div className="flex flex-col w-full bg-white overflow-clip">
-      
+
       <Hero>
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
 
-            {/* background vignette */}
-            <div className="absolute w-full h-full bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
-            
-            {/* generate blocks */}
-            <div className="absolute top-0 left-0 grid w-full h-full grid-cols-7 z-[1] ">
-              {
-                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
-              }
-            </div>
+            <ColoredGrid />
 
             {/* actual hero */}
             <div className="z-10 flex flex-col items-center justify-center w-full gap-10 px-10 text-white">
               <div className="flex flex-col items-center justify-center">
-                <h1 className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services</h1>
+                <motion.h1
+                  initial={{ y: -25, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{duration:1}}
+                  className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services</motion.h1>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <div className="flex flex-col items-center justify-center gap-1">
@@ -79,78 +72,131 @@ const Home = () => {
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex flex-col gap-16 p-5 py-10 overflow-clip laptop:flex-row navTrigger">
-        <div className="flex flex-col items-center justify-center gap-1 laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)]">
-          <h2 className='text-lg font-bold text-center desktop:text-xl hd:text-3xl'>WHO ARE WE?</h2>
+      <section className="flex flex-col gap-16 p-10 pt-10 overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger">
+        <div className="flex flex-col items-center justify-center gap-1 laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)] z-10">
+          <h2
+            className='text-lg font-bold text-center desktop:text-xl hd:text-3xl'>WHO ARE WE?</h2>
           <p className='text-sm text-center desktop:text-base hd:text-md'>Discover who we are and be part of our <span className='font-bold text-accent-500'>JOURNEY</span></p>
         </div>
 
         <div className="flex flex-col flex-1 gap-16">
           <StickyScrollItem>
-            <div className="relative flex flex-col justify-center h-full">
-              <img src="./images/australia-map.png" alt="" className='absolute top-[-25%] right-[-25%] h-full brightness-90 tablet:right-0 tablet:h-[15rem]' />
+            <StickyScrollContent imageUrl="./images/australia-map.png">
 
-              <div className="z-10 flex flex-col justify-center h-full gap-5">
-                <h2 className='text-xl font-bold desktop:text-2xl hd:text-3xl'>DMRS <span className='text-primary-300'>Australia</span></h2>
-                <p className='text-xs desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Australia) Pty Ltd is the parent company of our operational division Dan Murdoch Risk Services (Thailand) Limited.</p>
-                <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 text-white">
-                  <Link to="/dmrs-fe/dmrs/australia">
-                    Go to DMRS Australia
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </StickyScrollItem>
+              <h2 className='text-xl font-bold desktop:text-2xl hd:text-3xl'>DMRS <span className='text-primary-300'>Australia</span></h2>
+              <p className='text-xs text-justify desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Australia) Pty Ltd is the parent company of our operational division Dan Murdoch Risk Services (Thailand) Limited.</p>
 
-          <StickyScrollItem>
-            <div className="relative flex flex-col justify-center h-full">
-              <img src="./images/thailand-map.png" alt="" className='absolute top-[-10%] right-[-25%] h-full brightness-90 tablet:right-5 tablet:h-[20rem]' />
-
-              <div className='z-10 flex flex-col justify-center h-full gap-5'>
-                <h2 className='text-xl font-bold desktop:text-2xl'>DMRS <span className='text-primary-300'>Thailand</span></h2>
-                <p className='text-xs desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Thailand) Co. Ltd. staff are trained detectives and intelligence analysts who use both objective and subjective thinking to gather manual online data leading to intelligence for many Fortune 500 companies worldwide.</p>
-                <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 !text-white">
-                  <Link to="/dmrs-fe/dmrs/thailand">
-                    Go to DMRS Thailand
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </StickyScrollItem>
-
-          <StickyScrollItem>
-            <div className="relative flex flex-col justify-center h-full gap-5 max-w-[1080px]">
-              <h2 className='relative text-lg font-bold text-primary-300 desktop:text-2xl'>Specialization</h2>
-              <p className='text-xs desktop:text-sm hd:text-md'>We specialize in pharmaceuticals and the protection of and identifying risks associated with medicines worldwide.</p>
-              <Button size="xs" variant='default' className=" w-fit bg-accent-400 ring-accent-400">
-                <Link to="/dmrs-fe">Get Started</Link>
+              <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 text-white">
+                <Link to="/dmrs-fe/dmrs/australia">
+                  Go to DMRS Australia
+                </Link>
               </Button>
-            </div>
+
+            </StickyScrollContent>
+            
           </StickyScrollItem>
+
+          <StickyScrollItem>
+            <StickyScrollContent imageUrl="./images/thailand-map.png">
+
+              <h2 className='text-xl font-bold desktop:text-2xl hd:text-3xl'>DMRS <span className='text-primary-300'>Thailand</span></h2>
+              <p className='text-xs text-justify desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Thailand) Co. Ltd. staff are trained detectives and intelligence analysts who use both objective and subjective thinking to gather manual online data leading to intelligence for many Fortune 500 companies worldwide.</p>
+
+              <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 text-white">
+                <Link to="/dmrs-fe/dmrs/thailand">
+                  Go to DMRS Thailand
+                </Link>
+              </Button>
+
+            </StickyScrollContent>
+          </StickyScrollItem>
+
+          <StickyScrollItem>
+            <StickyScrollContent>
+
+              <h2 className='text-xl font-bold desktop:text-2xl hd:text-3xl'>Specialization</h2>
+              <p className='text-xs text-justify desktop:text-sm hd:text-md'>We specialize in pharmaceuticals and the protection of and identifying risks associated with medicines worldwide.</p>
+
+              <Button size="xs" variant='default' className="w-fit">
+                <Link to="/dmrs-fe/contact">
+                  Get Started
+                </Link>
+              </Button>
+
+            </StickyScrollContent>
+          </StickyScrollItem>
+
 
         </div>
       </section>
 
       {/* VISION AND MISSION SECTION */}
-      <section className="relative flex p-5 py-10 z-[1]">
-        
-        {/* grid bg */}
-        <div className="absolute top-0 left-0 flex w-full h-full">
-          <div className="relative w-full h-full">
+      <section className="relative flex p-10 pb-10 z-[1] gap-5">
 
-            <div className="absolute left-0 grid w-3/4 h-full grid-cols-7">
-              <GridFiller cellCount={35} cellClass={'border border-background-dark/5'} />
-            </div>
-
-            <div className="absolute left-0 w-3/4 h-full bg-gradient-radial from-transparent via-white to-white"></div>
-
-          </div>
+        <div className="absolute top-[-170%] right-[-40%] scale-50 hidden laptop:flex">
+          <Rocket/>
         </div>
-        
-        <VisionMission />
+
+        <VerticalProgress/>
+
+        <div className="flex flex-col laptop:max-w-[55%] gap-10">
+
+          <div className="flex flex-col gap-3">
+            <motion.div 
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{once:true}}
+              custom={1}
+              className="flex items-center gap-3">
+                
+              <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
+                <FaEye className='text-sm laptop:text-md hd:text-lg'/>
+              </div>
+              
+              <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Vision</span></h2>
+              
+            </motion.div>
+
+            <motion.p 
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{once:true}}
+              custom={2}
+              className='text-xs text-justify laptop:text-sm hd:text-base'>Dan Murdoch Risk Services will be the preferred company of choice for online intelligence, investigative consultancy, brand protection and business intelligence advice worldwide offering beneficial solutions for all corporate and personal problems.</motion.p>
+          </div>
+
+          <div className="flex flex-col gap-3">
+              
+            <motion.div 
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{once:true}}
+              custom={1}
+              className="flex items-center gap-3">
+              <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
+                <FaRocket className='text-sm laptop:text-md hd:text-lg'/>
+              </div>
+              <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Mission Statement</span></h2>
+            </motion.div>
+
+            <motion.p
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{once:true}}
+              custom={2}
+              className='text-xs text-justify laptop:text-sm hd:text-base'>Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.</motion.p>
+          </div>
+
+        </div>
+
+
       </section>
 
-      <section className='relative flex flex-col gap-10 p-5 py-10 laptop:flex-row'>
+      <section className='relative flex flex-col gap-10 p-10 py-10 mt-16 laptop:flex-row'>
 
         {/* grid background */}
         <div className="absolute top-0 left-0 flex w-full h-full">
@@ -168,10 +214,15 @@ const Home = () => {
 
         <div className="z-10 flex flex-col items-center gap-8 laptop:w-[45%]">
 
-          <div className="flex flex-col items-center hd:flex-row hd:gap-5">
+          <motion.div 
+            initial={{ opacity: 0, x: -75 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: .5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex items-center hd:flex-row hd:gap-5">
             <img src="./images/sheild-dynamic-color.png" className='w-1/4' alt="" />
             <h2 className='text-lg font-bold text-center hd:text-2xl hd:text-left'> What are <span className="text-primary-300">we</span> offering?</h2>
-          </div>
+          </motion.div>
 
 
           <div className="flex flex-col gap-3 text-xs tablet:text-sm tablet:w-3/4 laptop:w-full laptop:px-5 laptop:gap-5 hd:text-base hd:gap-10">

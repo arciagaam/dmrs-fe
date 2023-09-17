@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { MissionRocket } from './../../../components/Svgs'
 import { FaEye, FaFlag } from 'react-icons/fa'
 import { Application } from '@splinetool/runtime';
-import Spline from '@splinetool/react-spline';
 
 const VisionMission = () => {
     const titleRef = useRef(null);
