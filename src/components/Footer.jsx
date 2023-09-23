@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import FormInput from './Form/FormInput';
 import Button from './Button';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 const Footer = () => {
     const location = useLocation();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -49,9 +49,9 @@ const Footer = () => {
 
                 <div className="flex items-end justify-between mt-10 text-xs whitespace-nowrap">
                     <div className="flex flex-col gap-1">
-                        <p>Privacy Policy</p>
+                        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/policy">Privacy Policy</NavLink>
                         <p className='hidden'>|</p>
-                        <p>Terms & Conditions</p>
+                        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/terms">Terms & Conditions</NavLink>
                     </div>
 
                     <p>c 2021 Yourintell.com</p>
