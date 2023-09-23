@@ -7,7 +7,6 @@ import II_icon from '../../assets/intelligent-intelligence-icon.png'
 import IntelligenceMb_img from '../../assets/intelligent-investigations-mb.png'
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from 'react'
-import SlideAnimation from './components/SlideAnimation.jsx'
 import Animate from './components/Animate.jsx'
 import 'animate.css';
 
@@ -92,7 +91,9 @@ const Australia = () => {
             
           </div>  
         </div>  
-        <img src={DMRSimg} alt="" className="hidden tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block"/>
+        <Animate animationClass='animate__pulse'>
+          <img src={DMRSimg} alt="" className="hidden tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block"/>
+        </Animate>
         
       </section>
 
