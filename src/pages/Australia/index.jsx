@@ -91,10 +91,7 @@ const Australia = () => {
             
           </div>  
         </div>  
-        <Animate animationClass='animate__pulse'>
-          <img src={DMRSimg} alt="" className="hidden tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block"/>
-        </Animate>
-        
+        <img src={DMRSimg} alt="" className="hidden tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block animate__animated animate__pulse"/>
       </section>
 
       {/* Intelligent Intelligence */}
