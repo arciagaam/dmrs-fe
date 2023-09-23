@@ -5,7 +5,12 @@ import Intelligence_img from '../../assets/intelligence-investigations.png'
 import Australia_img from '../../assets/dmrs-australia-1.jpg' 
 import II_icon from '../../assets/intelligent-intelligence-icon.png'
 import IntelligenceMb_img from '../../assets/intelligent-investigations-mb.png'
-import { useEffect, useRef } from 'react'
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from 'react'
+import SlideAnimation from './components/SlideAnimation.jsx'
+import AnimatedText from './components/AnimatedText.jsx'
+import 'animate.css';
+
 
 const Australia = () => {
   const blockCount = new Array(28);
@@ -31,6 +36,8 @@ const Australia = () => {
     return () => clearInterval(intervalId);
   }, [])
 
+  const [count, setCount] = useState(0);
+
   return (
     <div className="flex flex-col w-full bg-white"> 
       <div className="tablet:z-10">
@@ -53,22 +60,36 @@ const Australia = () => {
 
       {/* DMRS Australia */}
       <section className="relative navTrigger tablet:z-12">
+        
         <div className="flex flex-col h-full w-full items-center p-10 gap-12 tablet:p-16 tablet:flex-row laptop:min-h-[768px] laptop:h-full laptop:gap-24 laptop:p-20 ">
-          <div className="max-h-[350px] flex w-full tablet:z-10 tablet:w-full tablet:max-h-[500px]">
-            <img src={Australia_img} alt="" className="object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem]"/>
-          </div>
-
+          <div className="max-h-[350px] flex w-full tablet:z-10 tablet:w-full tablet:max-h-[500px] z-10  justify-center gap-5">
+            <AnimatedText animationClass='animate__fadeInLeftBig'>
+              <img src={Australia_img} alt="" className='object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem] h-full w-full' />     
+            </AnimatedText>    
+          </div>  
+          
+           
+              
+         
           <div className="flex flex-col w-full gap-10 tablet:z-10 tablet:w-full">
             <div>
-              <p className="font-bold text-md text-bg-dark laptop:text-xl ">Dan Murdoch Risk Services</p>
-              <p className="text-lg font-bold text-primary-300 laptop:text-2xl">Australia</p>
+              <AnimatedText animationClass='animate__fadeInTopRight'>
+                <p className="font-bold text-md text-bg-dark laptop:text-xl">Dan Murdoch Risk Services</p>  
+              </AnimatedText>
+
+              <AnimatedText animationClass='animate__fadeInRightBig'>
+                <p className="text-lg font-bold text-primary-300 laptop:text-2xl">Australia</p>  
+              </AnimatedText>
+              
             </div>
+            <AnimatedText animationClass='animate__fadeInBottomRight'>
+              <p className="max-w-lg text-xs text-bg-dark tablet:z-10 tablet:text-sm">
+                <strong className="text-accent-800">DMRS </strong> 
+                <strong className="text-primary-400">Australia </strong> 
+                Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
+              </p>  
+            </AnimatedText>
             
-            <p className="max-w-lg text-xs text-bg-dark tablet:z-10 tablet:text-sm">
-              <strong className="text-accent-800">DMRS </strong> 
-              <strong className="text-primary-400">Australia </strong> 
-              Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
-            </p>
           </div>  
         </div>  
         <img src={DMRSimg} alt="" className="hidden tablet:absolute tablet:top-0 tablet:bottom-0 tablet:right-0 tablet:w-auto tablet:m-auto tablet:min-h-[600px] tablet:max-h-[850px] tablet:z-0 tablet:block"/>
