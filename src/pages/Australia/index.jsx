@@ -8,7 +8,7 @@ import IntelligenceMb_img from '../../assets/intelligent-investigations-mb.png'
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from 'react'
 import SlideAnimation from './components/SlideAnimation.jsx'
-import AnimatedText from './components/AnimatedText.jsx'
+import Animate from './components/Animate.jsx'
 import 'animate.css';
 
 
@@ -63,9 +63,9 @@ const Australia = () => {
         
         <div className="flex flex-col h-full w-full items-center p-10 gap-12 tablet:p-16 tablet:flex-row laptop:min-h-[768px] laptop:h-full laptop:gap-24 laptop:p-20 ">
           <div className="max-h-[350px] flex w-full tablet:z-10 tablet:w-full tablet:max-h-[500px] z-10  justify-center gap-5">
-            <AnimatedText animationClass='animate__fadeInLeftBig'>
+            <Animate animationClass='animate__fadeInLeftBig'>
               <img src={Australia_img} alt="" className='object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem] h-full w-full' />     
-            </AnimatedText>    
+            </Animate>    
           </div>  
           
            
@@ -73,22 +73,22 @@ const Australia = () => {
          
           <div className="flex flex-col w-full gap-10 tablet:z-10 tablet:w-full">
             <div>
-              <AnimatedText animationClass='animate__fadeInTopRight'>
+              <Animate animationClass='animate__fadeInTopRight'>
                 <p className="font-bold text-md text-bg-dark laptop:text-xl">Dan Murdoch Risk Services</p>  
-              </AnimatedText>
+              </Animate>
 
-              <AnimatedText animationClass='animate__fadeInRightBig'>
+              <Animate animationClass='animate__fadeInRightBig'>
                 <p className="text-lg font-bold text-primary-300 laptop:text-2xl">Australia</p>  
-              </AnimatedText>
+              </Animate>
               
             </div>
-            <AnimatedText animationClass='animate__fadeInBottomRight'>
+            <Animate animationClass='animate__fadeInBottomRight'>
               <p className="max-w-lg text-xs text-bg-dark tablet:z-10 tablet:text-sm">
                 <strong className="text-accent-800">DMRS </strong> 
                 <strong className="text-primary-400">Australia </strong> 
                 Pty Ltd is the parent company for the operational division Dan Murdoch Risk Services (Thailand) Co. Limited.
               </p>  
-            </AnimatedText>
+            </Animate>
             
           </div>  
         </div>  
