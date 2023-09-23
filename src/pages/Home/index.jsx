@@ -134,7 +134,7 @@ const Home = () => {
       <section className="relative flex p-10 pb-10 z-[1] gap-5">
 
         <div className="absolute top-[-170%] right-[-40%] scale-50 hidden laptop:flex">
-          <Rocket/>
+          {/* <Rocket/> */}
         </div>
 
         <VerticalProgress/>
