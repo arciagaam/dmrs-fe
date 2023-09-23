@@ -8,6 +8,8 @@ import OtherServices from "./components/OtherServices"
 import GridFiller from "../Home/components/GridFiller"
 import { useEffect, useRef } from "react"
 
+import { motion } from 'framer-motion'
+
 
 const Thailand = () => {
     let size = '300';

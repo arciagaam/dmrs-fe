@@ -8,6 +8,8 @@ import Home from '../pages/Home'
 import Australia from '../pages/Australia'
 import Thailand from '../pages/Thailand'
 import ContactUs from '../pages/ContactUs'
+import PrivacyPolicy from '../pages/PrivacyPolicy'
+import TermsAndConditions from '../pages/TermsAndConditions'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -19,6 +21,10 @@ const router = createBrowserRouter(
             <Route path="dmrs/australia" element={<Australia/>}/>
 
             <Route path="contact" element={<ContactUs/>}/>
+
+            <Route path="dmrs/terms" element={<TermsAndConditions/>}/>
+
+            <Route path="dmrs/policy" element={<PrivacyPolicy/>}/>
         </Route>
     ) 
 )
