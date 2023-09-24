@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SubParagraph = ({ content, listType }) => {
+const SubParagraph = ({ content }) => {
   return (
     <li>
       <p>{content}</p>
