@@ -1,18 +1,19 @@
-import React, { useEffect, useRef } from 'react'
+
 import Hero from '../../components/Hero'
 import StickyScrollItem from './components/StickyScrollItem'
 import TextMarquee from './components/TextMarquee'
 import Button from '../../components/Button'
 import WhatWeDo from './components/WhatWeDo'
-import { Link } from 'react-router-dom'
 import GridFiller from './components/GridFiller'
 import ColoredGrid from '../../components/ColoredGrid'
-import { FaEye, FaRocket } from 'react-icons/fa'
-import Rocket from './components/Rocket'
-
 import VerticalProgress from './components/VerticalProgress'
-import { motion } from 'framer-motion'
 import StickyScrollContent from './components/StickyScrollContent'
+import Rocket from './components/Rocket'
+import { Link } from 'react-router-dom'
+import { FaEye, FaRocket } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import { Canvas } from '@react-three/fiber'
+
 
 const fadeInAnimationVariants = {
   initial: {
@@ -72,7 +73,7 @@ const Home = () => {
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex flex-col gap-16 p-10 pt-10 overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger">
+      <section className="flex flex-col gap-16 px-10 pt-10 overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger">
         <div className="flex flex-col items-center justify-center gap-1 laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)] z-10">
           <h2
             className='text-lg font-bold text-center desktop:text-xl hd:text-3xl'>WHO ARE WE?</h2>
