@@ -30,18 +30,7 @@ const VerticalProgress = () => {
                 <div className="absolute top-0 left-0 min-w-[3px] max-w-[3px] h-full rounded-lg flex items-center justify-center">
 
                     <VerticalProgressPoint className="top-0 bg-primary-300"/>
-                    <VerticalProgressPoint className="top-[14.8rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem] bg-primary-300"/>
-
-                    {/* <motion.div 
-                        initial={{background:'black'}}
-                        whileInView={{background:'red'}}
-                        onViewportLeave={{background:'black'}}
-                        className="absolute bg-black min-h-[10px] aspect-square rounded-full top-0"></motion.div>
-                    <motion.div 
-                        initial={{background:'black'}}
-                        whileInView={{background:'red'}}
-                        onViewportLeave={{background:'black'}}
-                        className="absolute bg-black min-h-[10px] aspect-square rounded-full top-[14.8rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem]"></motion.div> */}
+                    <VerticalProgressPoint className="top-[13.5rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem] bg-primary-300"/>
 
                     {/* end */}
                     <div className="absolute bg-primary-300 min-h-[.2rem] min-w-[1rem] bottom-0"></div>

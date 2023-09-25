@@ -13,8 +13,6 @@ const Footer = () => {
         const { name, email, message } = formData;
     }
 
-        console.log(path);
-
     const handleOnInput = (e) => {
         const inputName = e.target.name;
         setFormData((prevFormData) => ({
