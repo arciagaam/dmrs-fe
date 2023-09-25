@@ -10,21 +10,24 @@ import Thailand from '../pages/Thailand'
 import ContactUs from '../pages/ContactUs'
 import PrivacyPolicy from '../pages/PrivacyPolicy'
 import TermsAndConditions from '../pages/TermsAndConditions'
+import Vpn from '../pages/VPN'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/dmrs-fe" element={<App/>}>
             <Route index element={<Home/>}/>
             
-            <Route path="dmrs/thailand" element={<Thailand/>}/>
+            <Route path="thailand" element={<Thailand/>}/>
 
-            <Route path="dmrs/australia" element={<Australia/>}/>
+            <Route path="australia" element={<Australia/>}/>
+
+            <Route path="vpn" element={<Vpn/>}/>
 
             <Route path="contact" element={<ContactUs/>}/>
 
-            <Route path="dmrs/terms" element={<TermsAndConditions/>}/>
+            <Route path="terms" element={<TermsAndConditions/>}/>
 
-            <Route path="dmrs/policy" element={<PrivacyPolicy/>}/>
+            <Route path="policy" element={<PrivacyPolicy/>}/>
         </Route>
     ) 
 )
