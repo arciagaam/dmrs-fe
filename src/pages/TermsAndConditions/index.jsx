@@ -1,5 +1,6 @@
 import React from "react";
 import Paragraph from "./Components/Paragraph";
+import StaggeredLine from "../../components/StaggeredLine";
 
 const TermsAndConditions = () => {
   const paragraphs = [
@@ -488,6 +489,9 @@ const TermsAndConditions = () => {
           <h2 className="z-10 text-sm font-bold mobile:text-left mobile:text-base tablet:text-base">
             SITE TERMS AND CONDITIONS USE
           </h2>
+
+
+
           <ol className="flex flex-col gap-6 pl-5 list-decimal">
             {paragraphs.map((item, index) => (
               <Paragraph

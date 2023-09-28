@@ -14,6 +14,7 @@ import { FaEye, FaRocket } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import VerticalProgress from '../../components/VerticalProgress'
+import StaggeredLine from '../../components/StaggeredLine'
 
 
 const fadeInAnimationVariants = {
@@ -186,18 +187,18 @@ const Home = () => {
               </div>
               <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Mission Statement</span></h2>
             </motion.div>
-
             <motion.p
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
               custom={2}
-              className='text-xs text-justify laptop:text-sm hd:text-base'>Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.</motion.p>
+              className='text-xs text-justify laptop:text-sm hd:text-base'>
+                Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.
+              </motion.p>
           </div>
 
         </div>
-
 
       </section>
 

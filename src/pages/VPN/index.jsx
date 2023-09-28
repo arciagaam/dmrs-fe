@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import FirstSectionItem from './components/FirstSectionItem'
 import VerticalProgress from '../../components/VerticalProgress'
 import VerticalProgressPoint from '../../components/VerticalProgressPoint'
+import StaggeredLine from '../../components/StaggeredLine'
 
 const _MainData = [
     {
@@ -55,13 +56,13 @@ const Vpn = () => {
                 </div>
             </Hero>
 
-            <section className='relative flex gap-10 p-10 navTrigger'>
+            <section className='relative flex gap-10 p-10 overflow-hidden navTrigger'>
                 
                 <VerticalProgress>
                     <VerticalProgressPoint className="top-0 bg-primary-300" />
-                    <VerticalProgressPoint className="top-[51.5rem] tablet:top-[20rem] laptop:top-[28.5rem] desktop:top-[26.5rem] hd:top-[14rem] bg-primary-300" />
-                    <VerticalProgressPoint className="top-[105.5rem] tablet:top-[10rem] laptop:top-[110.5rem] desktop:top-[58.5rem] hd:top-[14rem] bg-primary-300" />
-                    <VerticalProgressPoint className="top-[148.5rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem] bg-primary-300" />
+                    <VerticalProgressPoint className="top-[51.5rem] tablet:top-[56.5rem] laptop:top-[30.5rem] bg-primary-300" />
+                    <VerticalProgressPoint className="top-[105.5rem] tablet:top-[113.5rem] laptop:top-[57.5rem] bg-primary-300" />
+                    <VerticalProgressPoint className="top-[150.5rem] tablet:top-[163.5rem] laptop:top-[75.5rem] bg-primary-300" />
                 </VerticalProgress>
 
                 <div className="flex flex-col gap-16">
@@ -70,6 +71,8 @@ const Vpn = () => {
 
             </section>
         </div>
+
+
     )
 }
 
