@@ -4,19 +4,20 @@ import { useState } from "react"
 
 import { motion } from 'framer-motion'
 
-const Services = ({ name, icon, subContents }) => {
+const Services = ({ name, icon, content, subContents }) => {
   const [isActive, setIsActive] = useState(false)
 
   return (
     <motion.div 
-      className={`relative overflow-hidden duration-300 ${isActive ? 'pb-10 ease-in-out duration-300 scale-105 min-h-[480px]': 'min-h-[240px] ease-in-out hover:scale-105 hover:fill-accent-300 duration-300'} flex flex-col text-sm gap-2 w-full ring-1 bg-white ring-gray-400 fill-accent-50 justify-center items-start pl-2 px-8 aspect-video ease-in-out duration-300 hover:text-white mobile:pl-4 mobile:text-md tablet:pl-4 laptop:pl-8 desktop:pl-8 desktop:text-md
-        before:content-[' '] before:bg-accent-500 before:min-h-0 before:absolute before:bottom-0 before:left-0 before:w-full before:ease-in-out before:duration-200 ${isActive? 'before:h-full': 'before:delay-150 before:hover:min-h-full'}
+      className={`relative overflow-hidden ease-out duration-500 ${isActive ? 'min-h-[320px] desktop:min-h-[480px] h-fit scale-[1.03]': 'min-h-[240px] hover:scale-[1.03] hover:fill-accent-50/20'} flex flex-col text-base gap-2 w-full ring-1 bg-white ring-gray-400 fill-accent-400/30 justify-center items-start aspect-video hover:text-white mobile:text-md laptop:text-md desktop:text-md
+        before:content-[' '] before:bg-accent-500 before:min-h-0 before:absolute before:bottom-0 before:left-0 before:w-full before:duration-200 before:ease-linear ${isActive? 'before:h-full': 'before:delay-150 before:hover:min-h-full'}
       `}
-      
     >
-      <div className={`flex w-full h-full z-10 ${isActive ? 'items-start flex-col' : 'items-center'}`}>{isActive ? subContents.map((subContent, index) => <CardContent className={`${isActive ? 'opacity-100' : 'opacity-0'} duration-200`} key={index} title={subContent.title} description={subContent.description} />) : name}</div>
-      <span className={`absolute top-16 -right-[10%] z-0 ${isActive ? 'opacity-25 scale-125 ease-in-out duration-500 rotate-12' : ' rotate-0'} -top-[20%] -right-[30%] scale-[0.7] mobile:scale-[0.7] mobile:-right-[20%] mobile:top-[0%] tablet:top-0 tablet:-right-[30%] laptop:scale-[0.8] laptop:-right-[4rem] laptop:top-[20%]`}>{icon}</span>
-      <span className={`absolute z-20 ${isActive ? 'text-white' : ''} text-xs cursor-pointer bottom-4 left-2 mobile:text-sm mobile:left-4 laptop:text-sm laptop:left-8 `}><button onClick={() => {setIsActive((prevState) => !prevState)}}>{isActive ? 'Click to Hide <' : 'Click to Show >'}</button></span>
+      <div className={`card-scroll flex flex-col w-full h-full items-start justify-start px-6 mobile:px-6 tablet:px-6 laptop:px-8 desktop:px-8 pt-6 pb-12 gap-6 z-10 ${isActive ? 'items-start flex-col overflow-y-auto tablet:overflow-y-auto laptop:overflow-y-auto desktop:overflow-y-auto delay-200' : 'items-center'}`}>
+        {isActive ? subContents.map((subContent, index) => <CardContent className={'text-white duration-500'} key={index} title={subContent.title} description={subContent.description} />) : <div className="flex flex-col gap-1">{[name, content]}</div> }
+      </div>
+      <span className={`absolute top-16 -right-[10%] z-0 duration-500 ${isActive ? 'scale-125 rotate-12' : ' rotate-0'} `}>{icon}</span>
+      <span className={`absolute z-20 ${isActive ? 'text-white bg-gradient-to-t from-accent-500 via-accent-500/90 to-accent-500/10 w-full pb-3 py-6 bottom-0' : 'bottom-4'} -left-3 pl-9 mobile:-left-3 mobile:pl-9 tablet:pl-9 laptop:pl-11 text-xs cursor-pointer mobile:text-sm laptop:text-sm`}><button onClick={() => {setIsActive((prevState) => !prevState)}}>{isActive ? 'Click to Hide <' : 'Click to Show >'}</button></span>
     </motion.div>
   )
 }

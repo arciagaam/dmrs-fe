@@ -38,8 +38,9 @@ const Thailand = () => {
 
     const services = [ 
       {
-        name:'Intelligence', 
+        name:<p className="self-start font-bold">Intelligence</p>, 
         icon:<IntelligenceAnalysts width={size} height={size} />,
+        content: <p className="text-xs">We are the industry leaders in manual intelligence collection, product monitoring and global investigative work protecting Fortune 500 companies with a worldwide footprint.</p>,
         subContent: 
         [
           {
@@ -53,8 +54,9 @@ const Thailand = () => {
         ]
       }, 
       {
-        name:'Research',
+        name:<p className="self-start font-bold">Research</p>,
         icon:<BussinessIntelligence width={size} height={size} />,
+        content: <p className="text-xs">If you have a problem whether it is offline or online we proactively research using our research methodology and tools to give you an appropriate and considered answer.</p>,
         subContent: 
         [
           {
@@ -64,8 +66,9 @@ const Thailand = () => {
         ]
       }, 
       {
-        name:'Investigations', 
+        name:<p className="self-start font-bold">Investigations</p>, 
         icon:<UndercoverOperations width={size} height={size} />,
+        content: <p className="text-xs">We investigate your specific problem are experienced in correct evidence gathering procedures and are aware of the complex skills required to ensure that the integrity of a company is never placed in doubt.</p>,
         subContent: 
         [
           {
@@ -119,8 +122,8 @@ const Thailand = () => {
             <p className="z-10 text-xs mobile:text-sm laptop:text-sm">The services DMRS offers fall into three categories <strong>INTELLIGENCE</strong>, <strong>INVESTIGATIONS</strong> and <strong>RESEARCH</strong>.</p>
           </div>
           <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
-            <div className="z-10 flex flex-col w-full gap-8 fill-black hover:text-secondary-200 hover:fill-secondary-200 mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3">
-              {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} subContents={item.subContent}/> )}
+            <div className="z-10 flex flex-col w-full gap-8 fill-black mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3">
+              {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} content={item.content} subContents={item.subContent}/> )}
             </div>
           </div>
         </div>
