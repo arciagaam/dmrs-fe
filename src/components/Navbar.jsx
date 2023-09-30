@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Button from './Button';
 import { NavLink } from 'react-router-dom';
-import NavAccordion from './NavAccordion';
+
 const Navbar = () => {
   const navRef = useRef(null);
   const ctaRef = useRef(null);
@@ -34,7 +34,7 @@ const Navbar = () => {
       const nav = navRef.current;
       const cta = ctaRef.current;
 
-      if(!nav && !cta) {
+      if (!nav && !cta) {
         return;
       }
 
@@ -42,14 +42,14 @@ const Navbar = () => {
       const navTriggerRect = navTrigger.getBoundingClientRect();
 
       if (navRect.bottom >= Math.floor(navTriggerRect.top)) {
-        nav.classList.add('bg-background-dark');  
+        nav.classList.add('bg-background-dark');
 
-        if(!cta) return;
+        if (!cta) return;
         cta.classList.add('max-w-[50rem]');
       } else {
         nav.classList.remove('bg-background-dark');
 
-        if(!cta) return;
+        if (!cta) return;
         cta.classList.remove('max-w-[50rem]');
       }
     }
@@ -73,19 +73,19 @@ const DefaultNavbar = ({ nav, cta }) => {
       <img src="./images/logo-1.png" className='h-3/4' alt="" />
 
       <div className="flex items-center gap-8">
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs-fe/">
+        <NavLink className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs-fe/">
           Home
         </NavLink>
-        
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/australia">
+
+        <NavLink className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="australia">
           DMRS Australia
         </NavLink>
 
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/thailand">
+        <NavLink className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="thailand">
           DMRS Thailand
         </NavLink>
 
-        <NavLink className={({isActive}) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="dmrs/vpn">
+        <NavLink className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="vpn">
           DMRS VPN
         </NavLink>
 
@@ -98,12 +98,40 @@ const DefaultNavbar = ({ nav, cta }) => {
 }
 
 const MobileNavbar = ({ nav }) => {
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <div ref={nav} className="fixed top-0 left-0 z-50 flex items-center justify-between w-full h-16 px-6 text-sm text-white bg-background-dark">
-      <img src="./images/logo-1.png" className='h-3/4' alt="" />
+    <div ref={nav} className="fixed top-0 left-0 z-50 flex w-full h-16 px-6 text-sm text-white bg-background-dark">
+      <div className="z-50 flex items-center justify-between w-full">
+        <img src="./images/logo-1.png" className='h-3/4' alt="" />
 
+        <div className="flex gap-2">
+          <NavLink to={'./contact'} className='whitespace-nowrap'>
+            <Button size='xs' className="m-1">Get Started</Button>
+          </NavLink>
+          <button className='text-lg' onClick={() => { setIsOpen(!isOpen) }}>=</button>
+        </div>
+      </div>
 
-      <button className='text-lg'>=</button>
+      <div className={`absolute top-0 left-0 z-40 pt-16 bg-background-dark text-white w-full transition-[height] ease-out duration-200 overflow-hidden ${isOpen ? 'h-[100vh]' : 'h-0'}`}>
+        <div className="flex flex-col items-center justify-center w-full gap-5 text-md">
+          <NavLink onClick={() => { setIsOpen(false) }} className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="/dmrs-fe/">
+            Home
+          </NavLink>
+
+          <NavLink onClick={() => { setIsOpen(false) }} className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="australia">
+            DMRS Australia
+          </NavLink>
+
+          <NavLink onClick={() => { setIsOpen(false) }} className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="thailand">
+            DMRS Thailand
+          </NavLink>
+
+          <NavLink onClick={() => { setIsOpen(false) }} className={({ isActive }) => isActive ? 'text-primary-300' : 'text-white transition-all hover:text-primary-300 active:brightness-90'} to="vpn">
+            DMRS VPN
+          </NavLink>
+        </div>
+      </div>
+
     </div>
   )
 }
