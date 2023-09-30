@@ -15,6 +15,7 @@ import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import VerticalProgress from '../../components/VerticalProgress'
 import StaggeredLine from '../../components/StaggeredLine'
+import { MissionRocket } from '../../components/Svgs'
 
 
 const fadeInAnimationVariants = {
@@ -75,7 +76,7 @@ const Home = () => {
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex flex-col gap-16 px-10 pt-10 overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger">
+      <section className="flex flex-col gap-16 px-10 pt-10 pb-10 overflow-hidden laptop:pb-0 laptop:overflow-visible laptop:flex-row navTrigger">
         <div className="flex flex-col items-center justify-center gap-1 laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)] z-10">
           <h2
             className='text-lg font-bold text-center desktop:text-xl hd:text-3xl'>WHO ARE WE?</h2>
@@ -136,8 +137,9 @@ const Home = () => {
       {/* VISION AND MISSION SECTION */}
       <section className="relative flex p-10 pb-10 z-[1] gap-5">
 
-        <div className="absolute top-[-170%] right-[-40%] scale-50 hidden laptop:flex">
+        <div className="hidden laptop:block absolute top-0 right-0 translate-y-[-70vh] translate-x-[40vh]">
           {/* <Rocket/> */}
+          < MissionRocket />
         </div>
 
         <VerticalProgress>

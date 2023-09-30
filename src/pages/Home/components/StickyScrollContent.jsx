@@ -14,7 +14,7 @@ const StickyScrollContent = ({children, ...props}) => {
                     initial={{ opacity: 0, x: 105 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1 }}
-                    viewport={{ once: true, margin: "-240px" }}
+                    viewport={{ once: true, margin: "-20px" }}
                 
                     src={imageUrl} alt="" className='absolute top-[-25%] right-[-25%] h-full brightness-90 tablet:right-0 tablet:h-[15rem] laptop:top-[0%] laptop:right-[100%] laptop:h-3/4' />}
                 <motion.div
