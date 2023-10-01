@@ -97,12 +97,7 @@ const Thailand = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full bg-white overflow-clip">
       <Hero>
-        <motion.div 
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{once:true}}
-          custom={1}
+        <div 
           className="relative z-10 flex flex-col justify-center w-full px-6 text-white">
           <div className="flex flex-col items-center justify-center gap-8 desktop:gap-4">
             <div className="absolute -top-20 w-full h-screen bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
@@ -111,13 +106,17 @@ const Thailand = () => {
                 blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
               }
             </div>
-            <div className="flex flex-col items-center justify-center gap-2">
+            <motion.div 
+              initial={{ y: -25, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="flex flex-col items-center justify-center gap-2">
               <h1 className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services Thailand</h1>
               <p className="text-sm text-center desktop:text-base hd:text-md">(Thailand)</p>
-            </div>
+            </motion.div>
             <Button variant="outline" size="sm" className="w-full mobile:fit tablet:w-fit z-10">Services</Button>
           </div>
-        </motion.div>
+        </div>
       </Hero>
 
       {/* DMRS Thailand section */}
