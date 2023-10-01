@@ -165,6 +165,7 @@ const Thailand = () => {
           </div>
         </div>
       </section>
+      
       {/* Services */}
       <motion.section 
         className="relative flex items-start w-full min-h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-[4.5rem]"
