@@ -115,7 +115,7 @@ const Australia = () => {
       </section>
 
       {/* Services */}
-      <section className='grid grid-cols-3 gap-10 px-10 py-10 overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger'>
+      <section className='grid grid-cols-3 gap-10 p-[7.5rem] overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger'>
         <div className="flex flex-col justify-center w-full col-span-3 gap-5">
           <p className="text-lg font-bold text-center uppercase laptop:text-xl text-bg-dark ">Who are Dan Murdoch Risk Services?</p>
           <p className="self-center max-w-5xl tablet:min-w-[565px] text-center text-xs text-bg-dark tablet:text-sm">
@@ -136,7 +136,7 @@ const Australia = () => {
           </div>
           <p className='text-center'>Intelligence</p>
         </motion.div>
-
+        
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,22 +159,47 @@ const Australia = () => {
             <SiDatabricks size={60} />
           </div>
           <p className='text-center'>Data Collection</p>
-        </motion.div>
+        </motion.div>  
       </section>
 
 
       {/* Intelligent Intelligence */}
-      <section className="relative p-10 px-20 bg-background-dark">
-        <div className="flex">
-          <img src={II_icon} alt="" className="object-contain h-full" />
+      <section className="relative p-10 px-[7.5rem] bg-background-dark">
+        <div className="flex gap-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut"}}
+            viewport={{ once: true }}
+          >
+          <img src={II_icon} alt="" className="object-contain h-full" />  
+          </motion.div>
+          
 
-          <div className="flex flex-col justify-center gap-2 text-center tablet:text-left">
+          <div className="flex flex-col justify-center gap-3 text-center tablet:text-left">
             <p className="text-sm tablet:text-md laptop:text-lg ">
-              <strong className="text-primary-300">Intelligent Intelligence</strong>
+            <motion.div
+              initial={{ opacity: 0, y: -80}}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeIn"}}
+              viewport={{ once: true }}
+            >
+            <strong className="text-primary-300">Intelligent Intelligence</strong>
+            </motion.div>
+              
             </p>
 
             <p className="text-sm text-justify text-white tablet:text-base laptop:text-md">
+            <motion.div
+              initial={{ opacity: 0, y: 80}}
+              whileInView={{ opacity: 1, y: 0}}
+              transition={{ duration: 0.5, ease: "easeIn"}}
+              viewport={{ once: true }}
+            >
               Leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.
+            
+            </motion.div>
+              
             </p>
           </div>
         </div>
