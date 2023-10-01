@@ -70,7 +70,7 @@ export default {
       },
 
       fontSize: {
-        xs : ['0.875rem', '130%'],
+        xs : ['0.875rem', '150%'],
         sm : ['1rem', '130%'],
         base : ['1.375rem', '130%'],
         md : ['1.75rem', '130%'],
