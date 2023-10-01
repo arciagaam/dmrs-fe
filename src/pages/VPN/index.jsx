@@ -49,14 +49,14 @@ const Vpn = () => {
                                     initial={{ y: -25, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ duration: 1 }}
-                                    className='z-10 text-lg text-center tablet:text-xl laptop:text-2xl hd:text-3xl'>DMRS VPN</motion.h1>
+                                    className='z-10 text-lg text-center tablet:text-xl laptop:text-2xl hd:text-3xl'>Dan Murdoch Risk Services VPN</motion.h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </Hero>
 
-            <section className='relative flex gap-10 p-10 overflow-hidden navTrigger'>
+            <section className='relative flex gap-10 p-10 overflow-hidden laptop:pl-28 navTrigger'>
                 
                 {/* <VerticalProgress>
                     <VerticalProgressPoint className="top-0 bg-primary-300" />
