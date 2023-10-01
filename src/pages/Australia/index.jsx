@@ -60,15 +60,12 @@ const Australia = () => {
       {/* DMRS Australia */}
       <section className="relative navTrigger tablet:z-12">
         
-        <div className="flex flex-col h-full w-full items-center p-10 gap-12 tablet:p-16 tablet:flex-row laptop:min-h-[768px] laptop:h-full laptop:gap-24 laptop:p-20 ">
+        <div className="flex overflow-hidden flex-col h-full w-full items-center p-10 gap-12 tablet:p-16 tablet:flex-row laptop:min-h-[768px] laptop:h-full laptop:gap-24 laptop:p-20 ">
           <div className="max-h-[350px] flex w-full tablet:z-10 tablet:w-full tablet:max-h-[500px] z-10  justify-center gap-5">
             <Animate animationClass='animate__fadeInLeftBig'>
               <img src={Australia_img} alt="" className='object-cover cover rounded-tl-[3.12rem] rounded-br-[3.12rem] h-full w-full' />     
             </Animate>    
           </div>  
-          
-           
-              
          
           <div className="flex flex-col w-full gap-10 tablet:z-10 tablet:w-full">
             <div>
@@ -98,15 +95,23 @@ const Australia = () => {
       <section className="relative tablet:z-10">
         <div className="flex h-full w-full items-center gap-[6rem] p-7 tablet:p-20">
           <div className="flex flex-col tablet:flex-row tablet:p-10 laptop:p-20 justify-center items-center w-full max-h-[450px] p-10 gap-2 mobile:gap-5 rounded-[3.12rem] bg-black">
-            <img src={II_icon} alt="" className="object-contain w-1/4"/>
-            <div className="flex flex-col justify-center text-center tablet:text-left">
-              <p className="text-sm tablet:text-md laptop:text-lg ">
-                <strong className="text-primary-300">Intelligent Intelligence</strong>
-              </p>
-              <p className="text-sm tablet:text-md laptop:text-lg text-accent-50 ">
-                <strong>leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.</strong>
-              </p>    
+            <div className='w-full'>
+              <Animate animationClass='animate__bounceIn'>
+                <img src={II_icon} alt="" className="object-contain"/>  
+              </Animate>
+              
             </div>
+            
+            <Animate animationClass='animate__bounceIn'> 
+              <div className="flex flex-col justify-center text-center tablet:text-left">
+                <p className="text-sm tablet:text-md laptop:text-lg ">
+                  <strong className="text-primary-300">Intelligent Intelligence</strong>
+                </p>
+                <p className="text-sm tablet:text-md laptop:text-lg text-accent-50 ">
+                  <strong>leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.</strong>
+                </p>    
+              </div>  
+            </Animate>
             
           </div>
         </div>  
