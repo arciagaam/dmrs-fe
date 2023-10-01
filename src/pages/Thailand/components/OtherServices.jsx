@@ -43,7 +43,7 @@ const OtherServices = () => {
         <div className='z-10 flex-[1]' onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
             <div className="flex flex-col">
                 {
-                    contents.map((content, index) => <OtherServicesItem key={index} content={content} parentHover={hovering} active={content.name == activeContent?.name} handleSelectActive={handleSelectActive} />)
+                    contents.map((content, index) => <OtherServicesItem key={index} index={index} content={content} parentHover={hovering} active={content.name == activeContent?.name} handleSelectActive={handleSelectActive} />)
                 }
             </div>
         </div>
