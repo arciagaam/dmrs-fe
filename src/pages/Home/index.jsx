@@ -6,23 +6,26 @@ import Button from '../../components/Button'
 import WhatWeDo from './components/WhatWeDo'
 import GridFiller from './components/GridFiller'
 import ColoredGrid from '../../components/ColoredGrid'
-import VerticalProgress from './components/VerticalProgress'
+import VerticalProgressPoint from '../../components/VerticalProgressPoint'
 import StickyScrollContent from './components/StickyScrollContent'
 import Rocket from './components/Rocket'
 import { Link } from 'react-router-dom'
 import { FaEye, FaRocket } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
+import VerticalProgress from '../../components/VerticalProgress'
+import StaggeredLine from '../../components/StaggeredLine'
+import { MissionRocket } from '../../components/Svgs'
 
 
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
-    x:-80
+    x: -80
   },
   animate: (index) => ({
     opacity: 1,
-    x:0,
+    x: 0,
     transition: {
       delay: index * 0.1,
       duration: .5
@@ -47,7 +50,7 @@ const Home = () => {
                 <motion.h1
                   initial={{ y: -25, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{duration:1}}
+                  transition={{ duration: 1 }}
                   className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services</motion.h1>
               </div>
               <div className="flex flex-col items-center gap-3">
@@ -73,7 +76,7 @@ const Home = () => {
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex flex-col gap-16 px-10 pt-10 overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger">
+      <section className="flex flex-col gap-16 px-10 pt-10 pb-10 overflow-hidden laptop:pb-0 laptop:overflow-visible laptop:flex-row navTrigger">
         <div className="flex flex-col items-center justify-center gap-1 laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)] z-10">
           <h2
             className='text-lg font-bold text-center desktop:text-xl hd:text-3xl'>WHO ARE WE?</h2>
@@ -88,13 +91,13 @@ const Home = () => {
               <p className='text-xs text-justify desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Australia) Pty Ltd is the parent company of our operational division Dan Murdoch Risk Services (Thailand) Limited.</p>
 
               <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 text-white">
-                <Link to="/dmrs-fe/dmrs/australia">
+                <Link to="/dmrs-fe/australia">
                   Go to DMRS Australia
                 </Link>
               </Button>
 
             </StickyScrollContent>
-            
+
           </StickyScrollItem>
 
           <StickyScrollItem>
@@ -104,7 +107,7 @@ const Home = () => {
               <p className='text-xs text-justify desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Thailand) Co. Ltd. staff are trained detectives and intelligence analysts who use both objective and subjective thinking to gather manual online data leading to intelligence for many Fortune 500 companies worldwide.</p>
 
               <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 text-white">
-                <Link to="/dmrs-fe/dmrs/thailand">
+                <Link to="/dmrs-fe/thailand">
                   Go to DMRS Thailand
                 </Link>
               </Button>
@@ -134,66 +137,70 @@ const Home = () => {
       {/* VISION AND MISSION SECTION */}
       <section className="relative flex p-10 pb-10 z-[1] gap-5">
 
-        <div className="absolute top-[-170%] right-[-40%] scale-50 hidden laptop:flex">
+        <div className="hidden laptop:block absolute top-0 right-0 translate-y-[-70vh] translate-x-[40vh]">
           {/* <Rocket/> */}
+          < MissionRocket />
         </div>
 
-        <VerticalProgress/>
+        <VerticalProgress>
+          <VerticalProgressPoint className="top-0 bg-primary-300" />
+          <VerticalProgressPoint className="top-[13.5rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem] bg-primary-300" />
+        </VerticalProgress>
 
         <div className="flex flex-col laptop:max-w-[55%] gap-10">
 
           <div className="flex flex-col gap-3">
-            <motion.div 
+            <motion.div
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
-              viewport={{once:true}}
+              viewport={{ once: true }}
               custom={1}
               className="flex items-center gap-3">
-                
+
               <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
-                <FaEye className='text-sm laptop:text-md hd:text-lg'/>
+                <FaEye className='text-sm laptop:text-md hd:text-lg' />
               </div>
-              
+
               <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Vision</span></h2>
-              
-            </motion.div>
 
-            <motion.p 
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{once:true}}
-              custom={2}
-              className='text-xs text-justify laptop:text-sm hd:text-base'>Dan Murdoch Risk Services will be the preferred company of choice for online intelligence, investigative consultancy, brand protection and business intelligence advice worldwide offering beneficial solutions for all corporate and personal problems.</motion.p>
-          </div>
-
-          <div className="flex flex-col gap-3">
-              
-            <motion.div 
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{once:true}}
-              custom={1}
-              className="flex items-center gap-3">
-              <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
-                <FaRocket className='text-sm laptop:text-md hd:text-lg'/>
-              </div>
-              <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Mission Statement</span></h2>
             </motion.div>
 
             <motion.p
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
-              viewport={{once:true}}
+              viewport={{ once: true }}
               custom={2}
-              className='text-xs text-justify laptop:text-sm hd:text-base'>Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.</motion.p>
+              className='text-xs text-justify laptop:text-sm hd:text-base'>Dan Murdoch Risk Services will be the preferred company of choice for online intelligence, investigative consultancy, brand protection and business intelligence advice worldwide offering beneficial solutions for all corporate and personal problems.</motion.p>
+          </div>
+
+          <div className="flex flex-col gap-3">
+
+            <motion.div
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={1}
+              className="flex items-center gap-3">
+              <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
+                <FaRocket className='text-sm laptop:text-md hd:text-lg' />
+              </div>
+              <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Mission Statement</span></h2>
+            </motion.div>
+            <motion.p
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={2}
+              className='text-xs text-justify laptop:text-sm hd:text-base'>
+                Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.
+              </motion.p>
           </div>
 
         </div>
-
 
       </section>
 
@@ -215,7 +222,7 @@ const Home = () => {
 
         <div className="z-10 flex flex-col items-center gap-8 laptop:w-[45%]">
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -75 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .5 }}

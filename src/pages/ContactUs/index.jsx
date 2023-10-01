@@ -15,7 +15,7 @@ const ContactUs = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
     return (
-        <div className="flex flex-col navTrigger">
+        <div className="flex flex-col gap-10 bg-white navTrigger laptop:gap-0">
             <div className="flex flex-col laptop:flex-row min-h-[90vh] pt-20 bg-white">
                 
                 <div className="flex flex-col items-center justify-center flex-1 px-20">
