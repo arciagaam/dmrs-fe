@@ -111,7 +111,10 @@ const Thailand = () => {
                 blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
               }
             </div>
-            <h1 className='z-10 text-xl font-bold mobile:text-center mobile:text-3xl tablet:text-center tablet:text-3xl'>DMRS Thailand</h1>
+            <div className="flex flex-col items-center justify-center gap-2">
+              <h1 className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services Thailand</h1>
+              <p className="text-sm text-center desktop:text-base hd:text-md">(Thailand)</p>
+            </div>
             <Button variant="outline" size="sm" className="w-full mobile:fit tablet:w-fit z-10">Services</Button>
           </div>
         </motion.div>
