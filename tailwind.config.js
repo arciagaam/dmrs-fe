@@ -7,11 +7,48 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif']
+        poppins: ['Poppins', 'sans-serif'],
+        archivo: ['Archivo', 'sans-serif'],
+        'red-hat' : ['Red Hat Display', 'sans-serif']
       },
 
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+
+      animation: {
+        ltr: 'ltr 20s infinite',
+        rtl: 'rtl 20s infinite',
+        ttb: 'ttb 20s infinite',
+        btt: 'btt 20s infinite',
+        bttsmall: 'bttsmall 3s easeout infinite',
+      },
+
+      keyframes: {
+        ltr: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%' : { transform: 'translateX(-10px)' },
+        },
+
+        rtl: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%' : { transform: 'translateX(10px)' },
+        },
+
+        ttb: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%' : { transform: 'translateY(10px)' },
+        },
+
+        btt: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%' : { transform: 'translateY(-10px)' },
+        },
+
+        bttsmall : {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%' : { transform: 'translateY(3px)' },
+        }
       },
 
       colors: {
