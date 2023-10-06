@@ -16,7 +16,7 @@ import { Canvas } from '@react-three/fiber'
 import VerticalProgress from '../../components/VerticalProgress'
 import StaggeredLine from '../../components/StaggeredLine'
 import { MissionRocket } from '../../components/Svgs'
-
+import { BsArrowLeft } from 'react-icons/bs'
 
 const fadeInAnimationVariants = {
   initial: {
@@ -40,18 +40,60 @@ const Home = () => {
 
       <Hero>
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+          <div className="relative z-10 flex flex-col w-full h-full">
 
             <ColoredGrid />
 
+            <div className="absolute top-0 left-0 z-40 w-3/4 h-full opacity-50 bg-gradient-to-r from-black via-black to-transparent"></div>
+
             {/* actual hero */}
-            <div className="z-10 flex flex-col items-center justify-center w-full gap-10 px-10 text-white">
-              <div className="flex flex-col items-center justify-center">
+            <div className="z-50 relative flex flex-col items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-28">
+
+
+              <div className="absolute z-50 scale-110 -rotate-90 bottom-28 right-28">
+                <div className="flex items-center gap-5">
+                  <BsArrowLeft className='scale-x-[150%]' />
+                  <p className='whitespace-nowrap'>Scroll Down</p>
+                </div>
+              </div>
+
+
+              <div className="flex gap-20">
+                <div className="flex flex-col flex-1 w-[100%] gap-1">
+                  <img src="./images/DMRS.png" alt="" className='w-full invert' />
+                </div>
+
+                <div className="grid grid-cols-1">
+                  <Link className='flex items-center justify-center h-full p-5 text-center bg-white aspect-square text-background-dark' >Our Services</Link>
+                  <Link className='flex items-center justify-center h-full p-5 text-center hover:brightness-110 bg-primary-300 aspect-square text-background-dark' >Get Started</Link>
+                  {/* <Button variant='outline' className="w-full h-full text-white ring-white">OUR SERVICES</Button>
+                  <Button variant='default' className="w-full h-full">GET STARTED</Button> */}
+                </div>
+              </div>
+
+              <div className="flex flex-col self-start h-full gap-10">
+
+                <p className='text-base'>Dan Murdoch Risk Services</p>
+
+                <div className="flex flex-col items-start justify-center gap-1 mt-auto">
+                    <p className='z-10 text-sm laptop:text-base hd:text-lg'>Providing Global Corporations with</p>
+                    <TextMarquee />
+                </div>
+
+              </div>
+
+              
+
+            </div>
+            {/* <div className="z-10 flex flex-col items-center justify-center w-full gap-10 px-10 text-white">
+              <div className="flex flex-col justify-center gap-2">
+                <h2 className='text-sm text-start tablet:text-md laptop:text-md hd:text-2xl'>We are</h2>
                 <motion.h1
-                  initial={{ y: -25, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services</motion.h1>
+                  // initial={{ y: -25, opacity: 0 }}
+                  // animate={{ y: 0, opacity: 1 }}
+                  // transition={{ duration: 1 }}
+                  className='z-10 font-bold text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl '>Dan Murdoch Risk Services</motion.h1>
+                  
               </div>
               <div className="flex flex-col items-center gap-3">
                 <div className="flex flex-col items-center justify-center gap-1">
@@ -70,7 +112,7 @@ const Home = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </Hero>
@@ -195,9 +237,9 @@ const Home = () => {
               whileInView="animate"
               viewport={{ once: true }}
               custom={2}
-              className='text-xs text-justify laptop:text-sm hd:text-base'>
-                Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.
-              </motion.p>
+              className='text-xs text-justify laptop:text-sm hd:text-base '>
+              Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.
+            </motion.p>
           </div>
 
         </div>
