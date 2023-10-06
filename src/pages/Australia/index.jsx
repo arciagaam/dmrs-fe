@@ -4,12 +4,11 @@ import DMRSimg from '../../assets/Australia-dots.png'
 import Intelligence_img from '../../assets/intelligence-investigations.png'
 import Australia_img from '../../assets/dmrs-australia-1.jpg'
 import II_icon from '../../assets/intelligent-intelligence-icon.png'
-import IntelligenceMb_img from '../../assets/intelligent-investigations-mb.png'
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from 'react'
-import Animate from './components/Animate.jsx'
 import 'animate.css';
 import ColoredGrid from '../../components/ColoredGrid'
+import { Link } from 'react-router-dom'
 
 import { LuLightbulb } from 'react-icons/lu'
 import { PiListMagnifyingGlassLight } from 'react-icons/pi'
@@ -128,7 +127,7 @@ const Australia = () => {
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
           viewport={{ once: true }}
           className="flex flex-col items-center justify-start gap-2 px-5 py-10 border rounded-lg border-background-dark/05">
           <div className="flex items-center justify-center h-20 aspect-square">
@@ -210,13 +209,11 @@ const Australia = () => {
       <section className="z-40 flex flex-col-reverse items-center w-full py-[20vh] tablet:flex-row">
         <div className="flex flex-col items-center flex-1 gap-5">
           <h2 className='font-bold text-center text-md desktop:text-lg hd:text-xl'>See our <span className='text-primary-300'>services</span> in full.</h2>
-          <Button variant='outline'>Our Services</Button>
+          <Link to='/dmrs-fe/thailand#services_th'>
+            <Button variant='outline'>Our Services</Button>
+          </Link>
+          
         </div>
-        {/* 
-          <div className="flex flex-col w-auto h-screen">
-            <img src={Intelligence_img} alt="" className="hidden w-full h-3/4 tablet:block" />
-            <img src={IntelligenceMb_img} alt="" className="w-full tablet:hidden" />
-          </div> */}
       </section>
 
     </div>

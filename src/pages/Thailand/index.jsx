@@ -7,6 +7,7 @@ import BgTextMarquee from "./components/BgTextMarquee"
 import OtherServices from "./components/OtherServices"
 import GridFiller from "../Home/components/GridFiller"
 import { useEffect, useRef } from "react"
+import { useLocation } from 'react-router-dom';
 
 import { motion } from 'framer-motion'
 
@@ -29,6 +30,18 @@ const Thailand = () => {
     let size = '300';
     const blockCount = new Array(28);
     const blockRef = useRef([]);
+    const location = useLocation();
+
+    useEffect(() => {
+      // Check if the URL contains the hash for the "services_th" section
+      if (location.hash === '#services_th') {
+        // Scroll to the "services_th" section
+        const servicesThElement = document.getElementById('services_th');
+        if (servicesThElement) {
+          servicesThElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, [location]);
     
     function toggleBlock(selectedBlock) {
       if (selectedBlock.classList.contains('active') || !selectedBlock) return;
@@ -114,7 +127,7 @@ const Thailand = () => {
               <h1 className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services Thailand</h1>
               <p className="text-sm text-center desktop:text-base hd:text-md">(Thailand)</p>
             </motion.div>
-            <Button variant="outline" size="sm" className="w-full mobile:fit tablet:w-fit z-10">Services</Button>
+            <Button variant="outline" size="sm" className="z-10 w-full mobile:fit tablet:w-fit">Services</Button>
           </div>
         </div>
       </Hero>
@@ -124,7 +137,7 @@ const Thailand = () => {
         <div 
           className="relative flex flex-col w-full gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:min-h-screen desktop:gap-20 desktop:px-24">
           <div className="flex w-full h-[300px] bg-gray-200 rounded-tl-[2rem] rounded-br-[2rem] tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 tablet:rounded-tl-[4rem] tablet:rounded-br-[4rem] overflow-hidden">
-            <img src="https://images.pexels.com/photos/7319070/pexels-photo-7319070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="h-full w-full object-cover"/>
+            <img src="https://images.pexels.com/photos/7319070/pexels-photo-7319070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="object-cover w-full h-full"/>
           </div>
           <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 z-0 top-0 hidden mobile:block laptop:right-[20%]' />
 
@@ -135,7 +148,7 @@ const Thailand = () => {
             viewport={{once:true}}
             custom={1}
             className="z-10 flex flex-col justify-center w-full gap-4 mobile:w-full mobile:gap-4 tablet:w-1/2 tablet:gap-10">
-            <h2 className="font-bold text-lg mobile:text-xl tablet:text-xl">Dan Murdoch Risk Services <strong className="font-bold text-primary-300 text-lg mobile:text-2xl tablet:text-2xl">Thailand.</strong></h2>
+            <h2 className="text-lg font-bold mobile:text-xl tablet:text-xl">Dan Murdoch Risk Services <strong className="text-lg font-bold text-primary-300 mobile:text-2xl tablet:text-2xl">Thailand.</strong></h2>
             <div className="flex flex-col gap-4 text-xs mobile:text-sm laptop:text-sm desktop:text-base">
               <p><strong className="text-accent-500">DMRS</strong> <strong className="text-primary-300">Thailand</strong> Co. Limited is based in Thailand with staff also in the Philippines, Australia, Hong Kong and China with trusted and verified agents in many global locations.</p>
             </div>
@@ -148,17 +161,17 @@ const Thailand = () => {
           <div className="w-full tablet:grid-cols-2 tablet:gap-16 laptop:gap-16 desktop:gap-10">
             <motion.div 
               variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={1}
-              className="grid grid-cols-2 items-center w-full gap-y-20 gap-x-5">
+              className="grid items-center w-full grid-cols-2 gap-y-20 gap-x-5">
               <>
-                <h1 className="text-md font-bold tablet:text-lg desktop:text-2xl">Trained Detectives</h1>
+                <h1 className="font-bold text-md tablet:text-lg desktop:text-2xl">Trained Detectives</h1>
                 <p>DMRS staff are <strong>trained detectives</strong> and <strong>intelligence analysts</strong> who use both objective and subjective thinking to <strong>gather online data and intelligence</strong> for many Fortune 500 companies worldwide.</p>
               </>
               <>
-                <h1 className="text-md font-bold tablet:text-lg desktop:text-2xl">Premier and Innovative</h1>
+                <h1 className="font-bold text-md tablet:text-lg desktop:text-2xl">Premier and Innovative</h1>
                 <p>Our facilities also offer <strong>premier and innovative investigative consultancy</strong> in all areas of corporate and personal requirements.</p>
               </>
               <>
-                <h1 className="text-md font-bold tablet:text-lg desktop:text-2xl">Global Protection</h1>
+                <h1 className="font-bold text-md tablet:text-lg desktop:text-2xl">Global Protection</h1>
                 <p>DMRS is proud to be focused on the  <strong>protection of patients globally</strong> through our identification of risks concerned with the illicit trade in counterfeit, sub-standard and suspect medicines together with all associated risks to corporations tasked with the protection of consumers worldwide.</p>
               </>
             </motion.div>
@@ -167,45 +180,46 @@ const Thailand = () => {
       </section>
       
       {/* Services */}
-      <motion.section 
-        className="relative flex items-start w-full min-h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-[4.5rem]"
-        variants={fadeInAnimationVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{once:true}}
-        custom={1}
-        >
-        <div className="absolute left-0 grid w-full h-full -top-10 grid-cols-3 mobile:grid-cols-4 desktop:grid-cols-8">
-          <GridFiller cellCount={40} cellClass={'border border-background-dark/5'} />
-        </div>
-        <div className="flex flex-col justify-start w-full gap-6 h-full">
-          <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-[4.5rem]">
-            <h2 className="z-10 font-bold text-lg mobile:text-xl laptop:text-xl">Services</h2>
-            <p
-              className="z-10 text-sm mobile:text-xs desktop:text-base gap-1"
-            >
-              The services DMRS offers fall into three categories
-              <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={8}> INTELLIGENCE,</motion.span> 
-              <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={12}> INVESTIGATIONS,</motion.span> 
-              <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={16}> RESEARCH.</motion.span> 
-            </p>
+      <div id="services_th" className="pt-10">
+        <motion.section 
+          className="relative flex items-start w-full min-h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-[4.5rem]"
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          id="services_th"
+          whileInView="animate"
+          viewport={{once:true}}
+          custom={1}
+          >
+          <div className="absolute left-0 grid w-full h-full grid-cols-3 -top-10 mobile:grid-cols-4 desktop:grid-cols-8">
+            <GridFiller cellCount={40} cellClass={'border border-background-dark/5'} />
           </div>
-          <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
-            <motion.div 
-              className="z-10 flex flex-col w-full gap-8 fill-black mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3"
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView={"animate"}
-              viewport={{once:true}}
-              custom={20}
-            >
-              {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} content={item.content} subContents={item.subContent}/> )}
-            </motion.div>
+          <div className="flex flex-col justify-start w-full h-full gap-6">
+            <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-[4.5rem]" >
+              <h2 className="z-10 text-lg font-bold mobile:text-xl laptop:text-xl">Services</h2>
+              <p
+                className="z-10 gap-1 text-sm mobile:text-xs desktop:text-base"
+              >
+                The services DMRS offers fall into three categories
+                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={8}> INTELLIGENCE,</motion.span> 
+                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={12}> INVESTIGATIONS,</motion.span> 
+                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={16}> RESEARCH.</motion.span> 
+              </p>
+            </div>
+            <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
+              <motion.div 
+                className="z-10 flex flex-col w-full gap-8 fill-black mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3"
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView={"animate"}
+                viewport={{once:true}}
+                custom={20}
+              >
+                {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} content={item.content} subContents={item.subContent}/> )}
+              </motion.div>
+            </div>
           </div>
-        </div>
-
-        
-      </motion.section>
+        </motion.section>
+      </div>
 
       {/* Other Services */}
       <section className="flex flex-col items-center justify-center w-full h-full gap-10 px-6 mb-10 tablet:px-12 desktop:px-[4.5rem]">
