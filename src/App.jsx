@@ -5,7 +5,7 @@ import ScrollToTop from "./routes/ScrollToTop"
 function App() {
   return (
     <ScrollToTop>
-      <div className="flex flex-col min-h-screen font-poppins">
+      <div className="flex flex-col min-h-screen font-red-hat">
         <Navbar />
         <Outlet />
         <Footer />

@@ -7,24 +7,17 @@ const fadeInAnimationVariants = {
         opacity: 0,
         x: -20
     },
-    animate: (index) => ({
+
+    inview: {
         opacity: 1,
-        x: 0,
-        transition: {
-            delay: index * 0.1,
-            duration: .1,
-        }
-    })
+        x: 0,   
+    }
 }
 
 const WhatWeDoItem = ({ children, content, parentHover, active, handleSelectActive, className = null, index }) => {
     return (
         <motion.div
             variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin:'100px' }}
-            custom={index}
             onClick={() => handleSelectActive(content)}
             className={`hover:pl-7 hover:grayscale-0 hover:opacity-100 hover:text-primary-300 hover:bg-black/5 text-background-dark gap-2 flex flex-col px-4 py-4 cursor-pointer transition-all duration-500 ${active ? 'pl-7 border-accent-400 text-accent-400' : parentHover ? 'grayscale text-background-dark opacity-50' : 'grayscale-0 text-background-dark opacity-100 border-black/20 '}`}>
 

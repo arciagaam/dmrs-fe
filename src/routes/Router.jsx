@@ -11,6 +11,7 @@ import ContactUs from '../pages/ContactUs'
 import PrivacyPolicy from '../pages/PrivacyPolicy'
 import TermsAndConditions from '../pages/TermsAndConditions'
 import Vpn from '../pages/VPN'
+import NotFound from '../pages/404'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -28,7 +29,11 @@ const router = createBrowserRouter(
             <Route path="terms" element={<TermsAndConditions/>}/>
 
             <Route path="policy" element={<PrivacyPolicy/>}/>
+
+
+            <Route path='*' element={<NotFound/>}/>
         </Route>
+
     ) 
 )
 
