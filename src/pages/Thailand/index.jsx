@@ -8,7 +8,7 @@ import OtherServices from "./components/OtherServices"
 import GridFiller from "../Home/components/GridFiller"
 import { useEffect, useRef } from "react"
 
-import { motion } from 'framer-motion'
+import { easeInOut, motion, useTime, useTransform } from 'framer-motion'
 
 const fadeInAnimationVariants = {
   initial: {
@@ -25,10 +25,28 @@ const fadeInAnimationVariants = {
   })
 }
 
+const yFadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: -80
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.1,
+      duration: .7
+    }
+  })
+}
+
 const Thailand = () => {
     let size = '300';
     const blockCount = new Array(28);
     const blockRef = useRef([]);
+
+    const time = useTime();
+    const rotate = useTransform(time, [0, 4000], [0, 360], { clamp: false });
     
     function toggleBlock(selectedBlock) {
       if (selectedBlock.classList.contains('active') || !selectedBlock) return;
@@ -100,31 +118,35 @@ const Thailand = () => {
         <div 
           className="relative z-10 flex flex-col justify-center w-full px-6 text-white">
           <div className="flex flex-col items-center justify-center gap-8 desktop:gap-4">
-            <div className="absolute -top-20 w-full h-screen bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
-            <div className="absolute -top-20 left-0 grid w-full h-screen grid-cols-7 z-[1] ">
-              {
-                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
-              }
+            <div className="absolute -top-20 w-full min-h-[110%] bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
+            <div className="absolute left-0 -top-20 grid w-full min-h-[110%] grid-cols-3 mobile:grid-cols-4 desktop:grid-cols-8">
+              <GridFiller cellCount={40} cellClass={'border border-background-light/5'} />
             </div>
-            <motion.div 
-              initial={{ y: -25, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="flex flex-col items-center justify-center gap-2">
-              <h1 className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services Thailand</h1>
-              <p className="text-sm text-center desktop:text-base hd:text-md">(Thailand)</p>
+            <motion.div className="absolute -top-10 w-full min-h-full flex flex-col items-start justify-start z-10">
+              <div className="relative flex flex-col">
+                <div className="text-hero flex flex-row">
+                  <motion.span initial={{ opacity:0 }} animate={{ opacity:1, transition:{ duration: 0.5, delay: 0.3, ease: easeInOut} }}>D</motion.span>
+                  <motion.span initial={{ opacity:0 }} animate={{ opacity:1, transition:{ duration: 0.5, delay: 0.6, ease: easeInOut} }}>M</motion.span>
+                  <motion.span initial={{ opacity:0 }} animate={{ opacity:1, transition:{ duration: 0.5, delay: 0.8, ease: easeInOut} }}>R</motion.span>
+                  <motion.span initial={{ opacity:0 }} animate={{ opacity:1, transition:{ duration: 0.5, delay: 1, ease: easeInOut} }}>S</motion.span>
+                </div>
+                <motion.span initial={{ opacity: 0, x:-100 }} animate={{ opacity:1, x:0, transition:{ duration: 1, delay: 1.7, ease: easeInOut} }} className="z-10 text-white text-2xl font-medium pl-10">Dan Murdoch Risk Services</motion.span>
+              </div>
+              <motion.span 
+                style={{ rotate }}
+                animate={{ opacity: [0,1], x: [0, 1680], transition:{ duration: 1.4, ease: easeInOut} }}
+                className="bg-white absolute  top-10 left-10 min-w-[400px] min-h-[400px] rounded-xl">
+              </motion.span>
             </motion.div>
-            <Button variant="outline" size="sm" className="w-full mobile:fit tablet:w-fit z-10">Services</Button>
           </div>
         </div>
       </Hero>
 
       {/* DMRS Thailand section */}
       <section className="navTrigger">
-        <div 
-          className="relative flex flex-col w-full gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:min-h-screen desktop:gap-20 desktop:px-24">
-          <div className="flex w-full h-[300px] bg-gray-200 rounded-tl-[2rem] rounded-br-[2rem] tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 tablet:rounded-tl-[4rem] tablet:rounded-br-[4rem] overflow-hidden">
-            <img src="https://images.pexels.com/photos/7319070/pexels-photo-7319070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="h-full w-full object-cover"/>
+        <div className="relative flex flex-col w-full justify-center gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:min-h-screen desktop:gap-20 desktop:px-24">
+          <div className="flex w-full h-[300px]  tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 overflow-hidden">
+            <img src="https://images.pexels.com/photos/7319070/pexels-photo-7319070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="h-full w-full object-cover z-10"/>
           </div>
           <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 z-0 top-0 hidden mobile:block laptop:right-[20%]' />
 
@@ -135,32 +157,35 @@ const Thailand = () => {
             viewport={{once:true}}
             custom={1}
             className="z-10 flex flex-col justify-center w-full gap-4 mobile:w-full mobile:gap-4 tablet:w-1/2 tablet:gap-10">
-            <h2 className="font-bold text-lg mobile:text-xl tablet:text-xl">Dan Murdoch Risk Services <strong className="font-bold text-primary-300 text-lg mobile:text-2xl tablet:text-2xl">Thailand.</strong></h2>
+            <h2 className="font-bold text-lg mobile:text-xl tablet:text-xl ">Dan Murdoch Risk Services <strong className="font-bold text-primary-300 text-lg mobile:text-2xl tablet:text-2xl">Thailand.</strong></h2>
             <div className="flex flex-col gap-4 text-xs mobile:text-sm laptop:text-sm desktop:text-base">
               <p><strong className="text-accent-500">DMRS</strong> <strong className="text-primary-300">Thailand</strong> Co. Limited is based in Thailand with staff also in the Philippines, Australia, Hong Kong and China with trusted and verified agents in many global locations.</p>
             </div>
           </motion.div>
         </div>
       </section>
-
-      <section className="flex items-center justify-center">
+      
+      {/* DMRS Thailand Section 2 */}
+      <section className="flex items-center justify-center relative">
         <div className="relative flex flex-col w-[90%] gap-6 px-6 py-8 h-fit items-center mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 laptop:w-full desktop:w-[90%] desktop:min-h-screen desktop:gap-20 desktop:px-24">
-          <div className="w-full tablet:grid-cols-2 tablet:gap-16 laptop:gap-16 desktop:gap-10">
+          <div className="w-full flex gap-10 items-center">
             <motion.div 
               variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={1}
-              className="grid grid-cols-2 items-center w-full gap-y-20 gap-x-5">
-              <>
-                <h1 className="text-md font-bold tablet:text-lg desktop:text-2xl">Trained Detectives</h1>
+              className="grid grid-cols-2 h-full gap-y-40 gap-x-5 items-center">
+                <div>
+                  <h1 className="text-md tablet:text-lg desktop:text-2xl relative">Trained Detectives</h1>
+                </div>
                 <p>DMRS staff are <strong>trained detectives</strong> and <strong>intelligence analysts</strong> who use both objective and subjective thinking to <strong>gather online data and intelligence</strong> for many Fortune 500 companies worldwide.</p>
-              </>
-              <>
-                <h1 className="text-md font-bold tablet:text-lg desktop:text-2xl">Premier and Innovative</h1>
+                  
+                <div>
+                  <h1 className="text-md tablet:text-lg desktop:text-2xl relative">Premier and Innovative</h1>
+                </div>
                 <p>Our facilities also offer <strong>premier and innovative investigative consultancy</strong> in all areas of corporate and personal requirements.</p>
-              </>
-              <>
-                <h1 className="text-md font-bold tablet:text-lg desktop:text-2xl">Global Protection</h1>
+
+                <div>
+                  <h1 className="text-md tablet:text-lg desktop:text-2xl relative">Global Protection</h1>
+                </div>
                 <p>DMRS is proud to be focused on the  <strong>protection of patients globally</strong> through our identification of risks concerned with the illicit trade in counterfeit, sub-standard and suspect medicines together with all associated risks to corporations tasked with the protection of consumers worldwide.</p>
-              </>
             </motion.div>
           </div>
         </div>
@@ -182,7 +207,7 @@ const Thailand = () => {
           <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-[4.5rem]">
             <h2 className="z-10 font-bold text-lg mobile:text-xl laptop:text-xl">Services</h2>
             <p
-              className="z-10 text-sm mobile:text-xs desktop:text-base gap-1"
+              className="z-10 text-xs mobile:text-xs desktop:sm gap-1"
             >
               The services DMRS offers fall into three categories
               <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={8}> INTELLIGENCE,</motion.span> 
@@ -190,18 +215,18 @@ const Thailand = () => {
               <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={16}> RESEARCH.</motion.span> 
             </p>
           </div>
-          <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
-            <motion.div 
-              className="z-10 flex flex-col w-full gap-8 fill-black mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3"
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView={"animate"}
-              viewport={{once:true}}
-              custom={20}
-            >
+          <motion.div 
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView={"animate"}
+            viewport={{once:true}}
+            custom={20}
+            className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
+            <div 
+              className="z-10 flex flex-col w-full gap-8 fill-black mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3">
               {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} content={item.content} subContents={item.subContent}/> )}
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
 
         
