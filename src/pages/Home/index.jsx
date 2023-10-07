@@ -12,7 +12,6 @@ import Rocket from './components/Rocket'
 import { Link } from 'react-router-dom'
 import { FaEye, FaRocket } from 'react-icons/fa'
 import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
 import VerticalProgress from '../../components/VerticalProgress'
 import StaggeredLine from '../../components/StaggeredLine'
 import { MissionRocket } from '../../components/Svgs'
@@ -37,7 +36,6 @@ const Home = () => {
 
   return (
     <div className="flex flex-col w-full bg-white overflow-clip">
-
       <Hero>
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="relative z-10 flex flex-col w-full h-full">
@@ -47,10 +45,14 @@ const Home = () => {
             <div className="absolute top-0 left-0 z-40 w-3/4 h-full opacity-50 bg-gradient-to-r from-black via-black to-transparent"></div>
 
             {/* actual hero */}
-            <div className="z-50 relative flex flex-col items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-10 laptop:px-28">
+            <div className="z-50 relative flex flex-col items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-10 
+            laptop:px-28
+            ">
 
 
-              <div className="absolute z-50 hidden scale-110 -rotate-90 laptop:block bottom-28 right-28">
+              <div className="absolute z-50 hidden scale-110 -rotate-90 bottom-28 right-28 
+              laptop:block 
+              ">
                 <div className="flex items-center gap-5 animate-ltr">
                   <BsArrowLeft className='scale-x-[150%]' />
                   <p className='whitespace-nowrap'>Scroll Down</p>
@@ -58,7 +60,9 @@ const Home = () => {
               </div>
 
 
-              <div className="flex flex-col items-center w-full gap-10 laptop:gap-20 laptop:flex-row">
+              <div className="flex flex-col items-center w-full gap-10 
+              laptop:gap-20 laptop:flex-row
+              ">
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
@@ -71,7 +75,9 @@ const Home = () => {
                   initial={{ x: -400 }}
                   animate={{ x: 0 }}
                   transition={{ delay: .2, duration: 1, ease: 'easeOut' }}
-                  className='text-base laptop:hidden'>
+                  className='text-base 
+                  laptop:hidden
+                  '>
                     Dan Murdoch Risk Services
                   </motion.p>
 
@@ -79,26 +85,42 @@ const Home = () => {
                   initial={{ opacity:0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
-                  className="hidden laptop:flex flex-col min-w-[15rem] rounded-lg overflow-hidden w-full">
+                  className="hidden flex-col min-w-[15rem] rounded-lg overflow-hidden w-full
+                  laptop:flex
+                  ">
                     <Link to="thailand" className='flex items-center justify-center p-2 py-5 font-medium text-center transition-all bg-white hover:h-full h-1/2 text-background-dark' >Our Services</Link>
                     <Link to="contact" className='flex items-center justify-center gap-4 p-2 py-5 font-medium text-center transition-all hover:h-full h-1/2 hover:brightness-110 bg-primary-300 text-background-dark' >Get Started  <BsArrowRight className="scale-150" /> </Link>
                 </motion.div>
               </div>
 
-              <div className="flex flex-col w-full h-full gap-10 tablet:flex-row tablet:mt-10 laptop:flex-col laptop:self-start">
+              <div className="flex flex-col w-full h-full gap-10 
+              tablet:flex-row tablet:mt-10 
+              laptop:flex-col laptop:self-start
+              ">
 
                 <motion.p
                   initial={{ x: -400 }}
                   animate={{ x: 0 }}
                   transition={{ delay: .2, duration: 1, ease: 'easeOut' }}
-                  className='hidden text-base laptop:block'>Dan Murdoch Risk Services</motion.p>
+                  className='hidden text-base 
+                  laptop:block
+                  '>
+                    Dan Murdoch Risk Services
+                  </motion.p>
 
                 <motion.div
                   initial={{ x: -450 }}
                   animate={{ x: 0 }}
                   transition={{ delay: .4, duration: 1, ease: 'easeOut' }}
-                  className="flex flex-col items-center justify-center gap-1 laptop:mt-auto laptop:items-start ">
-                  <p className='z-10 text-sm laptop:text-base hd:text-lg'>Providing Global Corporations with</p>
+                  className="flex flex-col items-center justify-center gap-1 
+                  laptop:mt-auto laptop:items-start
+                  ">
+                    <p className='z-10 text-sm 
+                    laptop:text-base 
+                    hd:text-lg
+                    '>
+                      Providing Global Corporations with
+                    </p>
                   <TextMarquee />
                 </motion.div>
 
@@ -106,7 +128,8 @@ const Home = () => {
                   initial={{ opacity:0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
-                  className="flex laptop:hidden flex-col min-w-[15rem] rounded-lg overflow-hidden w-full">
+                  className="flex flex-col min-w-[15rem] rounded-lg overflow-hidden w-full
+                  laptop:hidden ">
                     <Link to="thailand" className='flex items-center justify-center p-2 py-5 font-medium text-center transition-all bg-white hover:h-full h-1/2 text-background-dark' >Our Services</Link>
                     <Link to="contact" className='flex items-center justify-center gap-4 p-2 py-5 font-medium text-center transition-all hover:h-full h-1/2 hover:brightness-110 bg-primary-300 text-background-dark' >Get Started  <BsArrowRight className="scale-150" /> </Link>
                 </motion.div>
@@ -118,19 +141,38 @@ const Home = () => {
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex flex-col gap-16 px-10 pt-10 pb-10 overflow-hidden laptop:pb-0 laptop:overflow-visible laptop:flex-row navTrigger">
-        <div className="flex flex-col items-center justify-center gap-1 laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)] z-10">
+      <section className="flex flex-col gap-16 px-10 pt-10 pb-10 overflow-hidden navTrigger
+      laptop:pb-0 laptop:overflow-visible laptop:flex-row
+      ">
+        <div className="flex flex-col items-center justify-center gap-1 z-10
+        laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)]
+        ">
           <h2
-            className='text-lg font-bold text-center desktop:text-xl hd:text-3xl'>WHO ARE WE?</h2>
-          <p className='text-sm text-center desktop:text-base hd:text-md'>Discover who we are and be part of our <span className='font-bold text-accent-500'>JOURNEY</span></p>
+            className='text-lg font-bold text-center 
+            desktop:text-xl hd:text-3xl
+            '>WHO ARE WE?
+          </h2>
+          <p className='text-sm text-center 
+          desktop:text-base hd:text-md
+          '>
+            Discover who we are and be part of our <span className='font-bold text-accent-500'>JOURNEY</span>
+          </p>
         </div>
 
         <div className="flex flex-col flex-1 gap-16">
           <StickyScrollItem>
             <StickyScrollContent imageUrl="./images/australia-map.png">
 
-              <h2 className='text-xl font-bold desktop:text-2xl hd:text-3xl'>DMRS <span className='text-primary-300'>Australia</span></h2>
-              <p className='text-xs text-justify desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Australia) Pty Ltd is the parent company of our operational division Dan Murdoch Risk Services (Thailand) Limited.</p>
+              <h2 className='text-xl font-bold 
+              desktop:text-2xl hd:text-3xl
+              '>
+                DMRS <span className='text-primary-300'>Australia</span>
+              </h2>
+              <p className='text-xs text-justify 
+              desktop:text-sm hd:text-md
+              '>
+                Dan Murdoch Risk Services (Australia) Pty Ltd is the parent company of our operational division Dan Murdoch Risk Services (Thailand) Limited.
+              </p>
 
               <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 text-white">
                 <Link to="/dmrs-fe/australia">
@@ -145,8 +187,17 @@ const Home = () => {
           <StickyScrollItem>
             <StickyScrollContent imageUrl="./images/thailand-map.png">
 
-              <h2 className='text-xl font-bold desktop:text-2xl hd:text-3xl'>DMRS <span className='text-primary-300'>Thailand</span></h2>
-              <p className='text-xs text-justify desktop:text-sm hd:text-md'>Dan Murdoch Risk Services (Thailand) Co. Ltd. staff are trained detectives and intelligence analysts who use both objective and subjective thinking to gather manual online data leading to intelligence for many Fortune 500 companies worldwide.</p>
+              <h2 className='text-xl font-bold 
+              desktop:text-2xl 
+              hd:text-3xl
+              '>
+                DMRS <span className='text-primary-300'>Thailand</span>
+              </h2>
+              <p className='text-xs text-justify 
+              desktop:text-sm 
+              hd:text-md'>
+                Dan Murdoch Risk Services (Thailand) Co. Ltd. staff are trained detectives and intelligence analysts who use both objective and subjective thinking to gather manual online data leading to intelligence for many Fortune 500 companies worldwide.
+              </p>
 
               <Button size="xs" variant='default' className=" w-fit !bg-accent-400 !ring-accent-400 text-white">
                 <Link to="/dmrs-fe/thailand">
@@ -160,8 +211,18 @@ const Home = () => {
           <StickyScrollItem>
             <StickyScrollContent>
 
-              <h2 className='font-bold text-md desktop:text-2xl hd:text-3xl'>Specialization</h2>
-              <p className='text-xs text-justify desktop:text-sm hd:text-md'>We specialize in pharmaceuticals and the protection of and identifying risks associated with medicines worldwide.</p>
+              <h2 className='font-bold text-md 
+              desktop:text-2xl 
+              hd:text-3xl
+              '>
+                Specialization
+              </h2>
+              <p className='text-xs text-justify 
+              desktop:text-sm 
+              hd:text-md
+              '>
+                We specialize in pharmaceuticals and the protection of and identifying risks associated with medicines worldwide.
+              </p>
 
               <Button size="xs" variant='default' className="w-fit">
                 <Link to="/dmrs-fe/contact">
@@ -179,20 +240,29 @@ const Home = () => {
       {/* VISION AND MISSION SECTION */}
       <section className="relative flex p-10 pb-10 z-[1] gap-5">
 
-        <div className="hidden laptop:block absolute top-0 right-0 translate-y-[-70vh] translate-x-[40vh]">
+        <div className="hidden absolute top-0 right-0 translate-y-[-70vh] translate-x-[40vh]
+        laptop:block
+        ">
           {/* <Rocket/> */}
           < MissionRocket />
         </div>
 
-        <div className="hidden laptop:block">
+        <div className="hidden 
+        laptop:block
+        ">
           <VerticalProgress>
             <VerticalProgressPoint className="top-0 bg-primary-300" />
-            <VerticalProgressPoint className="top-[13.5rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem] bg-primary-300" />
+            <VerticalProgressPoint className="top-[13.5rem] bg-primary-300
+            tablet:top-[10rem] 
+            laptop:top-[13.5rem] 
+            desktop:top-[10.5rem] 
+            hd:top-[14rem]" />
           </VerticalProgress>
         </div>
 
-        <div className="flex flex-col laptop:max-w-[55%] gap-10">
-
+        <div className="flex flex-col  gap-10
+        laptop:max-w-[55%]
+        ">
           <div className="flex flex-col gap-3">
             <motion.div
               variants={fadeInAnimationVariants}
@@ -203,10 +273,18 @@ const Home = () => {
               className="flex items-center gap-3">
 
               <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
-                <FaEye className='text-sm laptop:text-md hd:text-lg' />
+                <FaEye className='text-sm 
+                laptop:text-md 
+                hd:text-lg
+                '/>
               </div>
 
-              <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Vision</span></h2>
+              <h2 className="text-lg font-bold 
+              laptop:text-xl 
+              hd:text-2xl
+              ">
+                Our <span className='text-primary-300'>Vision</span>
+              </h2>
 
             </motion.div>
 
@@ -216,7 +294,11 @@ const Home = () => {
               whileInView="animate"
               viewport={{ once: true }}
               custom={2}
-              className='text-xs text-justify laptop:text-sm hd:text-base'>Dan Murdoch Risk Services will be the preferred company of choice for online intelligence, investigative consultancy, brand protection and business intelligence advice worldwide offering beneficial solutions for all corporate and personal problems.</motion.p>
+              className='text-xs text-justify 
+              laptop:text-sm 
+              hd:text-base'>
+                Dan Murdoch Risk Services will be the preferred company of choice for online intelligence, investigative consultancy, brand protection and business intelligence advice worldwide offering beneficial solutions for all corporate and personal problems.
+              </motion.p>
           </div>
 
           <div className="flex flex-col gap-3">
@@ -229,9 +311,14 @@ const Home = () => {
               custom={1}
               className="flex items-center gap-3">
               <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
-                <FaRocket className='text-sm laptop:text-md hd:text-lg' />
+                <FaRocket className='text-sm 
+                laptop:text-md hd:text-lg' />
               </div>
-              <h2 className="text-lg font-bold laptop:text-xl hd:text-2xl">Our <span className='text-primary-300'>Mission Statement</span></h2>
+              <h2 className="text-lg font-bold 
+              laptop:text-xl 
+              hd:text-2xl">
+                Our <span className='text-primary-300'>Mission Statement</span>
+              </h2>
             </motion.div>
             <motion.p
               variants={fadeInAnimationVariants}
@@ -239,7 +326,10 @@ const Home = () => {
               whileInView="animate"
               viewport={{ once: true }}
               custom={2}
-              className='text-xs text-justify laptop:text-sm hd:text-base '>
+              className='text-xs text-justify 
+              laptop:text-sm 
+              hd:text-base
+              '>
               Dan Murdoch Risk Services will offer and deliver to the corporate world and the general public a complete range of business services from intelligence strategies and a true investigative consultancy to proactive solutions and risk management strategies for internal and external problems facing companies and individuals worldwide.
             </motion.p>
           </div>
@@ -248,7 +338,9 @@ const Home = () => {
 
       </section>
 
-      <section className='relative flex flex-col gap-10 p-10 py-10 mt-16 laptop:flex-row'>
+      <section className='relative flex flex-col gap-10 p-10 py-10 mt-16 
+      laptop:flex-row
+      '>
 
         {/* grid background */}
         <div className="absolute top-0 left-0 flex w-full h-full">
@@ -264,20 +356,30 @@ const Home = () => {
         </div>
 
 
-        <div className="z-10 flex flex-col items-center gap-8 laptop:w-[45%]">
+        <div className="z-10 flex flex-col items-center gap-8 
+        laptop:w-[45%]
+        ">
 
           <motion.div
             initial={{ opacity: 0, x: -75 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .5 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="flex items-center hd:flex-row hd:gap-5">
+            className="flex items-center 
+            hd:flex-row hd:gap-5
+            ">
             <img src="./images/sheild-dynamic-color.png" className='w-1/4' alt="" />
-            <h2 className='text-lg font-bold text-center hd:text-2xl hd:text-left'> What are <span className="text-primary-300">we</span> offering?</h2>
+            <h2 className='text-lg font-bold text-center 
+            hd:text-2xl hd:text-left
+            '> What are <span className="text-primary-300">we</span> offering?</h2>
           </motion.div>
 
 
-          <div className="flex flex-col gap-3 text-xs tablet:text-sm tablet:w-3/4 laptop:w-full laptop:px-5 laptop:gap-5 hd:text-base hd:gap-10">
+          <div className="flex flex-col gap-3 text-xs 
+          tablet:text-sm tablet:w-3/4 
+          laptop:w-full laptop:px-5 laptop:gap-5 
+          hd:text-base hd:gap-10
+          ">
             <p className='text-justify'>The services DMRS offers fall into three broad areas, labeled as <strong>Intelligence</strong>, <strong>Investigations</strong>,
               and <strong>Research</strong>.
             </p>
