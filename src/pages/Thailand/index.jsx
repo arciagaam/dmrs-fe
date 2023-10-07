@@ -6,10 +6,13 @@ import Services from "./components/Services"
 import BgTextMarquee from "./components/BgTextMarquee"
 import OtherServices from "./components/OtherServices"
 import GridFiller from "../Home/components/GridFiller"
+import TryComponent from "./components/TryComponent"
 import { useEffect, useRef } from "react"
 import { useLocation } from 'react-router-dom';
 
 import { motion } from 'framer-motion'
+import ColoredGrid from "../../components/ColoredGrid"
+import SecondSection from "./components/SecondSection"
 
 const fadeInAnimationVariants = {
   initial: {
@@ -20,7 +23,7 @@ const fadeInAnimationVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      delay: index * 0.1,
+      delay: index * 0.3,
       duration: .7
     }
   })
@@ -110,24 +113,24 @@ const Thailand = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full bg-white overflow-clip">
       <Hero>
-        <div 
-          className="relative z-10 flex flex-col justify-center w-full px-6 text-white">
-          <div className="flex flex-col items-center justify-center gap-8 desktop:gap-4">
-            <div className="absolute -top-20 w-full h-screen bg-gradient-radial from-background-dark/20 to-background-dark z-[2]"></div>
-            <div className="absolute -top-20 left-0 grid w-full h-screen grid-cols-7 z-[1] ">
-              {
-                blockCount.fill(null).map((_, index) => <div ref={(el) => blockRef.current[index] = el} key={index} className='block border border-background-light/5'></div>)
-              }
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+
+            <ColoredGrid />
+
+            {/* actual hero */}
+            <div className="z-10 flex flex-col items-center justify-center w-full gap-10 px-10 text-white">
+              <motion.div
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1, transition: { duration: 1 } }} 
+                className="flex flex-col items-center justify-center gap-2">
+                <h1 className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>
+                  Dan Murdoch Risk Services
+                </h1>
+                <p className='text-sm text-center desktop:text-base hd:text-md'>(Thailand)</p>
+              </motion.div>
+              <Button variant='outline'>Our Services</Button>
             </div>
-            <motion.div 
-              initial={{ y: -25, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="flex flex-col items-center justify-center gap-2">
-              <h1 className='z-10 text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl'>Dan Murdoch Risk Services Thailand</h1>
-              <p className="text-sm text-center desktop:text-base hd:text-md">(Thailand)</p>
-            </motion.div>
-            <Button variant="outline" size="sm" className="z-10 w-full mobile:fit tablet:w-fit">Services</Button>
           </div>
         </div>
       </Hero>
@@ -135,11 +138,11 @@ const Thailand = () => {
       {/* DMRS Thailand section */}
       <section className="navTrigger">
         <div 
-          className="relative flex flex-col w-full gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:min-h-screen desktop:gap-20 desktop:px-24">
+          className="relative flex flex-col w-full gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:min-h-screen desktop:gap-20 desktop:px-24 z-20">
           <div className="flex w-full h-[300px] bg-gray-200 rounded-tl-[2rem] rounded-br-[2rem] tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 tablet:rounded-tl-[4rem] tablet:rounded-br-[4rem] overflow-hidden">
             <img src="https://images.pexels.com/photos/7319070/pexels-photo-7319070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="object-cover w-full h-full"/>
           </div>
-          <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 z-0 top-0 hidden mobile:block laptop:right-[20%]' />
+          <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 -z-10 top-0 right-0 hidden mobile:block laptop:right-[20%]' />
 
           <motion.div 
             variants={fadeInAnimationVariants}
@@ -155,34 +158,34 @@ const Thailand = () => {
           </motion.div>
         </div>
       </section>
-
-      <section className="flex items-center justify-center">
-        <div className="relative flex flex-col w-[90%] gap-6 px-6 py-8 h-fit items-center mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 laptop:w-full desktop:w-[90%] desktop:min-h-screen desktop:gap-20 desktop:px-24">
-          <div className="w-full tablet:grid-cols-2 tablet:gap-16 laptop:gap-16 desktop:gap-10">
-            <motion.div 
-              variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={1}
-              className="grid items-center w-full grid-cols-2 gap-y-20 gap-x-5">
-              <>
-                <h1 className="font-bold text-md tablet:text-lg desktop:text-2xl">Trained Detectives</h1>
-                <p>DMRS staff are <strong>trained detectives</strong> and <strong>intelligence analysts</strong> who use both objective and subjective thinking to <strong>gather online data and intelligence</strong> for many Fortune 500 companies worldwide.</p>
-              </>
-              <>
-                <h1 className="font-bold text-md tablet:text-lg desktop:text-2xl">Premier and Innovative</h1>
-                <p>Our facilities also offer <strong>premier and innovative investigative consultancy</strong> in all areas of corporate and personal requirements.</p>
-              </>
-              <>
-                <h1 className="font-bold text-md tablet:text-lg desktop:text-2xl">Global Protection</h1>
-                <p>DMRS is proud to be focused on the  <strong>protection of patients globally</strong> through our identification of risks concerned with the illicit trade in counterfeit, sub-standard and suspect medicines together with all associated risks to corporations tasked with the protection of consumers worldwide.</p>
-              </>
-            </motion.div>
-          </div>
-        </div>
+      
+      {/* DMRS Thailand Section 2 */}
+      <section className="flex items-center justify-center relative overflow-hidden">
+        <motion.div
+          whileInView={{ opacity: [0,1], transition: { duration: 1, delay: 0.5 }}} 
+          className="flex w-full gap-6 py-8 min-h-fit justify-center items-center
+          before:absolute before:content-[''] before:top-0 before:bg-gradient-to-t before:from-background-dark before:to-white before:min-h-[5px] before:min-w-full after:z-10 
+          after:absolute after:content-[''] after:bottom-0 after:bg-gradient-to-b after:from-background-dark after:to-white after:min-h-[5px] after:min-w-full before:z-10 
+          mobile:py-14 mobile:px-12 mobile:h-fit mobile:flex-col 
+          tablet:items-center tablet:px-24 tablet:flex-col 
+          laptop:p-20 laptop:gap-24 laptop:w-full 
+          desktop:w-[90%] desktop:min-h-screen desktop:gap-20 desktop:px-24
+        ">
+        <TryComponent />
+          <SecondSection />
+          <div className="absolute top-0 bg-gradient-to-t from-background-dark to-white min-h-[5px] min-w-full z-10" />
+        </motion.div>
       </section>
       
       {/* Services */}
       <div id="services_th" className="pt-10">
         <motion.section 
-          className="relative flex items-start w-full min-h-full px-6 pb-20 overflow-hidden align-middle mobile:px-6 tablet:px-12 tablet:mt-10 laptop:gap-10 desktop:px-[4.5rem]"
+          className="relative flex items-start min-w-full min-h-full pb-20 overflow-hidden align-middle 
+          mobile:px-6 mobile:max-w-full 
+          tablet:px-12 tablet:max-w-full
+          tablet:mt-10 
+          laptop:gap-10 
+          desktop:px-12"
           variants={fadeInAnimationVariants}
           initial="initial"
           id="services_th"
@@ -190,29 +193,43 @@ const Thailand = () => {
           viewport={{once:true}}
           custom={1}
           >
-          <div className="absolute left-0 grid w-full h-full grid-cols-3 -top-10 mobile:grid-cols-4 desktop:grid-cols-8">
+          <div className="absolute left-0 grid w-full h-full grid-cols-3 -top-10 
+            mobile:grid-cols-4 
+            desktop:grid-cols-8">
             <GridFiller cellCount={40} cellClass={'border border-background-dark/5'} />
           </div>
-          <div className="flex flex-col justify-start w-full h-full gap-6">
-            <div className="flex flex-col items-start gap-2 mobile:pl-6 tablet:pl-6 laptop:pl-12 desktop:pl-[4.5rem]" >
+          <div className="flex flex-col justify-start h-full px-6 gap-6">
+            <div className="flex flex-col items-start gap-2 
+              mobile:pl-6 
+              tablet:pl-6 
+              laptop:pl-12 
+              desktop:pl-[4.5rem]" >
               <h2 className="z-10 text-lg font-bold mobile:text-xl laptop:text-xl">Services</h2>
               <p
-                className="z-10 gap-1 text-sm mobile:text-xs desktop:text-base"
+                className="z-10 gap-1 text-sm mobile:text-xs desktop:text-xs"
               >
                 The services DMRS offers fall into three categories
-                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={8}> INTELLIGENCE,</motion.span> 
-                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={12}> INVESTIGATIONS,</motion.span> 
-                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={16}> RESEARCH.</motion.span> 
+                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={2}> INTELLIGENCE,</motion.span> 
+                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={4}> INVESTIGATIONS,</motion.span> 
+                <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={6}> RESEARCH.</motion.span> 
               </p>
             </div>
-            <div className="flex flex-row items-start justify-start h-fit mobile:px-6 tablet:px-6 laptop:px-12 desktop:px-[4.5rem]">
+            <div className="flex flex-row items-center justify-start h-fit px-0 
+              mobile:px-  
+              tablet:px-6 
+              laptop:px-12 
+              desktop:px-[4.5rem]">
               <motion.div 
-                className="z-10 flex flex-col w-full gap-8 fill-black mobile:flex mobile:flex-col tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col laptop:grid-cols-2 desktop:grid-cols-3"
                 variants={fadeInAnimationVariants}
                 initial="initial"
                 whileInView={"animate"}
                 viewport={{once:true}}
-                custom={20}
+                custom={6}
+                className="z-10 w-full gap-8 fill-black 
+                mobile:flex mobile:flex-col 
+                tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col 
+                laptop:grid-cols-2 
+                desktop:grid-cols-3"
               >
                 {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} content={item.content} subContents={item.subContent}/> )}
               </motion.div>
