@@ -21,7 +21,7 @@ const StickyScrollContent = ({children, ...props}) => {
                     initial={{ opacity: 0, x: -75 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: .5 }}
-                    viewport={{ once: true, margin: "-240px" }}
+                    viewport={{ once: true, margin: "-20px" }}
 
                     className="z-10 flex flex-col justify-center h-full gap-5">
 

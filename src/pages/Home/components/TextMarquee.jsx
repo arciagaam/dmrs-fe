@@ -26,9 +26,9 @@ const TextMarquee = () => {
     }
 
     return (
-        <div className={`flex flex-col overflow-hidden transition-all max-h-[2.353rem] w-fit`}>
-            <div className={`whitespace-nowrap flex transition-all duration-1000 ease-in-out flex-col items-start z-10`} style={{transform: `translateY(${-index * 2.353}rem)`}}>
-                {content.map((item, index) => <p className={`text-md`} key={index}>{item}</p>)}
+        <div className={`flex flex-col overflow-hidden transition-all max-h-[2.353rem] w-full laptop:w-fit`}>
+            <div className={`whitespace-nowrap flex transition-all duration-1000 ease-in-out flex-col items-center laptop:items-start z-10`} style={{transform: `translateY(${-index * 2.353}rem)`}}>
+                {content.map((item, index) => <p className={`text-md scale-90 tablet:scale-100`} key={index}>{item}</p>)}
             </div>
         </div>
     )
