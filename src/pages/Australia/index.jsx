@@ -4,12 +4,11 @@ import DMRSimg from '../../assets/Australia-dots.png'
 import Intelligence_img from '../../assets/intelligence-investigations.png'
 import Australia_img from '../../assets/dmrs-australia-1.jpg'
 import II_icon from '../../assets/intelligent-intelligence-icon.png'
-import IntelligenceMb_img from '../../assets/intelligent-investigations-mb.png'
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from 'react'
-import Animate from './components/Animate.jsx'
 import 'animate.css';
 import ColoredGrid from '../../components/ColoredGrid'
+import { Link } from 'react-router-dom'
 
 import { LuLightbulb } from 'react-icons/lu'
 import { PiListMagnifyingGlassLight } from 'react-icons/pi'
@@ -115,7 +114,7 @@ const Australia = () => {
       </section>
 
       {/* Services */}
-      <section className='grid grid-cols-3 gap-10 px-10 py-10 overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger'>
+      <section className='grid grid-cols-3 gap-10 p-[7.5rem] overflow-hidden laptop:overflow-visible laptop:flex-row navTrigger'>
         <div className="flex flex-col justify-center w-full col-span-3 gap-5">
           <p className="text-lg font-bold text-center uppercase laptop:text-xl text-bg-dark ">Who are Dan Murdoch Risk Services?</p>
           <p className="self-center max-w-5xl tablet:min-w-[565px] text-center text-xs text-bg-dark tablet:text-sm">
@@ -128,7 +127,7 @@ const Australia = () => {
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
           viewport={{ once: true }}
           className="flex flex-col items-center justify-start gap-2 px-5 py-10 border rounded-lg border-background-dark/05">
           <div className="flex items-center justify-center h-20 aspect-square">
@@ -136,7 +135,7 @@ const Australia = () => {
           </div>
           <p className='text-center'>Intelligence</p>
         </motion.div>
-
+        
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,22 +158,47 @@ const Australia = () => {
             <SiDatabricks size={60} />
           </div>
           <p className='text-center'>Data Collection</p>
-        </motion.div>
+        </motion.div>  
       </section>
 
 
       {/* Intelligent Intelligence */}
-      <section className="relative p-10 px-20 bg-background-dark">
-        <div className="flex">
-          <img src={II_icon} alt="" className="object-contain h-full" />
+      <section className="relative p-10 px-[7.5rem] bg-background-dark">
+        <div className="flex gap-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut"}}
+            viewport={{ once: true }}
+          >
+          <img src={II_icon} alt="" className="object-contain h-full" />  
+          </motion.div>
+          
 
-          <div className="flex flex-col justify-center gap-2 text-center tablet:text-left">
+          <div className="flex flex-col justify-center gap-3 text-center tablet:text-left">
             <p className="text-sm tablet:text-md laptop:text-lg ">
-              <strong className="text-primary-300">Intelligent Intelligence</strong>
+            <motion.div
+              initial={{ opacity: 0, y: -80}}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeIn"}}
+              viewport={{ once: true }}
+            >
+            <strong className="text-primary-300">Intelligent Intelligence</strong>
+            </motion.div>
+              
             </p>
 
             <p className="text-sm text-justify text-white tablet:text-base laptop:text-md">
+            <motion.div
+              initial={{ opacity: 0, y: 80}}
+              whileInView={{ opacity: 1, y: 0}}
+              transition={{ duration: 0.5, ease: "easeIn"}}
+              viewport={{ once: true }}
+            >
               Leads to thoughtful investigations and evidence-filled undercover operations resulting in a safer pharmaceutical environment globally.
+            
+            </motion.div>
+              
             </p>
           </div>
         </div>
@@ -185,13 +209,11 @@ const Australia = () => {
       <section className="z-40 flex flex-col-reverse items-center w-full py-[20vh] tablet:flex-row">
         <div className="flex flex-col items-center flex-1 gap-5">
           <h2 className='font-bold text-center text-md desktop:text-lg hd:text-xl'>See our <span className='text-primary-300'>services</span> in full.</h2>
-          <Button variant='outline'>Our Services</Button>
+          <Link to='/dmrs-fe/thailand#services_th'>
+            <Button variant='outline'>Our Services</Button>
+          </Link>
+          
         </div>
-        {/* 
-          <div className="flex flex-col w-auto h-screen">
-            <img src={Intelligence_img} alt="" className="hidden w-full h-3/4 tablet:block" />
-            <img src={IntelligenceMb_img} alt="" className="w-full tablet:hidden" />
-          </div> */}
       </section>
 
     </div>

@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 import WhatWeDoItem from './WhatWeDoItem'
+import { motion } from 'framer-motion';
+
+const variants = {
+    initial: { transition: { staggerChildren: 0.07, delayChildren: 0.02 }, },
+    inview: { transition: { staggerChildren: .10, ease: 'easeOut' }, },
+}
 
 const WhatWeDo = () => {
     const contents = [
@@ -53,11 +59,15 @@ const WhatWeDo = () => {
 
     return (
         <div className='z-10 flex-1' onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
-            <div className="flex flex-col">
+            <motion.div
+                variants={variants}
+                initial="initial"
+                whileInView="inview"
+                className="flex flex-col">
                 {
                     contents.map((content, index) => <WhatWeDoItem key={index} index={index} content={content} parentHover={hovering} active={content.name == activeContent?.name} handleSelectActive={handleSelectActive} />)
                 }
-            </div>
+            </motion.div>
         </div>
     )
 }

@@ -26,7 +26,7 @@ const Button = ({
             xl: 'text-xl py-[1.594rem] px-[3.188rem]',
         },
 
-        default: 'rounded-full cursor-pointer transition-all hover:brightness-110 active:brightness-90'
+        default: 'rounded-lg cursor-pointer transition-all hover:brightness-110 active:brightness-90'
     }
     
     return (

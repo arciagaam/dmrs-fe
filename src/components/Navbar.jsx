@@ -46,11 +46,13 @@ const Navbar = () => {
 
         if (!cta) return;
         cta.classList.add('max-w-[50rem]');
+        cta.classList.remove('hidden');
       } else {
         nav.classList.remove('bg-background-dark');
 
         if (!cta) return;
         cta.classList.remove('max-w-[50rem]');
+        cta.classList.add('hidden');
       }
     }
 
@@ -69,7 +71,7 @@ const Navbar = () => {
 
 const DefaultNavbar = ({ nav, cta }) => {
   return (
-    <div ref={nav} className="fixed top-0 left-0 z-50 flex items-center justify-between w-full h-16 px-6 text-xs text-white">
+    <div ref={nav} className="fixed top-0 left-0 z-50 flex items-center justify-between w-full h-16 text-xs text-white px-28">
       <img src="./images/logo-1.png" className='h-3/4' alt="" />
 
       <div className="flex items-center gap-8">
@@ -89,7 +91,8 @@ const DefaultNavbar = ({ nav, cta }) => {
           DMRS VPN
         </NavLink>
 
-        <NavLink ref={cta} to={'./contact'} className='overflow-hidden transition-all duration-1000 max-w-0 whitespace-nowrap'>
+        
+        <NavLink ref={cta} to={'./contact'} className='hidden overflow-hidden transition-all duration-1000 max-w-0 whitespace-nowrap'>
           <Button size='xs' className="m-1">Get Started</Button>
         </NavLink>
       </div>
