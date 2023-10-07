@@ -4,9 +4,8 @@ import { useState } from "react"
 
 import { motion } from 'framer-motion'
 
-const Services = ({ order, name, icon, content, subContents }) => {
+const Services = ({ name, icon, content, subContents }) => {
   const [isActive, setIsActive] = useState(false)
-  console.log(order);
   return (
     <div
       className={`relative overflow-hidden ease-in-out duration-300 ${isActive ? 'min-h-[340px] desktop:min-h-[480px] h-fit scale-[1.03] fill-accent-200/20 text-white ': 'min-h-[300px] desktop:min-h-[400px] hover:scale-[1.03] hover:text-white'} flex flex-col text-base gap-2 w-full ring-1 bg-white ring-gray-400 fill-accent-400/20 justify-center items-start aspect-video mobile:text-md laptop:text-md desktop:text-md

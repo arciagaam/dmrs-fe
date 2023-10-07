@@ -6,6 +6,7 @@ import Services from "./components/Services"
 import BgTextMarquee from "./components/BgTextMarquee"
 import OtherServices from "./components/OtherServices"
 import GridFiller from "../Home/components/GridFiller"
+import TryComponent from "./components/TryComponent"
 import { useEffect, useRef } from "react"
 
 import { easeInOut, motion, useTime, useTransform } from 'framer-motion'
@@ -25,16 +26,12 @@ const fadeInAnimationVariants = {
   })
 }
 
-const yFadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: -80
-  },
+const slideRightVariants = {
   animate: (index) => ({
-    opacity: 1,
-    y: 0,
+    // opacity: [0, 1],
+    width: ['100%', '0%'],
     transition: {
-      delay: index * 0.1,
+      delay: index * 0.7,
       duration: .7
     }
   })
@@ -132,11 +129,6 @@ const Thailand = () => {
                 </div>
                 <motion.span initial={{ opacity: 0, x:-100 }} animate={{ opacity:1, x:0, transition:{ duration: 1, delay: 1.7, ease: easeInOut} }} className="z-10 text-white text-2xl font-medium pl-10">Dan Murdoch Risk Services</motion.span>
               </div>
-              <motion.span 
-                style={{ rotate }}
-                animate={{ opacity: [0,1], x: [0, 1680], transition:{ duration: 1.4, ease: easeInOut} }}
-                className="bg-white absolute  top-10 left-10 min-w-[400px] min-h-[400px] rounded-xl">
-              </motion.span>
             </motion.div>
           </div>
         </div>
@@ -175,17 +167,17 @@ const Thailand = () => {
                 <div>
                   <h1 className="text-md tablet:text-lg desktop:text-2xl relative">Trained Detectives</h1>
                 </div>
-                <p>DMRS staff are <strong>trained detectives</strong> and <strong>intelligence analysts</strong> who use both objective and subjective thinking to <strong>gather online data and intelligence</strong> for many Fortune 500 companies worldwide.</p>
+                <p className="relative"><motion.span className="absolute right-0 bg-white min-h-full" variants={slideRightVariants} whileInView={"animate"} custom={1} style={{ fontFamily: 'Major Mono Display' }}></motion.span>DMRS staff are <strong>trained detectives</strong> and <strong>intelligence analysts</strong> who use both objective and subjective thinking to <strong>gather online data and intelligence</strong> for many Fortune 500 companies worldwide.</p>
                   
                 <div>
                   <h1 className="text-md tablet:text-lg desktop:text-2xl relative">Premier and Innovative</h1>
                 </div>
-                <p>Our facilities also offer <strong>premier and innovative investigative consultancy</strong> in all areas of corporate and personal requirements.</p>
+                <p className="relative"><motion.span className="absolute right-0 bg-white min-h-full" variants={slideRightVariants} whileInView={"animate"} custom={2}></motion.span>Our facilities also offer <strong>premier and innovative investigative consultancy</strong> in all areas of corporate and personal requirements.</p>
 
                 <div>
                   <h1 className="text-md tablet:text-lg desktop:text-2xl relative">Global Protection</h1>
                 </div>
-                <p>DMRS is proud to be focused on the  <strong>protection of patients globally</strong> through our identification of risks concerned with the illicit trade in counterfeit, sub-standard and suspect medicines together with all associated risks to corporations tasked with the protection of consumers worldwide.</p>
+                <p className="relative"><motion.span className="absolute right-0 bg-white min-h-full" variants={slideRightVariants} whileInView={"animate"} custom={3}></motion.span>DMRS is proud to be focused on the  <strong>protection of patients globally</strong> through our identification of risks concerned with the illicit trade in counterfeit, sub-standard and suspect medicines together with all associated risks to corporations tasked with the protection of consumers worldwide.</p>
             </motion.div>
           </div>
         </div>
