@@ -16,7 +16,7 @@ import { Canvas } from '@react-three/fiber'
 import VerticalProgress from '../../components/VerticalProgress'
 import StaggeredLine from '../../components/StaggeredLine'
 import { MissionRocket } from '../../components/Svgs'
-import { BsArrowLeft } from 'react-icons/bs'
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 
 const fadeInAnimationVariants = {
   initial: {
@@ -47,72 +47,72 @@ const Home = () => {
             <div className="absolute top-0 left-0 z-40 w-3/4 h-full opacity-50 bg-gradient-to-r from-black via-black to-transparent"></div>
 
             {/* actual hero */}
-            <div className="z-50 relative flex flex-col items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-28">
+            <div className="z-50 relative flex flex-col items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-10 laptop:px-28">
 
 
-              <div className="absolute z-50 scale-110 -rotate-90 bottom-28 right-28">
-                <div className="flex items-center gap-5">
+              <div className="absolute z-50 hidden scale-110 -rotate-90 laptop:block bottom-28 right-28">
+                <div className="flex items-center gap-5 animate-ltr">
                   <BsArrowLeft className='scale-x-[150%]' />
                   <p className='whitespace-nowrap'>Scroll Down</p>
                 </div>
               </div>
 
 
-              <div className="flex gap-20">
-                <div className="flex flex-col flex-1 w-[100%] gap-1">
-                  <img src="./images/DMRS.png" alt="" className='w-full invert' />
-                </div>
+              <div className="flex flex-col items-center w-full gap-10 laptop:gap-20 laptop:flex-row">
+                <motion.div
+                  initial={{ x: '-100%' }}
+                  animate={{ x: 0 }}
+                  transition={{ duration: 1, ease: 'easeOut' }}
+                  className="flex flex-col col-span-3">
+                    <img src="./images/DMRS.png" alt="" className='w-full invert' />
+                </motion.div>
 
-                <div className="grid grid-cols-1">
-                  <Link className='flex items-center justify-center h-full p-5 text-center bg-white aspect-square text-background-dark' >Our Services</Link>
-                  <Link className='flex items-center justify-center h-full p-5 text-center hover:brightness-110 bg-primary-300 aspect-square text-background-dark' >Get Started</Link>
-                  {/* <Button variant='outline' className="w-full h-full text-white ring-white">OUR SERVICES</Button>
-                  <Button variant='default' className="w-full h-full">GET STARTED</Button> */}
-                </div>
+                <motion.p
+                  initial={{ x: -400 }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: .2, duration: 1, ease: 'easeOut' }}
+                  className='text-base laptop:hidden'>
+                    Dan Murdoch Risk Services
+                  </motion.p>
+
+                <motion.div
+                  initial={{ opacity:0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
+                  className="hidden laptop:flex flex-col min-w-[15rem] rounded-lg overflow-hidden w-full">
+                    <Link to="thailand" className='flex items-center justify-center p-2 py-5 font-medium text-center transition-all bg-white hover:h-full h-1/2 text-background-dark' >Our Services</Link>
+                    <Link to="contact" className='flex items-center justify-center gap-4 p-2 py-5 font-medium text-center transition-all hover:h-full h-1/2 hover:brightness-110 bg-primary-300 text-background-dark' >Get Started  <BsArrowRight className="scale-150" /> </Link>
+                </motion.div>
               </div>
 
-              <div className="flex flex-col self-start h-full gap-10">
+              <div className="flex flex-col w-full h-full gap-10 tablet:flex-row tablet:mt-10 laptop:flex-col laptop:self-start">
 
-                <p className='text-base'>Dan Murdoch Risk Services</p>
+                <motion.p
+                  initial={{ x: -400 }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: .2, duration: 1, ease: 'easeOut' }}
+                  className='hidden text-base laptop:block'>Dan Murdoch Risk Services</motion.p>
 
-                <div className="flex flex-col items-start justify-center gap-1 mt-auto">
-                    <p className='z-10 text-sm laptop:text-base hd:text-lg'>Providing Global Corporations with</p>
-                    <TextMarquee />
-                </div>
+                <motion.div
+                  initial={{ x: -450 }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: .4, duration: 1, ease: 'easeOut' }}
+                  className="flex flex-col items-center justify-center gap-1 laptop:mt-auto laptop:items-start ">
+                  <p className='z-10 text-sm laptop:text-base hd:text-lg'>Providing Global Corporations with</p>
+                  <TextMarquee />
+                </motion.div>
 
+                <motion.div
+                  initial={{ opacity:0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
+                  className="flex laptop:hidden flex-col min-w-[15rem] rounded-lg overflow-hidden w-full">
+                    <Link to="thailand" className='flex items-center justify-center p-2 py-5 font-medium text-center transition-all bg-white hover:h-full h-1/2 text-background-dark' >Our Services</Link>
+                    <Link to="contact" className='flex items-center justify-center gap-4 p-2 py-5 font-medium text-center transition-all hover:h-full h-1/2 hover:brightness-110 bg-primary-300 text-background-dark' >Get Started  <BsArrowRight className="scale-150" /> </Link>
+                </motion.div>
               </div>
-
-              
 
             </div>
-            {/* <div className="z-10 flex flex-col items-center justify-center w-full gap-10 px-10 text-white">
-              <div className="flex flex-col justify-center gap-2">
-                <h2 className='text-sm text-start tablet:text-md laptop:text-md hd:text-2xl'>We are</h2>
-                <motion.h1
-                  // initial={{ y: -25, opacity: 0 }}
-                  // animate={{ y: 0, opacity: 1 }}
-                  // transition={{ duration: 1 }}
-                  className='z-10 font-bold text-center text-md tablet:text-lg laptop:text-xl hd:text-3xl '>Dan Murdoch Risk Services</motion.h1>
-                  
-              </div>
-              <div className="flex flex-col items-center gap-3">
-                <div className="flex flex-col items-center justify-center gap-1">
-                  <p className='z-10 text-xs laptop:text-sm hd:text-lg'>Providing Global Corporations with</p>
-                  <TextMarquee />
-                </div>
-                <div className="flex gap-3">
-                  <Link to='contact'>
-                    <Button variant='default' size='xs' className='w-fit'>
-                      Get Started
-                    </Button>
-                  </Link>
-
-                  <Button variant='outline' size='xs' className='w-fit'>
-                    Our Services
-                  </Button>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </Hero>
@@ -160,7 +160,7 @@ const Home = () => {
           <StickyScrollItem>
             <StickyScrollContent>
 
-              <h2 className='text-xl font-bold desktop:text-2xl hd:text-3xl'>Specialization</h2>
+              <h2 className='font-bold text-md desktop:text-2xl hd:text-3xl'>Specialization</h2>
               <p className='text-xs text-justify desktop:text-sm hd:text-md'>We specialize in pharmaceuticals and the protection of and identifying risks associated with medicines worldwide.</p>
 
               <Button size="xs" variant='default' className="w-fit">
@@ -184,10 +184,12 @@ const Home = () => {
           < MissionRocket />
         </div>
 
-        <VerticalProgress>
-          <VerticalProgressPoint className="top-0 bg-primary-300" />
-          <VerticalProgressPoint className="top-[13.5rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem] bg-primary-300" />
-        </VerticalProgress>
+        <div className="hidden laptop:block">
+          <VerticalProgress>
+            <VerticalProgressPoint className="top-0 bg-primary-300" />
+            <VerticalProgressPoint className="top-[13.5rem] tablet:top-[10rem] laptop:top-[13.5rem] desktop:top-[10.5rem] hd:top-[14rem] bg-primary-300" />
+          </VerticalProgress>
+        </div>
 
         <div className="flex flex-col laptop:max-w-[55%] gap-10">
 

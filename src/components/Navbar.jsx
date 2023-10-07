@@ -71,7 +71,7 @@ const Navbar = () => {
 
 const DefaultNavbar = ({ nav, cta }) => {
   return (
-    <div ref={nav} className="fixed top-0 left-0 z-50 flex items-center justify-between w-full h-16 text-xs text-white px-28">
+    <div ref={nav} className="fixed top-0 left-0 z-50 flex items-center justify-between w-full h-16 px-10 text-xs text-white laptop:px-28">
       <img src="./images/logo-1.png" className='h-3/4' alt="" />
 
       <div className="flex items-center gap-8">
