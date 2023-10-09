@@ -67,12 +67,13 @@ const Footer = () => {
                         <img src="./images/logo-1.png" alt="" />
                 </div>
                 
-                <h2 className='text-2xl text-left text-accent-500'>CONTACT US</h2>
+                <h2 className='text-2xl text-left text-white'>CONTACT <span className='text-accent-500'>US</span></h2>
 
                         <form action="#" className='flex flex-col gap-8' onSubmit={handleFormSubmit}>
-                            <FormInput label='Name' name='name' placeholder='Enter your name' onInput={handleOnInput} value={formData.name} />
-                            <FormInput label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} />
-                            <FormInput label='Message' name='message' placeholder='Leave us a message!' onInput={handleOnInput} value={formData.message} />
+                            <FormInput className="text-background-light" label='Name' name='name' placeholder='Enter your name' onInput={handleOnInput} value={formData.name} number="01"/>
+                            <FormInput className="text-background-light" label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} number="02"/>
+                            <FormInput className='text-background-light' label="What services are you looking for?" name='services' placeholder='Data Collection, Online Investigations, Business Intelligence' onInput={handleOnInput} value={formData.services} number="03"/>
+                            <FormInput className="text-background-light" label='Message' name='message' placeholder='Leave us a message!' onInput={handleOnInput} value={formData.message} number="04"/>
                             <Button size="sm" variant="outline"><a href="mailto:test@gmail.com">Send us a message!</a></Button>
 
                         </form>
