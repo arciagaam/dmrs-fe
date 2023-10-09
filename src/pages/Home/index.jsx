@@ -141,8 +141,11 @@ const Home = () => {
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex flex-col gap-16 px-10 pt-10 pb-10 overflow-hidden navTrigger
-      laptop:pb-0 laptop:overflow-visible laptop:flex-row
+      <section className="flex flex-col gap-16 overflow-hidden navTrigger
+      mobile:py-10 mobile:px-12 
+      tablet:px-12
+      laptop:p-20 laptop:pb-0 laptop:overflow-visible laptop:flex-row
+      desktop:px-24
       ">
         <div className="flex flex-col items-center justify-center gap-1 z-10
         laptop:sticky laptop:flex-1 laptop:top-16 laptop:max-h-[calc(100vh-4rem)]
@@ -238,7 +241,11 @@ const Home = () => {
       </section>
 
       {/* VISION AND MISSION SECTION */}
-      <section className="relative flex p-10 pb-10 z-[1] gap-5">
+      <section className="relative flex  z-[1] gap-5 px-6 py-8
+        mobile:py-10 mobile:px-12 
+        tablet:px-12
+        laptop:p-20
+        desktop:px-24">
 
         <div className="hidden absolute top-0 right-0 translate-y-[-70vh] translate-x-[40vh]
         laptop:block
@@ -312,7 +319,8 @@ const Home = () => {
               className="flex items-center gap-3">
               <div className="flex items-center justify-center p-2 rounded-md bg-black/5 aspect-square">
                 <FaRocket className='text-sm 
-                laptop:text-md hd:text-lg' />
+                laptop:text-md 
+                hd:text-lg' />
               </div>
               <h2 className="text-lg font-bold 
               laptop:text-xl 
@@ -338,8 +346,12 @@ const Home = () => {
 
       </section>
 
-      <section className='relative flex flex-col gap-10 p-10 py-10 mt-16 
-      laptop:flex-row
+      <section className='relative flex flex-col gap-10 mt-16 px-6 py-8 
+      mobile:py-10 mobile:px-12 
+      tablet:px-12
+      laptop:p-20 laptop:flex-row
+      desktop:px-24
+      
       '>
 
         {/* grid background */}
