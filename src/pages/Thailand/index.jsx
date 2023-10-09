@@ -224,11 +224,11 @@ const Thailand = () => {
           before:absolute before:content-[''] before:top-0 before:bg-gradient-to-t before:from-background-dark before:to-white before:min-h-[5px] before:min-w-full after:z-10 
           after:absolute after:content-[''] after:bottom-0 after:bg-gradient-to-b after:from-background-dark after:to-white after:min-h-[5px] after:min-w-full before:z-10 
           mobile:py-14 mobile:px-12 mobile:h-fit mobile:flex-col 
-          tablet:items-center tablet:flex-col 
-          laptop:h-screen
+          tablet:items-center tablet:px-24 tablet:flex-col 
+          laptop:p-20 laptop:gap-24 laptop:w-full 
           desktop:w-[90%] desktop:min-h-screen desktop:gap-20 desktop:px-24
         ">
-          <TryComponent />
+        <TryComponent />
           <SecondSection />
           <div className="absolute top-0 bg-gradient-to-t from-background-dark to-white min-h-[5px] min-w-full z-10" />
         </motion.div>
