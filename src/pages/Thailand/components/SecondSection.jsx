@@ -40,7 +40,9 @@ const slideRight = {
 
 const SecondSection = () => {
   return (
-    <div className="w-full h-full flex items-center">
+    <div className="w-full h-full flex items-center px-6
+      mobile:px-6
+    ">
       <motion.div 
         whileInView={{ 
           opacity: [0, 1], 
@@ -51,9 +53,10 @@ const SecondSection = () => {
             staggerChildren: 0.1
           }
         }}
-        className="flex flex-col h-full gap-y-20 gap-x-5 items-center text-white
+        className="flex flex-col h-full gap-y-10 gap-x-5 items-center text-white
+        tablet:gap-y-20
         laptop:gap-y-[9rem]
-        desktop:gap-y-40
+        desktop:gap-y-32
         ">
         {contents.map((content, index) => {
           return(
