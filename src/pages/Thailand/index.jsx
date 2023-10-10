@@ -256,7 +256,7 @@ const Thailand = () => {
             <GridFiller cellCount={40} cellClass={'border border-background-dark/5'} />
           </div>
           <div className="flex flex-col justify-start h-full px-6 gap-6">
-            <div className="flex flex-col items-start gap-2 
+            <div className="flex flex-col items-start gap-2
               mobile:pl-6 
               tablet:pl-6 
               laptop:pl-12 
@@ -271,8 +271,8 @@ const Thailand = () => {
                 <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={6}> RESEARCH.</motion.span> 
               </p>
             </div>
-            <div className="flex flex-row items-center justify-start h-fit px-0 
-              mobile:px-  
+            <div className="flex flex-row items-center justify-start
+              mobile:px-6  
               tablet:px-6 
               laptop:px-12 
               desktop:px-[4.5rem]">
@@ -282,10 +282,9 @@ const Thailand = () => {
                 whileInView={"animate"}
                 viewport={{once:true}}
                 custom={6}
-                className="z-10 w-full gap-8 fill-black 
-                mobile:flex mobile:flex-col 
-                tablet:grid tablet:justify-center tablet:grid-cols-2 tablet:flex-col 
-                laptop:grid-cols-2 
+                className="z-10 grid grid-rows-1 gap-4 fill-black justify-center w-full
+                mobile:flex mobile:flex-col mobile:gap-4 mobile:justify-center
+                tablet:grid tablet:grid-cols-2 
                 desktop:grid-cols-3"
               >
                 {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} content={item.content} subContents={item.subContent}/> )}

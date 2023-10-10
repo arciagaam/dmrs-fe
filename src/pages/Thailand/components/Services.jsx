@@ -8,10 +8,10 @@ const Services = ({ name, icon, content, subContents }) => {
   const [isActive, setIsActive] = useState(false)
   return (
     <div
-      className={`relative overflow-hidden ease-in-out duration-300 flex flex-col text-base gap-2 w-full bg-white ring-1 ring-gray-400 fill-accent-400/20 justify-center items-start aspect-video
-        ${isActive ? 'min-h-[340px] desktop:min-h-[480px] h-fit scale-[1.03] fill-accent-200/20 text-white ': 'tablet:min-h-[300px] desktop:min-h-[400px] hover:scale-[1.03] hover:text-white'} 
-        mobile:text-md 
-        tablet:w-full tablet:min-w-full
+      className={`relative overflow-hidden ease-in-out duration-300 flex flex-col text-base gap-2 bg-white ring-1 ring-gray-400 fill-accent-400/20 justify-center items-start aspect-video 
+        ${isActive ? 'min-h-[300px] max-w-[100%] mobile:min-h-[240px] tablet:min-h-[320px] laptop:min-h-[480px] h-fit scale-[1.03] fill-accent-200/20 text-white ': 'min-h-[300px] max-w-[100%] tablet:min-h-[300px] desktop:min-h-[400px] hover:scale-[1.03] hover:text-white'}
+        mobile:text-md
+        tablet:min-w-full
         laptop:text-md 
         desktop:text-md
         before:content-[' '] before:min-h-0 before:absolute before:bottom-0 before:left-0 before:w-full before:bg-accent-500 before:duration-200 before:ease-in-out 
