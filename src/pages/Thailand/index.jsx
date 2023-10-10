@@ -208,7 +208,7 @@ const Thailand = () => {
             viewport={{once:true}}
             custom={1}
             className="z-10 flex flex-col justify-center w-full gap-4 mobile:w-full mobile:gap-4 tablet:w-1/2 tablet:gap-10">
-            <h2 className="text-lg font-bold mobile:text-xl tablet:text-xl">Dan Murdoch Risk Services <strong className="text-lg font-bold text-primary-300 mobile:text-2xl tablet:text-2xl">Thailand.</strong></h2>
+            <h2 className="flex flex-col text-lg font-bold mobile:text-xl tablet:text-xl">Dan Murdoch Risk Services <strong className="text-lg font-bold text-primary-300 mobile:text-2xl tablet:text-2xl">Thailand.</strong></h2>
             <div className="flex flex-col gap-4 text-xs mobile:text-sm laptop:text-sm desktop:text-base">
               <p><strong className="text-accent-500">DMRS</strong> <strong className="text-primary-300">Thailand</strong> Co. Limited is based in Thailand with staff also in the Philippines, Australia, Hong Kong and China with trusted and verified agents in many global locations.</p>
             </div>

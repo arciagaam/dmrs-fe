@@ -178,7 +178,7 @@ const Australia = () => {
             viewport={{once:true}}
             custom={1}
             className="z-10 flex flex-col justify-center w-full gap-4 mobile:w-full mobile:gap-4 tablet:w-1/2 tablet:gap-10">
-            <h2 className="text-lg font-bold 
+            <h2 className="flex flex-col text-lg font-bold 
               mobile:text-xl 
               tablet:text-xl
             ">
