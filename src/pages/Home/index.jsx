@@ -45,7 +45,7 @@ const Home = () => {
             <div className="absolute top-0 left-0 z-40 w-3/4 h-full opacity-50 bg-gradient-to-r from-black via-black to-transparent"></div>
 
             {/* actual hero */}
-            <div className="z-50 relative flex flex-col items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-10 
+            <div className="z-50 relative flex flex-col items-center overflow-auto h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-10 
             laptop:px-28
             ">
 
@@ -60,7 +60,7 @@ const Home = () => {
               </div>
 
 
-              <div className="flex flex-col items-center w-full gap-10 
+              <div className="flex flex-col w-full gap-5
               laptop:gap-20 laptop:flex-row
               ">
                 <motion.div
@@ -75,7 +75,7 @@ const Home = () => {
                   initial={{ x: -400 }}
                   animate={{ x: 0 }}
                   transition={{ delay: .2, duration: 1, ease: 'easeOut' }}
-                  className='text-base 
+                  className='text-sm self-start mb-10
                   laptop:hidden
                   '>
                     Dan Murdoch Risk Services
@@ -102,7 +102,7 @@ const Home = () => {
                   initial={{ x: -400 }}
                   animate={{ x: 0 }}
                   transition={{ delay: .2, duration: 1, ease: 'easeOut' }}
-                  className='hidden text-base 
+                  className='hidden text-base
                   laptop:block
                   '>
                     Dan Murdoch Risk Services
@@ -112,10 +112,12 @@ const Home = () => {
                   initial={{ x: -450 }}
                   animate={{ x: 0 }}
                   transition={{ delay: .4, duration: 1, ease: 'easeOut' }}
-                  className="flex flex-col items-center justify-center gap-1 
+                  className="flex flex-col justify-center gap-1 
+                  tablet:w-1/2
                   laptop:mt-auto laptop:items-start
                   ">
-                    <p className='z-10 text-sm 
+                    <p className='z-10 text-xs
+                    mobile:text-sm
                     laptop:text-base 
                     hd:text-lg
                     '>
@@ -128,7 +130,8 @@ const Home = () => {
                   initial={{ opacity:0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
-                  className="flex flex-col min-w-[15rem] rounded-lg overflow-hidden w-full
+                  className="flex flex-col min-w-[15rem] rounded-lg overflow-hidden w-full mt-auto
+                  tablet:w-1/2
                   laptop:hidden ">
                     <Link to="thailand" className='flex items-center justify-center p-2 py-5 font-medium text-center transition-all bg-white hover:h-full h-1/2 text-background-dark' >Our Services</Link>
                     <Link to="contact" className='flex items-center justify-center gap-4 p-2 py-5 font-medium text-center transition-all hover:h-full h-1/2 hover:brightness-110 bg-primary-300 text-background-dark' >Get Started  <BsArrowRight className="scale-150" /> </Link>
@@ -141,8 +144,7 @@ const Home = () => {
       </Hero>
 
       {/* WHO ARE WE SECTION */}
-      <section className="flex flex-col gap-16 overflow-hidden navTrigger
-      mobile:py-10 mobile:px-12 
+      <section className="flex flex-col gap-16 overflow-hidden navTrigger py-10 px-12 
       tablet:px-12
       laptop:p-20 laptop:pb-0 laptop:overflow-visible laptop:flex-row
       desktop:px-24

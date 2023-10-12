@@ -67,9 +67,9 @@ const Footer = () => {
                         <img src="./images/logo-1.png" alt="" />
                 </div>
                 
-                <h2 className='text-2xl text-left text-white'>CONTACT <span className='text-accent-500'>US</span></h2>
+                <h2 className='text-xl tablet:text-3xl text-left text-white'>CONTACT <span className='text-accent-500'>US</span></h2>
 
-                        <form action="#" className='flex flex-col gap-8' onSubmit={handleFormSubmit}>
+                        <form action="#" className='flex flex-col gap-8 text-xs mobile:text-sm' onSubmit={handleFormSubmit}>
                             <FormInput className="text-background-light" label='Name' name='name' placeholder='Enter your name' onInput={handleOnInput} value={formData.name} number="01"/>
                             <FormInput className="text-background-light" label='Email Address' name='email' placeholder='Enter your email address' onInput={handleOnInput} value={formData.email} number="02"/>
                             <FormInput className='text-background-light' label="What services are you looking for?" name='services' placeholder='Data Collection, Online Investigations, Business Intelligence' onInput={handleOnInput} value={formData.services} number="03"/>

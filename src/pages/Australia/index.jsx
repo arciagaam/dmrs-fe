@@ -64,7 +64,7 @@ const Australia = () => {
             <div className="absolute top-0 left-0 z-40 w-3/4 h-full opacity-50 bg-gradient-to-r from-black via-black to-transparent"></div>
 
             {/* actual hero */}
-            <div className="z-50 relative flex flex-col items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-10 
+            <div className="z-50 relative flex flex-col overflow-auto items-center h-full w-full gap-2 py-[calc(4rem+2rem)] text-white px-10 
               laptop:px-28">
 
               <div className="absolute z-50 hidden scale-110 -rotate-90 bottom-28 right-28 
@@ -126,8 +126,9 @@ const Australia = () => {
                   animate={{ x: 0 }}
                   transition={{ delay: .4, duration: 1, ease: 'easeOut' }}
                   className="flex flex-col items-center justify-center gap-1 
+                    tablet:w-1/2
                     laptop:mt-auto laptop:items-start ">
-                  <p className='z-10 text-sm 
+                  <p className='z-10 text-md
                     laptop:text-xl'>AUSTRALIA</p>
                   
                 </motion.div>
@@ -136,7 +137,8 @@ const Australia = () => {
                   initial={{ opacity:0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
-                  className="flex flex-col min-w-[15rem] rounded-lg overflow-hidden w-full 
+                  className="flex flex-col min-w-[15rem] rounded-lg overflow-hidden w-full mt-auto
+                    tablet:w-1/2
                     laptop:hidden">
                     <Link to="thailand" className='flex items-center justify-center p-2 py-5 font-medium text-center transition-all bg-white hover:h-full h-1/2 text-background-dark' >Our Services</Link>
                     <Link to="contact" className='flex items-center justify-center gap-4 p-2 py-5 font-medium text-center transition-all hover:h-full h-1/2 hover:brightness-110 bg-primary-300 text-background-dark' >Get Started  <BsArrowRight className="scale-150" /> </Link>

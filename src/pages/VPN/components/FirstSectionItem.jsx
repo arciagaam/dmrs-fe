@@ -8,12 +8,12 @@ const FirstSectionItem = ({ ...props }) => {
 
             <div className="relative overflow-hidden rounded-lg laptop:hidden">
                 <div className="z-20">
-                    <img className='object-cover w-full h-full aspect-square' src={imageUrl} alt="" loading='lazy'/>
+                    <img className='object-cover w-full h-full aspect-square mobile:aspect-video' src={imageUrl} alt="" loading='lazy'/>
                 </div>
 
                 <div className="absolute inset-0 bg-black/70"></div>
 
-                <h3 className='absolute top-0 left-0 z-30 m-10 text-lg text-white'>{title}</h3>
+                <h3 className='absolute top-0 left-0 z-30 m-10 text-base mobile:text-lg text-white'>{title}</h3>
             </div>
 
 
