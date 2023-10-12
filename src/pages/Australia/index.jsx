@@ -1,8 +1,8 @@
 import Hero from '../../components/Hero'
 import Button from '../../components/Button'
-import DMRSimg from '../../assets/Australia-dots.png'
-import Australia_img from '../../assets/dmrs-australia-1.jpg'
-import II_icon from '../../assets/intelligent-intelligence-icon.png'
+import DMRSimg from '../../assets/Australia-dots.webp'
+import Australia_img from '../../assets/dmrs-australia.webp'
+import II_icon from '../../assets/intelligent-intelligence-icon.webp'
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from 'react'
 import 'animate.css';
@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 import { LuLightbulb } from 'react-icons/lu'
 import { PiListMagnifyingGlassLight } from 'react-icons/pi'
-import { PiGear, PiGearFill } from 'react-icons/pi'
 import { SiDatabricks } from 'react-icons/si'
 
 const fadeInAnimationVariants = {
@@ -83,7 +82,7 @@ const Australia = () => {
                   animate={{ x: 0 }}
                   transition={{ duration: 1, ease: 'easeOut' }}
                   className="flex flex-col col-span-3">
-                    <img src="./images/DMRS.png" alt="" className='w-full invert' />
+                    <img src="./images/DMRS.webp" alt="" className='w-full invert' />
                 </motion.div>
 
                 <motion.p
@@ -373,8 +372,10 @@ const Australia = () => {
 
 
       {/* Services */}
-      <section className="z-40 flex flex-col-reverse items-center w-full py-[20vh] 
-      tablet:flex-row">
+      <section className="z-40 flex flex-col-reverse items-center w-full p-8 
+      tablet:flex-row
+      mobile:p-18 
+      laptop:p-28">
         <div className="flex flex-col items-center flex-1 gap-5">
         {/* PiGear, PiGearFill  */}
         <h2 className='font-bold text-center text-md 

@@ -139,7 +139,7 @@ const Thailand = () => {
                   animate={{ x: 0 }}
                   transition={{ duration: 1, ease: 'easeOut' }}
                   className="flex flex-col col-span-3">
-                    <img src="./images/DMRS.png" alt="" className='w-full invert' />
+                    <img src="./images/DMRS.webp" alt="" className='w-full invert' />
                 </motion.div>
 
                 <motion.p
