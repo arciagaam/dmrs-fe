@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion';
 
 const FirstSectionItem = ({ ...props }) => {
@@ -8,12 +8,12 @@ const FirstSectionItem = ({ ...props }) => {
 
             <div className="relative overflow-hidden rounded-lg laptop:hidden">
                 <div className="z-20">
-                    <img className='object-cover w-full h-full aspect-square' src={imageUrl} alt="" />
+                    <img className='object-cover w-full h-full aspect-square mobile:aspect-video' src={imageUrl} alt="" loading='lazy'/>
                 </div>
 
                 <div className="absolute inset-0 bg-black/70"></div>
 
-                <h3 className='absolute top-0 left-0 z-30 m-10 text-lg text-white'>{title}</h3>
+                <h3 className='absolute top-0 left-0 z-30 m-10 text-base mobile:text-lg text-white'>{title}</h3>
             </div>
 
 
@@ -31,15 +31,50 @@ const FirstSectionItem = ({ ...props }) => {
                     className='w-full text-justify'>{content}</motion.p>
             </div>
 
-            <motion.div
-                initial={{ x: 100 }}
-                whileInView={{ x: 0 }}
-                viewport={{ once: true }}
-                className="z-20 hidden w-1/2 h-full overflow-hidden rounded-lg laptop:block laptop:absolute right-[-15%] top-0 shadow-md">
-                <img className='object-cover w-full h-full aspect-video' src={imageUrl} alt="" />
-            </motion.div>
+            <LazyLoad imageUrl={imageUrl}/>
         </div>
     )
+}
+
+const LazyLoad = ({imageUrl}) => {
+    const parentRef = useRef(null);
+    const imageRef = useRef(null);
+
+    
+    useEffect(() => {
+        let imageListener;
+        const image = imageRef.current; 
+        const loaded = () => {
+            image.classList.remove('opacity-0');
+            image.classList.add('opacity-1');
+        }
+    
+        if(image?.complete) {
+            loaded()
+        } else {
+            imageListener = image?.addEventListener('load', loaded)
+        }
+
+        return () => {
+            if(imageListener) {
+                removeEventListener('load', imageListener);
+            }
+        }
+    }, [])
+
+
+    return (
+        <motion.div
+        ref={parentRef}
+        initial={{ x: 100 }}
+        whileInView={{ x: 0 }}
+        viewport={{ once: true }}
+        className="z-20 hidden w-1/2 h-full overflow-hidden rounded-lg laptop:block laptop:absolute right-[-15%] top-0 shadow-md bg-cover bg-center"
+        style={{backgroundImage: 'url(./images/browse-small.webp)'}}>
+        <img ref={imageRef} className='object-cover w-full h-full aspect-video opacity-0' src={imageUrl} alt=""/>
+        </motion.div>
+    )
+
 }
 
 export default FirstSectionItem
