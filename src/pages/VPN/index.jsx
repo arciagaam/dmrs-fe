@@ -118,13 +118,6 @@ const Vpn = () => {
       </Hero>
 
             <section className='relative flex gap-10 p-10 overflow-hidden laptop:pl-28 navTrigger'>
-                
-                {/* <VerticalProgress>
-                    <VerticalProgressPoint className="top-0 bg-primary-300" />
-                    <VerticalProgressPoint className="top-[51.5rem] tablet:top-[56.5rem] laptop:top-[30.5rem] bg-primary-300" />
-                    <VerticalProgressPoint className="top-[105.5rem] tablet:top-[113.5rem] laptop:top-[57.5rem] bg-primary-300" />
-                    <VerticalProgressPoint className="top-[150.5rem] tablet:top-[163.5rem] laptop:top-[75.5rem] bg-primary-300" />
-                </VerticalProgress> */}
 
                 <div className="flex flex-col gap-16">
                     {_MainData.map((item, index) => <FirstSectionItem key={index} imageUrl={item.imageUrl} title={item.title} content={item.content} index={index} />)}

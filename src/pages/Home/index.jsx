@@ -254,7 +254,7 @@ const Home = () => {
           < MissionRocket />
         </div>
 
-        <div className="hidden 
+        {/* <div className="hidden 
         laptop:block
         ">
           <VerticalProgress>
@@ -265,7 +265,7 @@ const Home = () => {
             desktop:top-[10.5rem] 
             hd:top-[14rem]" />
           </VerticalProgress>
-        </div>
+        </div> */}
 
         <div className="flex flex-col  gap-10
         laptop:max-w-[55%]

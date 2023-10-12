@@ -7,7 +7,7 @@ const VerticalProgress = ({children}) => {
 
     const {scrollYProgress} = useScroll({
         target: ref,
-        offset: ['start center', 'end center']
+        offset: ['start end', 'end center']
     });
 
     return (
