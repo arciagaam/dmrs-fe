@@ -53,6 +53,7 @@ const SecondSection = () => {
             staggerChildren: 0.1
           }
         }}
+        viewport={{once:true}}
         className="flex flex-col h-full gap-y-10 gap-x-5 items-center text-white
         tablet:gap-y-20
         laptop:gap-y-[9rem]
@@ -70,6 +71,7 @@ const SecondSection = () => {
             ">
               <motion.div 
                 variants={ fadeRight } 
+                viewport={{once:true}}
                 whileInView="animate" 
                 custom={ index } 
                 className='flex items-center w-full'
@@ -86,6 +88,7 @@ const SecondSection = () => {
               <motion.p className="relative desktop:text-base">
                 <motion.span 
                   variants={ slideRight } 
+                  viewport={{once:true}}
                   whileInView="animate" 
                   custom={ index }
                   className="absolute right-0 bg-background-dark min-h-full"    
