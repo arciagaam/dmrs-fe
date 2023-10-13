@@ -197,7 +197,7 @@ const Thailand = () => {
         <div 
           className="relative flex flex-col w-full gap-6 px-6 py-8 h-fit mobile:py-10 mobile:px-12 mobile:h-fit mobile:flex-col tablet:items-center tablet:px-12 tablet:flex-row laptop:p-20 laptop:gap-24 desktop:min-h-screen desktop:gap-20 desktop:px-24 z-20">
           <div className="flex w-full h-[300px] bg-gray-200 rounded-tl-[2rem] rounded-br-[2rem] tablet:h-[calc((3/5)*100vh)] tablet:w-1/2 laptop:w-1/2 tablet:rounded-tl-[4rem] tablet:rounded-br-[4rem] overflow-hidden">
-            <img src="https://images.pexels.com/photos/7319070/pexels-photo-7319070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="object-cover w-full h-full"/>
+            <img src="./images/dmrs-thailand.webp" alt="" className="object-cover w-full h-full"/>
           </div>
           <img src="/images/thailand-map.png" alt="" className='absolute opacity-50 h-full brightness-90 -z-10 top-0 right-0 hidden mobile:block laptop:right-[20%]' />
 
@@ -220,6 +220,7 @@ const Thailand = () => {
       <section className="flex items-center justify-center relative overflow-hidden">
         <motion.div
           whileInView={{ opacity: [0,1], transition: { duration: 1, delay: 0.5 }}} 
+          viewport={{once:true}}
           className="flex w-full gap-6 py-8 min-h-fit justify-center items-center
           before:absolute before:content-[''] before:top-0 before:bg-gradient-to-t before:from-background-dark before:to-white before:min-h-[5px] before:min-w-full after:z-10 
           after:absolute after:content-[''] after:bottom-0 after:bg-gradient-to-b after:from-background-dark after:to-white after:min-h-[5px] after:min-w-full before:z-10 
@@ -241,8 +242,7 @@ const Thailand = () => {
           mobile:px-6 mobile:max-w-full 
           tablet:px-12 tablet:max-w-full
           tablet:mt-10 
-          laptop:gap-10 
-          desktop:px-12"
+          laptop:gap-10"
           variants={fadeInAnimationVariants}
           initial="initial"
           id="services_th"
@@ -255,12 +255,12 @@ const Thailand = () => {
             desktop:grid-cols-8">
             <GridFiller cellCount={40} cellClass={'border border-background-dark/5'} />
           </div>
-          <div className="flex flex-col justify-start h-full px-6 gap-6">
-            <div className="flex flex-col items-start gap-2
-              mobile:pl-6 
-              tablet:pl-6 
-              laptop:pl-12 
-              desktop:pl-[4.5rem]" >
+          <div className="flex flex-col h-full gap-6 px-6
+              mobile:px-6  
+              tablet:px-6 
+              laptop:px-12 
+              desktop:px-[4.5rem]">
+            <div className="flex flex-col items-start gap-2">
               <h2 className="z-10 text-lg font-bold mobile:text-xl laptop:text-xl">Services</h2>
               <p
                 className="z-10 gap-1 text-sm mobile:text-xs desktop:text-xs"
@@ -271,11 +271,7 @@ const Thailand = () => {
                 <motion.span className="font-bold" variants={fadeInAnimationVariants} initial="initial" whileInView="animate" viewport={{once:true}} custom={6}> RESEARCH.</motion.span> 
               </p>
             </div>
-            <div className="flex flex-row items-center justify-start
-              mobile:px-6  
-              tablet:px-6 
-              laptop:px-12 
-              desktop:px-[4.5rem]">
+            <div className="flex flex-row items-center justify-start">
               <motion.div 
                 variants={fadeInAnimationVariants}
                 initial="initial"
@@ -283,8 +279,8 @@ const Thailand = () => {
                 viewport={{once:true}}
                 custom={6}
                 className="z-10 grid grid-rows-1 gap-4 fill-black justify-center w-full
-                mobile:flex mobile:flex-col mobile:gap-4 mobile:justify-center
-                tablet:grid tablet:grid-cols-2 
+                mobile:grid mobile:grid-rows-1 mobile:gap-4
+                tablet:grid tablet:grid-cols-2 tablet:gap-6
                 desktop:grid-cols-3"
               >
                 {services.map((item, index) => <Services key={index} name={item.name} icon={item.icon} content={item.content} subContents={item.subContent}/> )}
@@ -295,8 +291,17 @@ const Thailand = () => {
       </div>
 
       {/* Other Services */}
-      <section className="flex flex-col items-center justify-center w-full h-full gap-10 px-6 mb-10 tablet:px-12 desktop:px-[4.5rem]">
-        <motion.div className="flex flex-col items-start gap-2 mobile:pl-5 tablet:pl-5 laptop:pl-10 desktop:pl-[4.5rem]"
+      <section className="flex flex-col items-center justify-center w-full h-full gap-10 mb-10 px-6
+          mobile:px-6 mobile:max-w-full 
+          tablet:px-12 tablet:max-w-full
+          tablet:mt-10 
+          laptop:gap-10"
+        >
+        <motion.div className="flex flex-col items-start gap-2 px-6
+          mobile:px-6  
+          tablet:px-6 
+          laptop:px-12 
+          desktop:px-[4.5rem]"
         variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
